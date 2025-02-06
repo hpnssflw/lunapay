@@ -10,9 +10,9 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        primary: "rgba(129, 168, 203, 1)", // Primary color
-        default: "rgba(25, 26, 35, 1)", // Default background color
-        secondary: "rgba(243, 243, 243, 1)", // Second
+        primary: "#81A8CB",
+        default: "#191A23",
+        secondary: "#F3F3F3",
       },
       keyframes: {
         "accordion-down": {

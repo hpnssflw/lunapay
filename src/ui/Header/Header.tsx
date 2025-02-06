@@ -10,8 +10,10 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
+import { Link } from "react-router";
 
 import luna from "@/assets/imgs/luna-logo.png";
+import { Button } from "@/components/ui/button";
 
 const navLinkClasses = `
   text-black hover:text-primary transition-colors duration-200 
@@ -31,36 +33,46 @@ export const Header = () => {
       </a>
 
       {/* navs */}
-      <NavigationMenu>
+      <NavigationMenu className="cursor-pointer">
         <NavigationMenuList className="flex justify-center gap-4 efault p-4">
           {/* Link 1 */}
           <NavigationMenuItem>
-            <NavigationMenuLink className={cn(navLinkClasses)}>
-              Home
-            </NavigationMenuLink>
+            <Link to="/about-us">
+              <NavigationMenuLink className={cn(navLinkClasses)}>
+                About us
+              </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
 
           {/* Link 2 */}
           <NavigationMenuItem>
-            <NavigationMenuLink className={cn(navLinkClasses)}>
-              Features
-            </NavigationMenuLink>
+            <Link to="/services">
+              <NavigationMenuLink className={cn(navLinkClasses)}>
+                Services
+              </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
 
           {/* Link 3 */}
           <NavigationMenuItem>
-            <NavigationMenuLink className={cn(navLinkClasses)}>
-              Pricing
-            </NavigationMenuLink>
+            <Link to="/use-cases">
+              <NavigationMenuLink className={cn(navLinkClasses)}>
+                Use Cases
+              </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
 
           {/* Link 4 */}
           <NavigationMenuItem>
-            <NavigationMenuLink className={cn(navLinkClasses)}>
-              Contact
-            </NavigationMenuLink>
+            <Link to="/blog">
+              <NavigationMenuLink className={cn(navLinkClasses)}>
+                Blog
+              </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
+
+        <Button> Request a quote</Button>
       </NavigationMenu>
     </div>
   );
