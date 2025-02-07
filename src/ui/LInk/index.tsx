@@ -24,7 +24,9 @@ export const LinkStyled = ({
         iconSide === "left" ? "flex-row" : "flex-row-reverse justify-end"
       }`}
     >
-      <div className={`h-10 w-10 items-center justify-center rounded-full ${iconBg}`}>
+      <div
+        className={`h-10 w-10 items-center justify-center rounded-full ${iconBg}`}
+      >
         <ArrowUpRight strokeWidth={1} size={38} color={iconTextColor} />
       </div>
       <span className={labelColor}>{label}</span>

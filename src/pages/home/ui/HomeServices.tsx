@@ -63,7 +63,7 @@ const servicesCards = [
 
 const genCard = (i: any) => (
   <div
-    className={`rounded-[45px] p-[50px] grid grid-cols-[1fr_220px] shadow-md border-2 border-black bg-${i.bgColor} w-[600px] h-[310px]`}
+    className={`rounded-[45px] p-[50px] grid grid-cols-[1fr_220px] shadow-md border-[1px] border-b-[6px] border-black bg-${i.bgColor} w-[600px] h-[310px]`}
   >
     <div className="flex flex-col justify-between ">
       <div>

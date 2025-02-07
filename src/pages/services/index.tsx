@@ -4,6 +4,11 @@ import React from "react";
 
 import intrologo from "@/assets/imgs/services/intro.png";
 
+import stardark from "@/assets/imgs/services/Stardark.svg";
+import fintechlogo from "@/assets/imgs/aboutus/fintech.png";
+
+import { LinkStyled } from "@/ui/LInk";
+
 const ServicesIntro = () => (
   <div className="grid grid-cols-2 items-center">
     <img src={intrologo} alt="" height={454} />
@@ -13,7 +18,7 @@ const ServicesIntro = () => (
         Expert <br /> Payment <br /> Solutions
       </h1>
 
-      <span className="font-normal">
+      <span className="font-normal max-w-[453px]">
         Unlock the power of seamless transactions with Luna Pay’s cutting-edge
         payment technology designed to support businesses worldwide.
       </span>
@@ -23,8 +28,8 @@ const ServicesIntro = () => (
 
 const ServicesIntroBanner = () => {
   return (
-    <section className="w-full h-[315px] grid grid-cols-2 rounded-[45px] bg-default p-10 text-white">
-      <div className="text-black mx-auto">
+    <section className="w-full h-[315px] grid grid-cols-[30%_1fr] rounded-[45px] bg-default p-10 px-40 text-white">
+      <div className="text-black ">
         <Badge>
           <h3>Payment</h3>
         </Badge>
@@ -41,7 +46,10 @@ const ServicesIntroBanner = () => {
           transaction failures, boost conversion rates, and improve customer
           satisfaction.
         </p>
-        <Button> Optimize My Payments</Button>
+        <Button variant="outline" className="bg-white text-black">
+          {" "}
+          Optimize My Payments
+        </Button>
       </div>
     </section>
   );
@@ -76,11 +84,14 @@ const setupCards = [
 ];
 
 const genSetupCard = (i: any) => (
-  <div className="h-[240px] rounded-[45px] bg-secondary grid grid-cols-[50px_1fr] gap-20 p-10 items-center">
-    <div className="mx-auto">
-      <p className="">{"0" + i.step}</p>
+  <div className="h-[240px] rounded-[45px] -z-10 bg-secondary grid grid-cols-[50px_1fr] gap-40 p-10 items-center">
+    <div className="mx-auto w-[138px] relative  h-[138px] flex">
+      <img src={stardark} alt="" className="absolute -z-10" />
+      <p className="text-[60px] text-primary mx-auto my-auto z-50">
+        {"0" + i.step}
+      </p>
     </div>
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-7">
       <h3>{i.title}</h3>
       <p>{i.info}</p>
     </div>
@@ -123,19 +134,31 @@ const ServicesUseCases = () => {
         </p>
       </div>
 
-      <div className="w-full  p-4 h-80 bg-black rounded-[45px] py-[70px] px-[60px] flex gap-14">
+      <div className="w-full  p-4 h-80 bg-default rounded-[45px] py-[70px] px-[60px] grid grid-cols-[1fr_1px_1fr_1px_1fr] gap-16">
         <div className="flex flex-col text-white justify-between font-normal">
           <h3>E-commerce Businesses</h3>
           <span>Streamline online payments for customers worldwide.</span>
 
-          <Button>Learn more</Button>
+          <LinkStyled
+            to="/"
+            label="Learn more"
+            iconSide="right"
+            labelColor="text-primary"
+            iconTextColor="#81A8CB"
+          />
         </div>
         <div className="h-full w-[1px] bg-white mx-auto"></div>
         <div className="flex flex-col text-white justify-between font-normal">
           <h3>Subscription Platforms:</h3>
           <span>Automate recurring billing with ease.</span>
 
-          <Button>Learn more</Button>
+          <LinkStyled
+            to="/"
+            label="Learn more"
+            iconSide="right"
+            labelColor="text-primary"
+            iconTextColor="#81A8CB"
+          />
         </div>
         <div className="h-full w-[1px] bg-white mx-auto"></div>
 
@@ -145,7 +168,13 @@ const ServicesUseCases = () => {
             Support multiple currencies and payment methods seamlessly.
           </span>
 
-          <Button>Learn more</Button>
+          <LinkStyled
+            to="/"
+            label="Learn more"
+            iconSide="right"
+            labelColor="text-primary"
+            iconTextColor="#81A8CB"
+          />
         </div>
       </div>
     </section>
@@ -193,7 +222,7 @@ const servicesCards = [
 
 const genCard = (i: any) => (
   <div
-    className={`rounded-[45px] p-[50px] grid grid-cols-[1fr_180px] shadow-md border-2 border-black bg-${i.bgColor} w-[600px] h-[310px]`}
+    className={`rounded-[45px] border-b-[6px] p-[50px] grid grid-cols-[1fr_180px] shadow-md border-2 border-black bg-${i.bgColor} w-[600px] h-[310px]`}
   >
     <div className="flex flex-col justify-between ">
       <div>
@@ -204,18 +233,21 @@ const genCard = (i: any) => (
         ))}
       </div>
 
-      <div>
-        <span>Learn more</span>
-      </div>
+      <LinkStyled
+        to="/"
+        label="Lear more"
+        iconBg="bg-black"
+        iconTextColor="#81A8CB"
+      />
     </div>
 
-    <div className="bg-blue-500 rounded-xl h-10 w-8"></div>
+    <img src={intrologo} alt="" height={454} />
   </div>
 );
 
 const ServicesOtherFeatures = () => {
   return (
-    <section className="flex flex-col gap-10">
+    <section className="flex flex-col gap-10 my-20">
       <div className="flex gap-10 ">
         <Badge bg="primary">
           <h2>Other Luna Pay Features</h2>
@@ -238,9 +270,9 @@ const ServicesOtherFeatures = () => {
 
 const ServicesStartBanner = () => {
   return (
-    <section className="border border-black rounded-[45px] p-20 grid grid-cols-2">
-      <div className="flex flex-col gap-10">
-        <h3>Ready to Simplify Your Payments</h3>
+    <section className="border border-b-[6px] border-black rounded-[45px] items-center pl-20 grid grid-cols-2">
+      <div className="flex flex-col justify-between gap-10">
+        <h3>Ready to Simplify Your Payments?</h3>
         <div className="h-[1px] bg-black w-full" />
 
         <span className="font-normal">
@@ -248,23 +280,23 @@ const ServicesStartBanner = () => {
           customer satisfaction, and drive business growth.
         </span>
 
-        <span className="font-semibold">
+        <p className="font-semibold mt-10">
           Let’s work together to grow your online presence.{" "}
-        </span>
+        </p>
 
-        <Button> Start My Payment Journey</Button>
+        <Button variant="primary"> Start My Payment Journey</Button>
       </div>
 
-      <div></div>
+      <img src={fintechlogo} alt="Fintech Logo" />
     </section>
   );
 };
 
 export const ServicesPage = () => {
   return (
-    <section className="flex flex-col gap-20">
+    <section className="flex flex-col gap-10">
       <ServicesIntro />
-      <Button className="w-fit">Back</Button>
+      <LinkStyled to="/" label="Back" iconBg="bg-black" iconTextColor="#fff" />
       <ServicesIntroBanner />
       <ServicesProcess />
       <ServicesUseCases />

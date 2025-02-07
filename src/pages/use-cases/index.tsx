@@ -3,6 +3,7 @@ import planet from "@/assets/imgs/home/planet-logo.png";
 import React from "react";
 import { Badge } from "@/ui";
 import { HomeTestimonials } from "../home/ui/HomeTestimonials";
+import { LinkStyled } from "@/ui/LInk";
 
 export const CasesIntro = () => {
   return (
@@ -27,10 +28,10 @@ export const CasesIntro = () => {
 
 const CasesSuccessStory = () => {
   return (
-    <section className="bg-default rounded-[45px] p-20 grid grid-cols-2">
+    <section className="bg-default rounded-[45px] p-20 gap-20 grid grid-cols-[1fr_fit-content(600px)]">
       <div className="flex flex-col gap-10 text-white">
         <Badge>
-          <h2>Featured Success Story</h2>
+          <h2 className="text-black">Featured Success Story</h2>
         </Badge>
 
         <h3>
@@ -44,23 +45,29 @@ const CasesSuccessStory = () => {
           satisfaction.
         </span>
 
-        <Button className="w-fit">Read</Button>
+        <LinkStyled
+          to="/"
+          label="Read"
+          labelColor="text-primary"
+          iconBg="bg-primary"
+          iconTextColor="#000"
+        />
       </div>
 
-      <div className="grid grid-cols-2 gap-5 text-center">
-        <div className="bg-white rounded-[45px] p-5">
+      <div className="grid grid-cols-2 gap-5 gap-x-5 text-center">
+        <div className="bg-white rounded-[45px] p-5 h-[200px] w-[200px] mx-auto">
           <h2>200%</h2>
           <span>increase in successful transactions</span>
         </div>
-        <div className="bg-white rounded-[45px] p-5">
+        <div className="bg-white rounded-[45px] p-5 h-[200px] w-[200px] mx-auto">
           <h2>150%</h2>
           <span>growth in customer retention</span>
         </div>
-        <div className="bg-white rounded-[45px] p-5">
+        <div className="bg-white rounded-[45px] p-5 h-[200px] w-[200px] mx-auto">
           <h2>95%</h2>
           <span>reduction in payment processing errors</span>
         </div>
-        <div className="bg-white rounded-[45px] p-5">
+        <div className="bg-white rounded-[45px] p-5 h-[200px] w-[200px] mx-auto">
           <h2>300%</h2>
           <span>improvement in conversion rates</span>
         </div>
@@ -106,7 +113,12 @@ const genStoryCard = (i: any) => (
   <div className="flex flex-col gap-10">
     <h3>{i.title}</h3>
     <p>{i.info}</p>
-    <Button>Learn more</Button>
+    <LinkStyled
+      to="/"
+      label="Learn more"
+      iconBg="bg-primary"
+      iconTextColor="#000"
+    />
   </div>
 );
 

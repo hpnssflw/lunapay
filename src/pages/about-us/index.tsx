@@ -2,11 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/ui";
 import React from "react";
 
+import star from "@/assets/imgs/aboutus/Star.svg";
+
 import aboutlogo from "@/assets/imgs/aboutus/intro.png";
+import fintechlogo from "@/assets/imgs/aboutus/fintech.png";
+import growthlogo from "@/assets/imgs/aboutus/growth.png";
+import teamlogo from "@/assets/imgs/aboutus/teamwork.png";
+import likelogo from "@/assets/imgs/aboutus/like.png";
 
 const AboutIntro = () => (
   <div className="grid grid-cols-2 items-center gap-10">
-    <img src={aboutlogo} alt="" height={377} />
+    <img src={aboutlogo} alt="" height={377} className=" w-[590px]" />
 
     <div className="flex flex-col gap-5">
       <h1>
@@ -25,7 +31,7 @@ const AboutIntro = () => (
 
 const AboutImpact = () => {
   return (
-    <section className="flex flex-col gap-5">
+    <section className="flex flex-col gap-20">
       <div className="flex gap-5">
         <Badge>
           <h2>Our Impact in Numbers</h2>
@@ -36,24 +42,24 @@ const AboutImpact = () => {
         </span>
       </div>
 
-      <div className="flex w-full justify-between">
-        <div className="flex flex-col gap-1">
+      <div className="flex w-full">
+        <div className="flex flex-col w-full px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>8+</h2>
           <p>Years of Experience</p>
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col w-full px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>50+</h2>
           <p>Experts</p>
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col w-full px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>100+</h2>
           <p>Integrated Payment Solutions</p>
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col w-full px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>20+</h2>
           <p>Industry Awards</p>
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col w-full px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>500%</h2>
           <p>Increase in ROI for Our Clients</p>
         </div>
@@ -92,9 +98,12 @@ const genPathCard = (i: any, index: number) => {
     <div className={style}>
       <p className="text-[60px] mt-5">{i.year}</p>
 
-      <div className="w-[600px] bg-default rounded-[45px] p-10 font-normal text-white h-[240px] flex flex-col gap-2">
-        <p>{i.title}</p>
-        <p>{i.info}</p>
+      <div className="w-[600px] bg-default rounded-[45px] p-10 font-normal text-white h-[240px] flex flex-row items-center gap-5">
+        <img src={star} alt="" className="h-[29px]" />
+        <div className="flex flex-col gap-5">
+          <h3>{i.title}</h3>
+          <p className="font-normal">{i.info}</p>
+        </div>
       </div>
     </div>
   );
@@ -109,7 +118,8 @@ const AboutJourney = () => {
         </Badge>
 
         <span className="font-normal">
-          A snapshot of the milestones and achievements that drive our success
+          From humble beginnings to industry leaders, discover how Positivus has
+          <br /> evolved to drive success for businesses worldwide.
         </span>
       </div>
 
@@ -126,10 +136,12 @@ const valuesContent = [
   },
   {
     title: "Innovation in Fintech",
+    img: fintechlogo,
     info: "We continuously push the boundaries of payment technology, adopting cutting-edge solutions to stay ahead in the rapidly evolving financial landscape.",
   },
   {
     title: "Collaborative Growth",
+    img: growthlogo,
     info: "We believe in the power of strong partnerships and teamwork, fostering collaboration with clients and stakeholders to drive mutual success.",
   },
   {
@@ -140,17 +152,25 @@ const valuesContent = [
 
 const genValueCard = (i: any) => {
   return (
-    <div className="flex flex-col gap-10 p-10 border border-black rounded-[45px]">
-      <h3>{i.title}</h3>
-      <div className="h-[1px] bg-black w-1/2"></div>
-      <span>{i.info}</span>
+    <div
+      className={`grid ${
+        i.img ? "grid-cols-2 pr-0" : "grid-cols-1"
+      } p-10 border border-black rounded-[45px] border-b-[6px]`}
+    >
+      <div className="flex flex-col">
+        <h3 className=" block w-full max-w-[55%] ">{i.title}</h3>
+        <div className="h-[1px] bg-black mb-10"></div>
+        <span className="font-normal">{i.info}</span>
+      </div>
+
+      {i.img && <img src={i.img} alt={i.title + "Logo"}></img>}
     </div>
   );
 };
 
 const AboutValues = () => {
   return (
-    <section className="flex flex-col gap-10">
+    <section className="flex flex-col gap-20">
       <div className="flex gap-5">
         <Badge>
           <h2>Core Values</h2>
@@ -170,8 +190,8 @@ const AboutValues = () => {
 };
 
 const AboutBanner = () => (
-  <section className="grid grid-cols-2 bg-default text-white rounded-[45px] p-10">
-    <img src="" alt="" />
+  <section className="grid grid-cols-2 bg-default text-white border-b-[6px] rounded-[45px] p-10">
+    <img src={likelogo} alt="" className="h-[287px]" />
 
     <div className="flex flex-col">
       <p className="font-bold text-[41px]">
@@ -187,7 +207,7 @@ const AboutBanner = () => (
 
 const AboutJoinTeam = () => {
   return (
-    <section className="grid grid-cols-2 border border-black p-10 rounded-[45px] bg-primary shadow-lg">
+    <section className="grid grid-cols-2 border items-center border-black border-b-[6px] pr-0 pl-20 rounded-[45px] bg-primary shadow-lg">
       <div className="flex flex-col gap-5">
         <h3>Join Our Team</h3>
         <span>
@@ -199,20 +219,22 @@ const AboutJoinTeam = () => {
         <Button className="w-fit">Explore Careers 🚀</Button>
       </div>
 
-      <div></div>
+      <img src={teamlogo} alt="" className="h-[320px] mx-auto " />
     </section>
   );
 };
 
 export const AboutUsPage = () => {
   return (
-    <section className="flex flex-col gap-20">
+    <section className="flex flex-col gap-0">
       <AboutIntro />
-      <AboutImpact />
-      <AboutJourney />
-      <AboutValues />
-      <AboutBanner />
-      <AboutJoinTeam />
+      <section className="flex flex-col gap-20">
+        <AboutImpact />
+        <AboutJourney />
+        <AboutValues />
+        <AboutBanner />
+        <AboutJoinTeam />
+      </section>
     </section>
   );
 };

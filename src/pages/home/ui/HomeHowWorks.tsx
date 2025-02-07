@@ -43,10 +43,18 @@ const accordionContent = [
 const getAccItem = (i: any, index: number) => (
   <AccordionItem
     value={`item-${index}`}
-    className="border rounded-2xl  px-10 bg-secondary py-5 border-black shadow-lg"
+    className="border rounded-[45px] border-b-[6px] w-full px-10 bg-secondary py-10 border-black shadow-lg"
   >
-    <AccordionTrigger>{i.trigger}</AccordionTrigger>
-    <AccordionContent>{i.content}</AccordionContent>
+    <div className="grid grid-cols-[50px_1fr] gap-10">
+      <span className="text-[60px]">{"0" + (index + 1)}</span>
+
+      <AccordionTrigger className=" w-full justify-between flex">
+        {i.trigger}
+      </AccordionTrigger>
+    </div>
+    <AccordionContent className="text-[18px] border-t border-black pt-5">
+      {i.content}
+    </AccordionContent>
   </AccordionItem>
 );
 

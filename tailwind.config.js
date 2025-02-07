@@ -9,6 +9,11 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        "black-sm": "0px 2px 4px 0px #000000", // Smaller shadow
+        "black-md": "0px 4px 6px 0px #000000", // Medium shadow (default)
+        "black-lg": "0px 8px 12px 0px #000000", // Lar
+      },
       colors: {
         primary: "#81A8CB",
         default: "#191A23",
