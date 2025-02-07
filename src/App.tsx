@@ -8,7 +8,6 @@ import {
   UseCasesPage,
 } from "./pages";
 import { Outlet, Route, Routes } from "react-router";
-import { lazy } from "react";
 
 const Layout = () => (
   <section className="mx-auto w-full  flex px-[100px] flex-col items-center justify-between">

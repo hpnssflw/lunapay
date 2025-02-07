@@ -72,7 +72,7 @@ export const Header = () => {
           </NavigationMenuItem>
         </NavigationMenuList>
 
-        <Button> Request a quote</Button>
+        <Button variant="outline"> Request a quote</Button>
       </NavigationMenu>
     </div>
   );

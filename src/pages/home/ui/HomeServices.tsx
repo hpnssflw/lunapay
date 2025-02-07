@@ -1,47 +1,69 @@
 import { Badge } from "@/ui";
 
+import payment_logo from "@/assets/imgs/home/service-payment.png";
+import recurring_logo from "@/assets/imgs/home/service-recurring.png";
+import fraud_logo from "@/assets/imgs/home/service-fraud.png";
+import multicur_logo from "@/assets/imgs/home/service-multicur.png";
+import api_logo from "@/assets/imgs/home/service-api.png";
+import analytics_logo from "@/assets/imgs/home/service-dashboard.png";
+import { LinkStyled } from "@/ui/LInk";
+
 const servicesCards = [
   {
     title: "Payment, Processing",
-    img: "",
+    img: payment_logo,
     bgColor: "secondary",
     badgeColor: "primary",
+    iconBg: "bg-black",
+    iconTextColor: "#fff ",
   },
   {
     title: "Recurring, Payments, & Subscriptions ",
-    img: "",
+    img: recurring_logo,
     bgColor: "primary",
     badgeColor: "white",
+    iconBg: "bg-black",
+    iconTextColor: "#fff ",
   },
   {
     title: "Fraud Detection, & Security",
-    img: "",
+    img: fraud_logo,
     bgColor: "default",
     badgeColor: "white",
+    iconBg: "bg-white",
+    iconTextColor: "#000 ",
+    labelColor: "text-white",
   },
   {
     title: "Multi-Currency, Support ",
-    img: "",
+    img: multicur_logo,
     bgColor: "secondary",
     badgeColor: "primary",
+    iconBg: "bg-black",
+    iconTextColor: "#fff ",
   },
   {
     title: "API Integration, for Developers",
-    img: "",
-    bgColor: "default",
+    img: api_logo,
+    bgColor: "primary",
     badgeColor: "white",
+    iconBg: "bg-black",
+    iconTextColor: "#fff ",
   },
   {
     title: "Analytics, & Reporting ",
-    img: "",
-    bgColor: "primary",
+    img: analytics_logo,
+    bgColor: "default",
     badgeColor: "white",
+    iconBg: "bg-white",
+    iconTextColor: "#000 ",
+    labelColor: "text-white",
   },
 ];
 
 const genCard = (i: any) => (
   <div
-    className={`rounded-[45px] p-[50px] grid grid-cols-[1fr_210px] shadow-md border-2 border-black bg-${i.bgColor} w-[600px] h-[310px]`}
+    className={`rounded-[45px] p-[50px] grid grid-cols-[1fr_220px] shadow-md border-2 border-black bg-${i.bgColor} w-[600px] h-[310px]`}
   >
     <div className="flex flex-col justify-between ">
       <div>
@@ -52,12 +74,19 @@ const genCard = (i: any) => (
         ))}
       </div>
 
-      <div>
-        <span>Learn more</span>
-      </div>
+      <LinkStyled
+        to="/"
+        label="Learn More"
+        labelColor={i.labelColor}
+        iconBg={i.iconBg}
+        iconTextColor={i.iconTextColor}
+        iconSide="left"
+      />
     </div>
 
-    <div className="bg-blue-500 rounded-xl h-10 w-8"></div>
+    <div className="relative">
+      <img src={i.img} alt="" className="absolute" />
+    </div>
   </div>
 );
 

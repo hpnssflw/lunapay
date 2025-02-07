@@ -16,11 +16,11 @@ export const HomeContactUs = () => {
         <p>Connect with Us: Let's Discuss Your Payment Needs</p>
       </div>
 
-      <div className="w-full py-16 px-24 bg-slate-100 rounded-[45px]">
+      <div className="w-full py-20 px-24 bg-secondary rounded-[45px]">
         <form
           action="
       POST"
-          className="max-w-[555px] flex flex-col gap-5"
+          className="max-w-[555px] flex flex-col gap-10"
         >
           <RadioGroup defaultValue="comfortable">
             <div className="flex items-center space-x-2">
@@ -37,15 +37,15 @@ export const HomeContactUs = () => {
             <div>
               <Label>Name</Label>
 
-              <Input />
+              <Input placeholder="Name" />
             </div>
             <div>
-              <Label>Email</Label>
+              <Label>Email*</Label>
 
-              <Input />
+              <Input placeholder="Email" />
             </div>
             <div>
-              <Label>Message</Label>
+              <Label>Message*</Label>
 
               <Textarea placeholder="Type your message here." />
             </div>

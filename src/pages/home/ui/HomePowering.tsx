@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
+import powering from "@/assets/imgs/home/powering.png";
 
 export const HomePowering = () => {
   return (
-    <section className="rounded-[45px] h-80 bg-slate-200 grid grid-cols-2 items-center px-[60px]">
+    <section className="rounded-[45px] h-80 -z-10 bg-secondary grid grid-cols-2 items-center px-[60px]">
       <div className="flex flex-col gap-[26px]">
         <h3>Let’s Power Your Payments</h3>
 
@@ -15,7 +16,9 @@ export const HomePowering = () => {
         <Button className="w-fit">Get Your Free Payment Proposal</Button>
       </div>
 
-      <div className="bg-blue-500 rounded-xl h-10 w-8"></div>
+      <div className="relative  h-full">
+        <img src={powering} alt="" className="absolute -top-40 -z-10" />
+      </div>
     </section>
   );
 };
