@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/ui";
+import { Badge, FlexSection } from "@/ui";
 import React from "react";
 
 import intrologo from "@/assets/imgs/services/intro.png";
@@ -105,7 +105,7 @@ const genSetupCard = (i: any) => (
 const ServicesProcess = () => {
   return (
     <section className="flex flex-col gap-20">
-      <div className="flex lg:flex-row flex-col gap-16 lg:gap-5">
+      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
         <Badge>
           <h2>How We Work:SetUp Process</h2>
         </Badge>
@@ -125,7 +125,7 @@ const ServicesProcess = () => {
 const ServicesUseCases = () => {
   return (
     <section className="flex flex-col gap-20">
-      <div className="flex gap-5">
+      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
         <Badge>
           <h2>Use cases</h2>
         </Badge>
@@ -257,7 +257,7 @@ const genCard = (i: any) => (
 const ServicesOtherFeatures = () => {
   return (
     <section className="flex flex-col gap-10 my-20">
-      <div className="flex flex-col lg:flex-row gap-10 ">
+      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
         <Badge bg="primary">
           <h2>Other Luna Pay Features</h2>
         </Badge>
@@ -293,26 +293,32 @@ const ServicesStartBanner = () => {
           Let’s work together to grow your online presence.{" "}
         </p>
 
-        <img src={fintechlogo} alt="Fintech Logo" />
+        <img src={fintechlogo} alt="Fintech Logo" className="block xl:hidden" />
 
         <Button variant="primary"> Start My Payment Journey</Button>
       </div>
 
-      {/* <img src={fintechlogo} alt="Fintech Logo" /> */}
+      <img src={fintechlogo} alt="Fintech Logo" className="hidden xl:block" />
     </section>
   );
 };
 
 export const ServicesPage = () => {
   return (
-    <section className="flex flex-col gap-10">
+    <FlexSection>
       <ServicesIntro />
-      <LinkStyled to="/" label="Back" iconBg="bg-black" iconTextColor="#fff" />
+      <LinkStyled
+        to="/"
+        label="Back"
+        iconBg="bg-black"
+        iconTextColor="#fff"
+        className="mr-auto"
+      />
       <ServicesIntroBanner />
       <ServicesProcess />
       <ServicesUseCases />
       <ServicesOtherFeatures />
       <ServicesStartBanner />
-    </section>
+    </FlexSection>
   );
 };

@@ -13,7 +13,7 @@ export const HomePowering = () => {
           solutions?
         </span>
 
-        <Button className="w-fit">Get Your Free Payment Proposal</Button>
+        <Button className="md:w-fit w-full">Get Your Free Payment Proposal</Button>
       </div>
 
       <div className="relative  h-full">

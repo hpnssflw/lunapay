@@ -93,7 +93,7 @@ const genCard = (i: any) => (
 export const HomeServices = () => {
   return (
     <section className="flex flex-col gap-10">
-      <div className="flex gap-10 ">
+      <div className="flex flex-col xl:flex-row items-center text-center xl:text-left xl:items-start gap-10 ">
         <Badge bg="primary">
           <h2>Services</h2>
         </Badge>

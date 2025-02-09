@@ -6,7 +6,7 @@ import React from "react";
 export const HomeSuccess = () => {
   return (
     <section className="w-full flex flex-col gap-20">
-      <div className="flex items-center gap-10">
+      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
         <Badge>
           <h2>Real Success Stories</h2>
         </Badge>

@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Badge } from "@/ui";
+import { Badge, FlexSection } from "@/ui";
 
 const accordionContent = [
   {
@@ -60,8 +60,8 @@ const getAccItem = (i: any, index: number) => (
 
 export const HomeHowWorks = () => {
   return (
-    <section className="flex flex-col gap-10">
-      <div className="flex items-center gap-10">
+    <FlexSection w="100%">
+      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
         <Badge>
           <h2>How Luna Pay Works</h2>
         </Badge>
@@ -70,15 +70,13 @@ export const HomeHowWorks = () => {
           needs.
         </span>
       </div>
-      <div>
-        <Accordion
-          type="single"
-          collapsible
-          className="w-full flex flex-col gap-10"
-        >
-          {accordionContent.map(getAccItem)}
-        </Accordion>
-      </div>
-    </section>
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full flex flex-col gap-10"
+      >
+        {accordionContent.map(getAccItem)}
+      </Accordion>
+    </FlexSection>
   );
 };

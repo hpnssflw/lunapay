@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import planet from "@/assets/imgs/home/planet-logo.png";
 import React from "react";
-import { Badge } from "@/ui";
+import { Badge, FlexSection } from "@/ui";
 import { HomeTestimonials } from "../home/ui/HomeTestimonials";
 import { LinkStyled } from "@/ui/LInk";
 
@@ -163,12 +163,12 @@ const CasesBanner = () => {
 
 export const UseCasesPage = () => {
   return (
-    <section className="flex flex-col py-10  gap-20">
+    <FlexSection>
       <CasesIntro />
       <CasesSuccessStory />
       <CasesAllStories />
       <HomeTestimonials />
       <CasesBanner />
-    </section>
+    </FlexSection>
   );
 };
