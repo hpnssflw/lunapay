@@ -16,7 +16,7 @@ export const HomeSuccess = () => {
         </span>
       </div>
 
-      <div className="w-full  p-4 h-80 bg-default rounded-[45px] py-[70px] px-[60px] flex gap-14 font-normal">
+      <div className="w-full  p-4 h-fit lg:h-80 bg-default rounded-[45px] py-[70px] px-[60px] flex flex-col lg:flex-row gap-14 font-normal">
         <div className="flex flex-col text-white justify-between ">
           <span>
             For a growing e-commerce platform, Luna Pay streamlined payment

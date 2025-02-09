@@ -10,15 +10,19 @@ import fintechlogo from "@/assets/imgs/aboutus/fintech.png";
 import { LinkStyled } from "@/ui/LInk";
 
 const ServicesIntro = () => (
-  <div className="grid grid-cols-2 items-center">
-    <img src={intrologo} alt="" height={454} />
+  <div className="grid lg:grid-cols-2 grid-cols-1 items-center">
+    <img src={intrologo} alt="" height={454} className="hidden lg:block" />
 
-    <div className="flex flex-col gap-5">
-      <h1>
+    <div className="flex flex-col w-full gap-5">
+      <h1 className="hidden lg:block">
         Expert <br /> Payment <br /> Solutions
       </h1>
 
-      <span className="font-normal max-w-[453px]">
+      <h1 className="lg:hidden block">Expert Payment Solutions</h1>
+
+      <img src={intrologo} alt="" className="w-[334px] mx-auto lg:hidden" />
+
+      <span className="font-normal lg:max-w-[453px]">
         Unlock the power of seamless transactions with Luna Pay’s cutting-edge
         payment technology designed to support businesses worldwide.
       </span>
@@ -28,7 +32,7 @@ const ServicesIntro = () => (
 
 const ServicesIntroBanner = () => {
   return (
-    <section className="w-full h-[315px] grid grid-cols-[30%_1fr] rounded-[45px] bg-default p-10 px-40 text-white">
+    <section className="w-full lg:h-[315px] grid grid-col-1 lg:grid-cols-[30%_1fr] gap-10 lg:gap-0 rounded-[45px] bg-default p-10 lg:px-40 text-white">
       <div className="text-black ">
         <Badge>
           <h3>Payment</h3>
@@ -84,10 +88,10 @@ const setupCards = [
 ];
 
 const genSetupCard = (i: any) => (
-  <div className="h-[240px] rounded-[45px] -z-10 bg-secondary grid grid-cols-[50px_1fr] gap-40 p-10 items-center">
-    <div className="mx-auto w-[138px] relative  h-[138px] flex">
+  <div className="lg:h-[240px] rounded-[45px] -z-10 bg-secondary grid grid-cols-[25px_1fr] lg:grid-cols-[50px_1fr] gap-20 lg:gap-40 p-10 items-center">
+    <div className="mx-auto lg:w-[138px] lg:h-[138px] w-[46px] h-[46px] relative mb-auto mt-2 lg:mt-auto flex">
       <img src={stardark} alt="" className="absolute -z-10" />
-      <p className="text-[60px] text-primary mx-auto my-auto z-50">
+      <p className="lg:text-[60px] text-[18px] text-primary mx-auto my-auto z-50">
         {"0" + i.step}
       </p>
     </div>
@@ -101,12 +105,12 @@ const genSetupCard = (i: any) => (
 const ServicesProcess = () => {
   return (
     <section className="flex flex-col gap-20">
-      <div className="flex gap-5">
+      <div className="flex lg:flex-row flex-col gap-16 lg:gap-5">
         <Badge>
           <h2>How We Work:SetUp Process</h2>
         </Badge>
 
-        <p className="font-normal max-w-[460px]">
+        <p className="font-normal lg:max-w-[460px]">
           Our step-by-step setup process ensures your payment system is fully
           optimized, secure, and ready to handle transactions effortlessly,
           helping your business grow globally.
@@ -134,7 +138,7 @@ const ServicesUseCases = () => {
         </p>
       </div>
 
-      <div className="w-full  p-4 h-80 bg-default rounded-[45px] py-[70px] px-[60px] grid grid-cols-[1fr_1px_1fr_1px_1fr] gap-16">
+      <div className="w-full  p-4 lg:h-80  bg-default rounded-[45px] py-[70px] px-[60px] grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr_1px_1fr] gap-16">
         <div className="flex flex-col text-white justify-between font-normal">
           <h3>E-commerce Businesses</h3>
           <span>Streamline online payments for customers worldwide.</span>
@@ -222,7 +226,7 @@ const servicesCards = [
 
 const genCard = (i: any) => (
   <div
-    className={`rounded-[45px] border-b-[6px] p-[50px] grid grid-cols-[1fr_180px] shadow-md border-2 border-black bg-${i.bgColor} w-[600px] h-[310px]`}
+    className={`rounded-[45px] border-b-[6px] p-[50px] grid grid-cols-1 lg:grid-cols-[1fr_180px] shadow-md border-2 border-black bg-${i.bgColor} max-w-[600px] w-full lg:h-[310px]`}
   >
     <div className="flex flex-col justify-between ">
       <div>
@@ -232,6 +236,11 @@ const genCard = (i: any) => (
           </Badge>
         ))}
       </div>
+      <img
+        src={intrologo}
+        alt=""
+        className="z-10 w-80 mx-auto lg:hidden block"
+      />
 
       <LinkStyled
         to="/"
@@ -241,14 +250,14 @@ const genCard = (i: any) => (
       />
     </div>
 
-    <img src={intrologo} alt="" height={454} />
+    <img src={intrologo} alt="" height={454} className="z-10 hidden lg:block" />
   </div>
 );
 
 const ServicesOtherFeatures = () => {
   return (
     <section className="flex flex-col gap-10 my-20">
-      <div className="flex gap-10 ">
+      <div className="flex flex-col lg:flex-row gap-10 ">
         <Badge bg="primary">
           <h2>Other Luna Pay Features</h2>
         </Badge>
@@ -261,7 +270,7 @@ const ServicesOtherFeatures = () => {
       </div>
 
       {/* cards */}
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {servicesCards.map(genCard)}
       </div>
     </section>
@@ -270,8 +279,8 @@ const ServicesOtherFeatures = () => {
 
 const ServicesStartBanner = () => {
   return (
-    <section className="border border-b-[6px] border-black rounded-[45px] items-center pl-20 grid grid-cols-2">
-      <div className="flex flex-col justify-between gap-10">
+    <section className="border border-b-[6px] border-black rounded-[45px] items-center p-10 lg:p-0 lg:pl-20 flex lg:grid lg:grid-cols-2">
+      <div className="flex flex-col justify-between gap-5 lg:gap-10">
         <h3>Ready to Simplify Your Payments?</h3>
         <div className="h-[1px] bg-black w-full" />
 
@@ -284,10 +293,12 @@ const ServicesStartBanner = () => {
           Let’s work together to grow your online presence.{" "}
         </p>
 
+        <img src={fintechlogo} alt="Fintech Logo" />
+
         <Button variant="primary"> Start My Payment Journey</Button>
       </div>
 
-      <img src={fintechlogo} alt="Fintech Logo" />
+      {/* <img src={fintechlogo} alt="Fintech Logo" /> */}
     </section>
   );
 };

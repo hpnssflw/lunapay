@@ -11,7 +11,7 @@ import teamlogo from "@/assets/imgs/aboutus/teamwork.png";
 import likelogo from "@/assets/imgs/aboutus/like.png";
 
 const AboutIntro = () => (
-  <div className="grid grid-cols-2 items-center gap-10">
+  <div className="flex flex-col-reverse lg:grid  lg:grid-cols-2  items-center gap-10">
     <img src={aboutlogo} alt="" height={377} className=" w-[590px]" />
 
     <div className="flex flex-col gap-5">
@@ -32,7 +32,7 @@ const AboutIntro = () => (
 const AboutImpact = () => {
   return (
     <section className="flex flex-col gap-20">
-      <div className="flex gap-5">
+      <div className="flex flex-col lg:flex-row gap-5">
         <Badge>
           <h2>Our Impact in Numbers</h2>
         </Badge>
@@ -42,24 +42,24 @@ const AboutImpact = () => {
         </span>
       </div>
 
-      <div className="flex w-full">
-        <div className="flex flex-col w-full px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
+      <div className="flex w-full flex-wrap justify-center">
+        <div className="flex flex-col w-full max-w-[210px] px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>8+</h2>
           <p>Years of Experience</p>
         </div>
-        <div className="flex flex-col w-full px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
+        <div className="flex flex-col w-full px-10 py-10 max-w-[210px] gap-1 border-t-2 border-black rounded-[25px]">
           <h2>50+</h2>
           <p>Experts</p>
         </div>
-        <div className="flex flex-col w-full px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
+        <div className="flex flex-col w-full px-10 py-10 gap-1 max-w-[210px] border-t-2 border-black rounded-[25px]">
           <h2>100+</h2>
           <p>Integrated Payment Solutions</p>
         </div>
-        <div className="flex flex-col w-full px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
+        <div className="flex flex-col w-full max-w-[210px] px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>20+</h2>
           <p>Industry Awards</p>
         </div>
-        <div className="flex flex-col w-full px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
+        <div className="flex flex-col w-full px-10  max-w-[210px] py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>500%</h2>
           <p>Increase in ROI for Our Clients</p>
         </div>
@@ -92,13 +92,15 @@ const mapContent = [
 ];
 
 const genPathCard = (i: any, index: number) => {
-  const style = `flex gap-5 ${index % 2 === 0 ? "mr-auto" : "ml-auto"}`;
+  const style = `flex flex-col lg:flex-row gap-5 ${
+    index % 2 === 0 ? "mr-auto" : "ml-auto"
+  }`;
 
   return (
     <div className={style}>
       <p className="text-[60px] mt-5">{i.year}</p>
 
-      <div className="w-[600px] bg-default rounded-[45px] p-10 font-normal text-white h-[240px] flex flex-row items-center gap-5">
+      <div className="max-w-[600px] w-full bg-default rounded-[45px] p-10 font-normal text-white h-[240px] flex flex-row items-center gap-5">
         <img src={star} alt="" className="h-[29px]" />
         <div className="flex flex-col gap-5">
           <h3>{i.title}</h3>
@@ -182,7 +184,7 @@ const AboutValues = () => {
       </div>
 
       {/* cards container */}
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {valuesContent.map(genValueCard)}
       </div>
     </section>
@@ -190,7 +192,7 @@ const AboutValues = () => {
 };
 
 const AboutBanner = () => (
-  <section className="grid grid-cols-2 bg-default text-white border-b-[6px] rounded-[45px] p-10">
+  <section className="grid grid-cols-1 lg:grid-cols-2 bg-default text-white border-b-[6px] rounded-[45px] p-10">
     <img src={likelogo} alt="" className="h-[287px]" />
 
     <div className="flex flex-col">
@@ -207,7 +209,7 @@ const AboutBanner = () => (
 
 const AboutJoinTeam = () => {
   return (
-    <section className="grid grid-cols-2 border items-center border-black border-b-[6px] pr-0 pl-20 rounded-[45px] bg-primary shadow-lg">
+    <section className="grid grid-cols-1 lg:grid-cols-2 border  items-center border-black border-b-[6px] pt-20 lg:pt-10 pr-20 lg:pr-0 pl-20 rounded-[45px] bg-primary shadow-lg">
       <div className="flex flex-col gap-5">
         <h3>Join Our Team</h3>
         <span>

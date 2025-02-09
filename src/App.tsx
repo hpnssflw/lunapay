@@ -10,7 +10,7 @@ import {
 import { Outlet, Route, Routes } from "react-router";
 
 const Layout = () => (
-  <section className="mx-auto w-full  flex px-[100px] flex-col items-center justify-between">
+  <section className="mx-auto w-full  flex px-[20px] md:px-[100px] flex-col items-center justify-between">
     <Header />
     <Outlet />
     <Footer />

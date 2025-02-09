@@ -7,12 +7,13 @@ import { LinkStyled } from "@/ui/LInk";
 
 export const CasesIntro = () => {
   return (
-    <section className="grid grid-cols-2 gap-x-10 rounded-[45px] bg-secondary">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 rounded-[45px] p-10 bg-secondary">
       <div className="">
-        <img src={planet} alt="" className="" />
+        <img src={planet} alt="" className=" hidden lg:block" />
       </div>
       <div className="flex flex-col gap-10 mt-[80px]">
         <h1>Proven Success Stories</h1>
+        <img src={planet} alt="" className=" block lg:hidden w-80 mx-auto" />
         <h4 className="font-normal w-[454px]">
           Discover how Luna Pay’s advanced payment solutions have transformed
           businesses across various industries. From e-commerce to global
@@ -28,7 +29,7 @@ export const CasesIntro = () => {
 
 const CasesSuccessStory = () => {
   return (
-    <section className="bg-default rounded-[45px] p-20 gap-20 grid grid-cols-[1fr_fit-content(600px)]">
+    <section className="bg-default rounded-[45px] p-20 gap-20 grid grid-cols-1 lg:grid-cols-[1fr_fit-content(600px)]">
       <div className="flex flex-col gap-10 text-white">
         <Badge>
           <h2 className="text-black">Featured Success Story</h2>
@@ -54,20 +55,20 @@ const CasesSuccessStory = () => {
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-5 gap-x-5 text-center">
-        <div className="bg-white rounded-[45px] p-5 h-[200px] w-[200px] mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 gap-x-5 text-center">
+        <div className="bg-white rounded-[45px] p-5 h-[200px] w-[272px] lg:w-[200px] mx-auto">
           <h2>200%</h2>
           <span>increase in successful transactions</span>
         </div>
-        <div className="bg-white rounded-[45px] p-5 h-[200px] w-[200px] mx-auto">
+        <div className="bg-white rounded-[45px] p-5 h-[200px]  w-[272px] lg:w-[200px] mx-auto">
           <h2>150%</h2>
           <span>growth in customer retention</span>
         </div>
-        <div className="bg-white rounded-[45px] p-5 h-[200px] w-[200px] mx-auto">
+        <div className="bg-white rounded-[45px] p-5 h-[200px]  w-[272px] lg:w-[200px] mx-auto">
           <h2>95%</h2>
           <span>reduction in payment processing errors</span>
         </div>
-        <div className="bg-white rounded-[45px] p-5 h-[200px] w-[200px] mx-auto">
+        <div className="bg-white rounded-[45px] p-5 h-[200px]  w-[272px] lg:w-[200px] mx-auto">
           <h2>300%</h2>
           <span>improvement in conversion rates</span>
         </div>
@@ -125,7 +126,7 @@ const genStoryCard = (i: any) => (
 const CasesAllStories = () => {
   return (
     <section className="flex flex-col gap-10">
-      <div className="flex items-center gap-10">
+      <div className="flex flex-col lg:flex-row items-center gap-10">
         <Badge>
           <h2>All Success Stories</h2>
         </Badge>
@@ -135,7 +136,7 @@ const CasesAllStories = () => {
         </span>
       </div>
 
-      <div className="border border-black rounded-[45px] p-10 grid gap-20 grid-cols-3">
+      <div className="border border-black rounded-[45px] p-10 grid gap-20 grid-cols-1 lg:grid-cols-3">
         {storiesCards.map(genStoryCard)}
       </div>
     </section>

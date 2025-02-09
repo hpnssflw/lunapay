@@ -20,18 +20,18 @@ const genFooterNavItem = (i: any, index: number) => (
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col w-full p-[60px] text-white rounded-tr-[45px] mt-20  rounded-tl-[45px] bg-default ">
+    <footer className="flex flex-col w-full max-w-[1240px] p-[60px] text-white rounded-tr-[45px] mt-20  rounded-tl-[45px] bg-default ">
       <div className="flex w-full ">
         <img src={luna} alt="Luna Pay logo" className="h-[77px]" />
 
         <NavigationMenu>
-          <NavigationMenuList className="flex  justify-center gap-4 efault p-4">
+          <NavigationMenuList className=" flex flex-col lg:flex-row justify-center gap-4  p-4">
             {routes.map(genFooterNavItem)}
           </NavigationMenuList>
         </NavigationMenu>
       </div>
 
-      <section className="grid grid-cols-2 py-10">
+      <section className="grid grid-cols-1 lg:grid-cols-2 py-10">
         <div className="w-full flex flex-col gap-5 font-normal">
           <p>Contact us:</p>
           <p>Email: info@lunapay.com</p>

@@ -63,7 +63,7 @@ const servicesCards = [
 
 const genCard = (i: any) => (
   <div
-    className={`rounded-[45px] p-[50px] grid grid-cols-[1fr_220px] shadow-md border-[1px] border-b-[6px] border-black bg-${i.bgColor} w-[600px] h-[310px]`}
+    className={`rounded-[45px] p-[50px] grid grid-cols-[1fr_220px] shadow-md border-[1px] border-b-[6px] border-black bg-${i.bgColor} w-full max-w-[600px] h-[310px]`}
   >
     <div className="flex flex-col justify-between ">
       <div>
@@ -108,7 +108,7 @@ export const HomeServices = () => {
       </div>
 
       {/* cards */}
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {servicesCards.map(genCard)}
       </div>
     </section>

@@ -52,7 +52,7 @@ export const HomeTestimonials = () => {
         </p>
       </div>
 
-      <div className="h-[625px] bg-default  overflow-hidden rounded-[45px] flex  flex-col">
+      <div className="h-[625px] bg-default overflow- rounded-[45px] flex  flex-col">
         {" "}
         <Carousel
           setApi={setApi}
@@ -60,12 +60,13 @@ export const HomeTestimonials = () => {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-[1240px] relative  mx-auto my-auto flex flex-col gap-28 "
+          // className="lg:w-full lg:max-w-[1240px] relative md:max-w-[760px] max-w-[450px]  mx-auto my-auto flex flex-col lg:gap-28 "
+          className="w-full lg:max-w-[1240px] max-w-[450px] relative  mx-auto my-auto flex flex-col gap-28 "
         >
-          <CarouselContent className="lg:w-[1860px] md:w-full lg:-ml-80">
+          <CarouselContent className="lg:w-[1860px] md:w-full -ml-0 lg:-ml-80">
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 ">
-                <Card className="h-[235px] bg-transparent border-primary rounded-[45px] text-white ">
+                <Card className="h-[235px]  bg-transparent border-primary rounded-[45px] text-white ">
                   <CardContent className="flex flex-col h-full  items-center justify-center ">
                     <span className="font-normal">
                       "We have been working with Positivus for the past year and
@@ -77,7 +78,7 @@ export const HomeTestimonials = () => {
                     </span>
                   </CardContent>
                 </Card>
-                <div className="text-white mt-10 px-10 fron-norl flex flex-col">
+                <div className="text-white mt-10 px-10 font-normal flex flex-col">
                   <span className="text-primary">John Smith </span>
                   <span>Marketing Director at XYZ Corp</span>
                 </div>
@@ -85,22 +86,12 @@ export const HomeTestimonials = () => {
             ))}
           </CarouselContent>
 
-          {/* <div className="relative "> */}
-
-          <div className="flex gap-5 mx-auto mt-100">
+          <div className="flex gap-5 mx-auto mt-[5px] md:mt-100">
             {Array.from({ length: 5 }).map(genStarView)}
           </div>
 
-          <CarouselPrevious
-            onChange={(e) => console.log("e", e)}
-            className="top-[450px] translate-x-60 bg-transparent border-0 text-white text-[36px]"
-          />
-
-          <CarouselNext
-            onChange={(e) => console.log("e", e)}
-            className="top-[450px] -translate-x-60 bg-transparent border-0 text-white"
-          />
-          {/* </div> */}
+          <CarouselPrevious className="top-[450px] md:translate-x-60 bg-transparent border-0 text-white text-[36px]" />
+          <CarouselNext className="top-[450px] md:-translate-x-60 bg-transparent border-0 text-white" />
         </Carousel>
       </div>
     </section>
