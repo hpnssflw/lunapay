@@ -1,3 +1,4 @@
+import { FlexSection } from "@/ui";
 import { HomeContactUs } from "./ui/HomeContactUs";
 import { HomeHowWorks } from "./ui/HomeHowWorks";
 import { HomeIntro } from "./ui/HomeIntro";
@@ -9,15 +10,21 @@ import { HomeTestimonials } from "./ui/HomeTestimonials";
 
 export const HomePage = () => {
   return (
-    <section className="flex flex-col  gap-20">
-      <HomeIntro />
-      {/* <HomeMap /> */}
-      <HomeServices />
-      <HomePowering />
-      <HomeSuccess />
-      <HomeHowWorks />
-      <HomeTestimonials />
-      <HomeContactUs />
-    </section>
+    <FlexSection w="1980px" gap="20">
+      <FlexSection>
+        <HomeIntro />
+      </FlexSection>
+      <FlexSection w="1980px">
+        <HomeMap />
+      </FlexSection>
+      <FlexSection w="1240px">
+        <HomeServices />
+        <HomePowering />
+        <HomeSuccess />
+        <HomeHowWorks />
+        <HomeTestimonials />
+        <HomeContactUs />
+      </FlexSection>
+    </FlexSection>
   );
 };

@@ -1,4 +1,4 @@
-import { Badge } from "@/ui";
+import { Badge, FlexSection } from "@/ui";
 import React from "react";
 import blogintro from "@/assets/imgs/blog/intro.png";
 import { LinkStyled } from "@/ui/LInk";
@@ -71,7 +71,7 @@ const CasesAllStories = () => {
 
 export const BlogPage = () => {
   return (
-    <section className="flex flex-col gap-10 w-full py-10">
+    <FlexSection>
       <section className="rounded-[45px] bg-secondary grid grid-cols-2 items-center ">
         <img src={blogintro} alt="" />
 
@@ -93,6 +93,6 @@ export const BlogPage = () => {
       </section>
 
       <CasesAllStories />
-    </section>
+    </FlexSection>
   );
 };

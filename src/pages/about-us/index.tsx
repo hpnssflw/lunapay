@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/ui";
+import { Badge, FlexSection } from "@/ui";
 import React from "react";
 
 import star from "@/assets/imgs/aboutus/Star.svg";
@@ -32,7 +32,7 @@ const AboutIntro = () => (
 const AboutImpact = () => {
   return (
     <section className="flex flex-col gap-20">
-      <div className="flex flex-col lg:flex-row gap-5">
+      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
         <Badge>
           <h2>Our Impact in Numbers</h2>
         </Badge>
@@ -114,7 +114,7 @@ const genPathCard = (i: any, index: number) => {
 const AboutJourney = () => {
   return (
     <section className="flex flex-col gap-20">
-      <div className="flex gap-5">
+      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
         <Badge>
           <h2>Our Journey</h2>
         </Badge>
@@ -173,7 +173,7 @@ const genValueCard = (i: any) => {
 const AboutValues = () => {
   return (
     <section className="flex flex-col gap-20">
-      <div className="flex gap-5">
+      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
         <Badge>
           <h2>Core Values</h2>
         </Badge>
@@ -228,7 +228,7 @@ const AboutJoinTeam = () => {
 
 export const AboutUsPage = () => {
   return (
-    <section className="flex flex-col gap-0">
+    <FlexSection>
       <AboutIntro />
       <section className="flex flex-col gap-20">
         <AboutImpact />
@@ -237,6 +237,6 @@ export const AboutUsPage = () => {
         <AboutBanner />
         <AboutJoinTeam />
       </section>
-    </section>
+    </FlexSection>
   );
 };
