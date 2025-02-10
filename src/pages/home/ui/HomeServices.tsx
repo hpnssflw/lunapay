@@ -6,7 +6,7 @@ import fraud_logo from "@/assets/imgs/home/service-fraud.png";
 import multicur_logo from "@/assets/imgs/home/service-multicur.png";
 import api_logo from "@/assets/imgs/home/service-api.png";
 import analytics_logo from "@/assets/imgs/home/service-dashboard.png";
-import { LinkStyled } from "@/ui/LInk";
+import { LinkStyled } from "@/ui/LinkStyled";
 
 const servicesCards = [
   {
@@ -67,7 +67,7 @@ const genCard = (i: any) => (
   >
     <div className="flex flex-col justify-between ">
       <div>
-        {i.title.split(",").map((str) => (
+        {i.title.split(",").map((str: string) => (
           <Badge bg={i.badgeColor}>
             <h3>{str}</h3>
           </Badge>

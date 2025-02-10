@@ -1,16 +1,16 @@
-import "./App.css";
-import { Header, Footer } from "./ui";
+import { Header, Footer } from "@/ui";
 import {
   AboutUsPage,
   BlogPage,
   HomePage,
   ServicesPage,
   UseCasesPage,
-} from "./pages";
+} from "@/pages";
 import { Outlet, Route, Routes } from "react-router";
+import "./App.css";
 
 const Layout = () => (
-  <section className="mx-auto w-full overflow-hidden flex px-[20px]  flex-col items-center justify-between">
+  <section className="mx-auto w-full overflow-hidden flex px-[20px] flex-col items-center justify-between">
     <Header />
     <Outlet />
     <Footer />

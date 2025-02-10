@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Badge } from "@/ui";
+import { Badge, FlexSection } from "@/ui";
 
 export const HomeTestimonials = () => {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -28,9 +28,7 @@ export const HomeTestimonials = () => {
     });
   }, [api]);
 
-  console.log(" ## carouse", current, count);
-
-  const genStarView = (i, index) => {
+  const genStarView = (_: any, index: number) => {
     return (
       <div
         className={`h-6 w-6 rotate-45 ${
@@ -41,8 +39,8 @@ export const HomeTestimonials = () => {
   };
 
   return (
-    <section className="flex flex-col gap-10">
-      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
+    <FlexSection gap="20">
+      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:mr-auto xl:items-center gap-10">
         <Badge>
           <h2>Testimonials</h2>
         </Badge>
@@ -61,12 +59,12 @@ export const HomeTestimonials = () => {
             loop: true,
           }}
           // className="lg:w-full lg:max-w-[1240px] relative md:max-w-[760px] max-w-[450px]  mx-auto my-auto flex flex-col lg:gap-28 "
-          className="w-full lg:max-w-[1240px] max-w-[450px] relative  mx-auto my-auto flex flex-col gap-28 "
+          className="w-full xl:max-w-[1240px] max-w-[460px] relative  mx-auto my-auto flex flex-col gap-28 "
         >
-          <CarouselContent className="lg:w-[1860px] md:w-full -ml-0 lg:-ml-80">
+          <CarouselContent className="xl:w-[1860px] md:w-full -ml-0 xl:-ml-80">
             {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 ">
-                <Card className="h-[235px]  bg-transparent border-primary rounded-[45px] text-white ">
+              <CarouselItem key={index} className=" xl:basis-1/3 ">
+                <Card className="h-[235px] max-w-[430px] xl:max-w-[100%]  bg-transparent border-primary rounded-[45px] text-white ">
                   <CardContent className="flex flex-col h-full  items-center justify-center ">
                     <span className="font-normal">
                       "We have been working with Positivus for the past year and
@@ -90,10 +88,10 @@ export const HomeTestimonials = () => {
             {Array.from({ length: 5 }).map(genStarView)}
           </div>
 
-          <CarouselPrevious className="top-[450px] md:translate-x-60 bg-transparent border-0 text-white text-[36px]" />
-          <CarouselNext className="top-[450px] md:-translate-x-60 bg-transparent border-0 text-white" />
+          <CarouselPrevious className="top-[450px] translate-x-20 xl:translate-x-60 bg-transparent border-0 text-white text-[36px]" />
+          <CarouselNext className="top-[450px] -translate-x-20 xl:-translate-x-60 bg-transparent border-0 text-white" />
         </Carousel>
       </div>
-    </section>
+    </FlexSection>
   );
 };
