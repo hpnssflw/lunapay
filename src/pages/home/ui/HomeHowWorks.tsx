@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Accordion,
   AccordionContent,
@@ -60,8 +59,8 @@ const getAccItem = (i: any, index: number) => (
 
 export const HomeHowWorks = () => {
   return (
-    <FlexSection w="100%">
-      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
+    <FlexSection w="100%" className="my-20" gap="20">
+      <div className="flex flex-col xl:flex-row  items-center  text-center xl:text-left xl:items-start gap-10 xl:mr-auto">
         <Badge>
           <h2>How Luna Pay Works</h2>
         </Badge>

@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
 import planet from "@/assets/imgs/home/planet-logo.png";
-import React from "react";
 import { Badge, FlexSection } from "@/ui";
 import { HomeTestimonials } from "../home/ui/HomeTestimonials";
-import { LinkStyled } from "@/ui/LInk";
+import { LinkStyled } from "@/ui/LinkStyled";
 
 export const CasesIntro = () => {
   return (
@@ -29,7 +28,7 @@ export const CasesIntro = () => {
 
 const CasesSuccessStory = () => {
   return (
-    <section className="bg-default rounded-[45px] p-20 gap-20 grid grid-cols-1 lg:grid-cols-[1fr_fit-content(600px)]">
+    <section className="bg-default rounded-[45px] p-20 gap-20  grid grid-cols-1 lg:grid-cols-[1fr_fit-content(600px)]">
       <div className="flex flex-col gap-10 text-white">
         <Badge>
           <h2 className="text-black">Featured Success Story</h2>
@@ -125,8 +124,8 @@ const genStoryCard = (i: any) => (
 
 const CasesAllStories = () => {
   return (
-    <section className="flex flex-col gap-10">
-      <div className="flex flex-col lg:flex-row items-center gap-10">
+    <FlexSection gap="20">
+      <div className="flex flex-col lg:flex-row items-center xl:mr-auto gap-10">
         <Badge>
           <h2>All Success Stories</h2>
         </Badge>
@@ -139,7 +138,7 @@ const CasesAllStories = () => {
       <div className="border border-black rounded-[45px] p-10 grid gap-20 grid-cols-1 lg:grid-cols-3">
         {storiesCards.map(genStoryCard)}
       </div>
-    </section>
+    </FlexSection>
   );
 };
 
@@ -163,7 +162,7 @@ const CasesBanner = () => {
 
 export const UseCasesPage = () => {
   return (
-    <FlexSection>
+    <FlexSection gap="40">
       <CasesIntro />
       <CasesSuccessStory />
       <CasesAllStories />

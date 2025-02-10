@@ -1,5 +1,3 @@
-import React from "react";
-
 import map from "../../../../public/assets/imgs/home/map.png";
 
 export const HomeMap = () => {

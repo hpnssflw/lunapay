@@ -1,7 +1,8 @@
 import { Badge, FlexSection } from "@/ui";
-import React from "react";
+import { useState } from "react";
 import blogintro from "@/assets/imgs/blog/intro.png";
-import { LinkStyled } from "@/ui/LInk";
+import { LinkStyled } from "@/ui/LinkStyled";
+import { Button } from "@/components/ui/button";
 
 const storiesCards = [
   {
@@ -69,9 +70,69 @@ const CasesAllStories = () => {
   );
 };
 
-export const BlogPage = () => {
+const BlogLongRead = () => {
+  const [fontSize, setFontSize] = useState({ header: "36px", content: "28px" });
+
   return (
     <FlexSection>
+      <div className="flex gap-0 ml-auto">
+        <Button
+          onClick={() => setFontSize({ header: "36px", content: "28px" })}
+          variant="ghost"
+          className="text-[30px]"
+        >
+          A
+        </Button>
+        <Button
+          onClick={() => setFontSize({ header: "32px", content: "24px" })}
+          variant="ghost"
+          className="text-[24px]"
+        >
+          A
+        </Button>
+        <Button
+          onClick={() => setFontSize({ header: "28px", content: "20px" })}
+          variant="ghost"
+          className="text-[20px]"
+        >
+          A
+        </Button>
+      </div>
+
+      <div className="w-full h-[1px] bg-default" />
+
+      <div
+        className={`h-[700px] overflow-y-scroll  flex flex-col gap-20 text-[56px]`}
+      >
+        <div className="flex flex-col gap-5">
+          <span className={`text-[${fontSize.header}]`}>
+            1. Embedded Finance: Everywhere, Seamlessly
+          </span>
+          <span className={`text-[${fontSize.content}]`}>
+            Embedded finance is transitioning from an emerging trend to a core
+            component of business models across industries. By 2025, the
+            integration of financial services into non-financial platforms will
+            be widespread, transforming industries like e-commerce, healthcare,
+            and retail. The ability to access financial services like lending,
+            insurance, or payments directly within apps or platforms is becoming
+            the norm. This shift will enable businesses to offer more seamless
+            experiences, enhancing customer engagement and providing new revenue
+            opportunities. For example, a retail website could seamlessly offer
+            consumers the option to finance their purchases or purchase
+            insurance through integrated platforms without leaving the site. As
+            the demand for frictionless financial solutions continues to grow,
+            embedded finance is expected to become a primary driver of fintech
+            innovation.
+          </span>
+        </div>
+      </div>
+    </FlexSection>
+  );
+};
+
+export const BlogPage = () => {
+  return (
+    <FlexSection gap="20">
       <section className="rounded-[45px] bg-secondary grid grid-cols-2 items-center ">
         <img src={blogintro} alt="" />
 
@@ -91,7 +152,7 @@ export const BlogPage = () => {
           </span>
         </div>
       </section>
-
+      <BlogLongRead />
       <CasesAllStories />
     </FlexSection>
   );

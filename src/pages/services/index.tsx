@@ -1,24 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { Badge, FlexSection } from "@/ui";
-import React from "react";
 
 import intrologo from "@/assets/imgs/services/intro.png";
 
 import stardark from "@/assets/imgs/services/Stardark.svg";
 import fintechlogo from "@/assets/imgs/aboutus/fintech.png";
+import starprim from "@/assets/imgs/star-primary.svg";
 
-import { LinkStyled } from "@/ui/LInk";
+import { LinkStyled } from "@/ui/LinkStyled";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const ServicesIntro = () => (
-  <div className="grid lg:grid-cols-2 grid-cols-1 items-center">
+  <div className="grid lg:grid-cols-2 grid-cols-1 items-center py-20 lg:py-0">
     <img src={intrologo} alt="" height={454} className="hidden lg:block" />
 
     <div className="flex flex-col w-full gap-5">
-      <h1 className="hidden lg:block">
+      <h1 className="hidden xl:block">
         Expert <br /> Payment <br /> Solutions
       </h1>
 
-      <h1 className="lg:hidden block">Expert Payment Solutions</h1>
+      <h1 className="xl:hidden ">Expert Payment Solutions</h1>
 
       <img src={intrologo} alt="" className="w-[334px] mx-auto lg:hidden" />
 
@@ -32,17 +38,28 @@ const ServicesIntro = () => (
 
 const ServicesIntroBanner = () => {
   return (
-    <section className="w-full lg:h-[315px] grid grid-col-1 lg:grid-cols-[30%_1fr] gap-10 lg:gap-0 rounded-[45px] bg-default p-10 lg:px-40 text-white">
-      <div className="text-black ">
-        <Badge>
-          <h3>Payment</h3>
-        </Badge>
-        <Badge>
-          <h3>Optimization</h3>
-        </Badge>
+    <section className="w-full relative xl:h-[315px] grid grid-col-1 xl:grid-cols-[30%_1fr] gap-10 xl:gap-20 rounded-[45px] bg-default p-10 xl:pr-40 text-white items-center">
+      <img src={starprim} alt="" className="absolute top-8 left-8" />
+      <div className="text-black xl:flex justify-between hidden mb-auto mt-5">
+        <div className="ml-20">
+          {" "}
+          <Badge>
+            <h3>Payment</h3>
+          </Badge>
+          <Badge>
+            <h3>Optimization</h3>
+          </Badge>
+        </div>
       </div>
+      <p className="text-primary uppercase block xl:hidden text-[26px] ml-20">
+        featured
+      </p>
 
-      <div className="font-normal flex flex-col gap-10">
+      <p className="ml-20 xl:ml-0 text-[26px] block xl:hidden">
+        Payment <br /> Optimization
+      </p>
+
+      <div className="font-normal flex flex-col gap-10 ml-20 xl:ml-0">
         <p>
           Payment optimization is the process of enhancing your business's
           transaction flow to ensure faster, more secure, and efficient
@@ -51,7 +68,6 @@ const ServicesIntroBanner = () => {
           satisfaction.
         </p>
         <Button variant="outline" className="bg-white text-black">
-          {" "}
           Optimize My Payments
         </Button>
       </div>
@@ -138,7 +154,7 @@ const ServicesUseCases = () => {
         </p>
       </div>
 
-      <div className="w-full  p-4 lg:h-80  bg-default rounded-[45px] py-[70px] px-[60px] grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr_1px_1fr] gap-16">
+      <div className="w-full  p-4 lg:h-80 hidden  bg-default rounded-[45px] py-[70px] px-[60px] xl:grid grid-cols-1 xl:grid-cols-[1fr_1px_1fr_1px_1fr] gap-16">
         <div className="flex flex-col text-white justify-between font-normal">
           <h3>E-commerce Businesses</h3>
           <span>Streamline online payments for customers worldwide.</span>
@@ -180,6 +196,37 @@ const ServicesUseCases = () => {
             iconTextColor="#81A8CB"
           />
         </div>
+      </div>
+
+      <div className="md:max-w-[600px] max-w-[400px] w-fit mx-auto  h-fit block xl:hidden font-normal">
+        <Carousel className="w-full mx-auto border-0">
+          <CarouselContent className="border-0">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <CarouselItem key={index}>
+                <div className="">
+                  <Card className="border-0 shadow-none">
+                    <CardContent className="">
+                      <div className="flex flex-col text-white justify-between w-full gap-5 p-10 h-fit xl:h-80 bg-default rounded-[45px]">
+                        <span>
+                          For a growing e-commerce platform, Luna Pay
+                          streamlined payment processing, reducing transaction
+                          failures by 40% and boosting overall sales by 25%
+                        </span>
+                        <LinkStyled
+                          to="/"
+                          label="Lear more"
+                          labelColor="text-primary"
+                          iconTextColor="#81A8CB"
+                          iconSide="right"
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );
@@ -230,7 +277,7 @@ const genCard = (i: any) => (
   >
     <div className="flex flex-col justify-between ">
       <div>
-        {i.title.split(",").map((str) => (
+        {i.title.split(",").map((str: string) => (
           <Badge bg={i.badgeColor}>
             <h3>{str}</h3>
           </Badge>

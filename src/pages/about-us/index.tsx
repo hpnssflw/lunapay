@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Badge, FlexSection } from "@/ui";
-import React from "react";
 
 import star from "@/assets/imgs/aboutus/Star.svg";
 
@@ -9,6 +8,12 @@ import fintechlogo from "@/assets/imgs/aboutus/fintech.png";
 import growthlogo from "@/assets/imgs/aboutus/growth.png";
 import teamlogo from "@/assets/imgs/aboutus/teamwork.png";
 import likelogo from "@/assets/imgs/aboutus/like.png";
+
+import bankcard from "@/assets/imgs/aboutus/bankcard.png";
+import bankpayment from "@/assets/imgs/aboutus/bankpayment.png";
+
+import starwhite from "@/assets/imgs/star-white.svg";
+import starbig from "@/assets/imgs/aboutus/star-big.svg";
 
 const AboutIntro = () => (
   <div className="flex flex-col-reverse lg:grid  lg:grid-cols-2  items-center gap-10">
@@ -31,8 +36,8 @@ const AboutIntro = () => (
 
 const AboutImpact = () => {
   return (
-    <section className="flex flex-col gap-20">
-      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
+    <section className="flex flex-col gap-20 w-full">
+      <div className="flex flex-col xl:flex-row xl:mr-auto items-center xl:text-left text-center xl:items-center gap-10">
         <Badge>
           <h2>Our Impact in Numbers</h2>
         </Badge>
@@ -42,24 +47,24 @@ const AboutImpact = () => {
         </span>
       </div>
 
-      <div className="flex w-full flex-wrap justify-center">
-        <div className="flex flex-col w-full max-w-[210px] px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
+      <div className="flex w-full flex-wrap xl:flex-nowrap justify-center">
+        <div className="flex flex-col w-full min-w-[210px] max-w-[250px] px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>8+</h2>
           <p>Years of Experience</p>
         </div>
-        <div className="flex flex-col w-full px-10 py-10 max-w-[210px] gap-1 border-t-2 border-black rounded-[25px]">
+        <div className="flex flex-col w-full px-10 py-10 min-w-[250px] max-w-[300px]  gap-1 border-t-2 border-black rounded-[25px]">
           <h2>50+</h2>
           <p>Experts</p>
         </div>
-        <div className="flex flex-col w-full px-10 py-10 gap-1 max-w-[210px] border-t-2 border-black rounded-[25px]">
+        <div className="flex flex-col w-full px-10 py-10 gap-1 min-w-[250px] max-w-[300px]  border-t-2 border-black rounded-[25px]">
           <h2>100+</h2>
           <p>Integrated Payment Solutions</p>
         </div>
-        <div className="flex flex-col w-full max-w-[210px] px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
+        <div className="flex flex-col w-full min-w-[210px] max-w-[250px]  px-10 py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>20+</h2>
           <p>Industry Awards</p>
         </div>
-        <div className="flex flex-col w-full px-10  max-w-[210px] py-10 gap-1 border-t-2 border-black rounded-[25px]">
+        <div className="flex flex-col w-full px-10  min-w-[210px] max-w-[250px]  py-10 gap-1 border-t-2 border-black rounded-[25px]">
           <h2>500%</h2>
           <p>Increase in ROI for Our Clients</p>
         </div>
@@ -113,7 +118,7 @@ const genPathCard = (i: any, index: number) => {
 
 const AboutJourney = () => {
   return (
-    <section className="flex flex-col gap-20">
+    <section className="flex flex-col gap-20 max-w-[1240px] w-full relative">
       <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
         <Badge>
           <h2>Our Journey</h2>
@@ -127,6 +132,24 @@ const AboutJourney = () => {
 
       {/* path container */}
       <div className="flex flex-col gap-10">{mapContent.map(genPathCard)}</div>
+
+      <div className=" hidden xl:block absolute -right-[15%] top-[47%] ">
+        <div className="relative">
+          <img src={bankpayment} alt="" className="w-[413px]" />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[50%] -z-10" />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[57%] -z-10" />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[64%] -z-10" />
+        </div>
+      </div>
+
+      <div className="hidden xl:block absolute -left-[15%] top-[20%] ">
+        <div className="relative">
+          <img src={bankcard} alt="" className="w-[406px]" />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[50%] -z-10" />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[57%] -z-10" />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[64%] -z-10" />
+        </div>
+      </div>
     </section>
   );
 };
@@ -193,9 +216,23 @@ const AboutValues = () => {
 
 const AboutBanner = () => (
   <section className="grid grid-cols-1 lg:grid-cols-2 bg-default text-white border-b-[6px] rounded-[45px] p-10">
-    <img src={likelogo} alt="" className="h-[287px]" />
+    <div className="z-10 relative  bottom-[30%] w-[500px] ml-20">
+      {/* <div className="relative"> */}
+      <img src={likelogo} alt="" className="w-[387px] relative -left-[7%]" />
+      <div className="h-[88px] w-[422px] border rounded-[100%] border-primary absolute top-[50%] -left-[10%] -z-10" />
+      <div className="h-[88px] w-[422px] border rounded-[100%] border-primary absolute top-[57%] -left-[10%] -z-10" />
+      <div className="h-[88px] w-[422px] border rounded-[100%] border-primary absolute top-[64%] -left-[10%] -z-10" />
+      <img src={starwhite} alt="" className="absolute top-[80%]" />
+      <img
+        src={starwhite}
+        alt=""
+        className="absolute top-[30%] right-[30%] rotate-45"
+      />
+      <img src={starbig} alt="" className="absolute top-[75%] right-[35%] " />
+      {/* </div> */}
+    </div>
 
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-10">
       <p className="font-bold text-[41px]">
         “At Luna Pay, we believe that success is powered by innovation,
         strengthened through collaboration, and sustained by a commitment to
@@ -204,13 +241,15 @@ const AboutBanner = () => (
 
       <p className="font-normal text-[24px]">-Luna Pay Leadership Team 🚀</p>
     </div>
+
+    {/* <img src={likelogo} alt="" className="h-[287px]" /> */}
   </section>
 );
 
 const AboutJoinTeam = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 border  items-center border-black border-b-[6px] pt-20 lg:pt-10 pr-20 lg:pr-0 pl-20 rounded-[45px] bg-primary shadow-lg">
-      <div className="flex flex-col gap-5">
+    <section className="grid grid-cols-1 lg:grid-cols-2 border  items-center border-black border-b-[6px] pt-20 lg:pt-0 pr-10 lg:pr-0 pl-10 lg:pl-20 rounded-[45px] bg-primary shadow-lg">
+      <div className="flex flex-col gap-5 text-center xl:text-left">
         <h3>Join Our Team</h3>
         <span>
           At Luna Pay, we’re redefining the future of digital payments through
@@ -218,25 +257,29 @@ const AboutJoinTeam = () => {
           passionate, driven individuals to join our team and help businesses
           thrive globally. Ready to make an impact in fintech?
         </span>
-        <Button className="w-fit">Explore Careers 🚀</Button>
+        <Button className="xl:w-fit ">Explore Careers 🚀</Button>
       </div>
 
-      <img src={teamlogo} alt="" className="h-[320px] mx-auto " />
+      <img src={teamlogo} alt="" className="w-[320px] mx-auto " />
     </section>
   );
 };
 
 export const AboutUsPage = () => {
   return (
-    <FlexSection>
-      <AboutIntro />
-      <section className="flex flex-col gap-20">
+    <FlexSection w="1980px" gap="20">
+      <FlexSection>
+        <AboutIntro />
         <AboutImpact />
+      </FlexSection>
+      <FlexSection w="1980px" gap="20" className="justify-between items-start">
         <AboutJourney />
+      </FlexSection>
+      <FlexSection gap="20">
         <AboutValues />
         <AboutBanner />
         <AboutJoinTeam />
-      </section>
+      </FlexSection>
     </FlexSection>
   );
 };

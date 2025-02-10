@@ -2,14 +2,14 @@ import React from "react";
 import { cn } from "@/lib/utils"; // Utility function for class names
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
+  // NavigationMenuContent,
+  // NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-  NavigationMenuViewport,
+  // NavigationMenuTrigger,
+  // navigationMenuTriggerStyle,
+  // NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router";
 
@@ -34,7 +34,7 @@ const navLinkClasses = `
 
 export const Header = () => {
   return (
-    <div className="flex flex-row w-full fixed xl:relative xl:flex bg-white max-w-[1240px] justify-between items-center h-20">
+    <div className="flex flex-row w-full fixed xl:relative xl:flex bg-white z-20 max-w-[1240px] justify-between items-center h-20">
       <a href="/" aria-label="Home Page">
         <img
           src={luna}

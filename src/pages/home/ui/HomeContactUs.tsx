@@ -3,17 +3,18 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/ui";
-import React from "react";
+import { Badge, FlexSection } from "@/ui";
 
 export const HomeContactUs = () => {
   return (
-    <section className="flex flex-col gap-10">
-      <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
+    <FlexSection gap="20" className="mt-20">
+      <div className="flex flex-col xl:flex-row  items-center xl:text-left xl:mr-auto text-center xl:items-center gap-10">
         <Badge bg="primary">
           <h2>Contact Us</h2>
         </Badge>
-        <p>Connect with Us: Let's Discuss Your Payment Needs</p>
+        <p>
+          Connect with Us: Let's Discuss <br /> Your Payment Needs
+        </p>
       </div>
 
       <div className="w-full py-20 px-24 bg-secondary rounded-[45px]">
@@ -54,6 +55,6 @@ export const HomeContactUs = () => {
           <Button size={"lg"}>Send Message</Button>
         </form>
       </div>
-    </section>
+    </FlexSection>
   );
 };
