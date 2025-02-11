@@ -5,7 +5,6 @@ import { HomeIntro } from "./ui/HomeIntro";
 import { HomeMap } from "./ui/HomeMap";
 import { HomePowering } from "./ui/HomePowering";
 import { HomeServices } from "./ui/HomeServices";
-import { HomeSuccess } from "./ui/HomeSuccess";
 import { HomeTestimonials } from "./ui/HomeTestimonials";
 
 export const HomePage = () => {
@@ -20,7 +19,6 @@ export const HomePage = () => {
       <FlexSection w="1240px">
         <HomeServices />
         <HomePowering />
-        <HomeSuccess />
         <HomeHowWorks />
         <HomeTestimonials />
         <HomeContactUs />

@@ -67,15 +67,6 @@ export const Header = () => {
 
           {/* Link 3 */}
           <NavigationMenuItem>
-            <Link to="/use-cases">
-              <NavigationMenuLink className={cn(navLinkClasses)}>
-                Use Cases
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-
-          {/* Link 4 */}
-          <NavigationMenuItem>
             <Link to="/blog">
               <NavigationMenuLink className={cn(navLinkClasses)}>
                 Blog
@@ -124,15 +115,6 @@ export const Header = () => {
                   </NavigationMenuItem>
 
                   {/* Link 3 */}
-                  <NavigationMenuItem>
-                    <Link to="/use-cases">
-                      <NavigationMenuLink className={cn(navLinkClasses)}>
-                        Use Cases
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-
-                  {/* Link 4 */}
                   <NavigationMenuItem>
                     <Link to="/blog">
                       <NavigationMenuLink className={cn(navLinkClasses)}>

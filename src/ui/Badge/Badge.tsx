@@ -15,16 +15,18 @@ export const Badge = ({
   children,
   bg = "primary",
   className,
+  text = "30px",
 }: {
   children: React.ReactNode;
   bg?: keyof typeof bgType;
   className?: string;
+  text?: string;
 }) => {
   return (
-    <div
-      className={`max-h-[51px] y px-2 w-fit rounded-[7px] ${bgType[bg]} ${className}`}
+    <p
+      className={`max-h-[51px] y px-2 w-fit   rounded-[7px] text-[${text}] ${bgType[bg]} ${className}`}
     >
       {children}
-    </div>
+    </p>
   );
 };
