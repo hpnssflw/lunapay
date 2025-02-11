@@ -1,4 +1,4 @@
-import { LinkStyled, Badge } from "@/ui";
+import { Badge } from "@/ui";
 import intrologo from "@/assets/imgs/services/intro.png";
 
 const servicesCards = [

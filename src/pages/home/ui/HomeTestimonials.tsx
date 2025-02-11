@@ -15,6 +15,8 @@ export const HomeTestimonials = () => {
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
+  console.log(" #count", count);
+
   React.useEffect(() => {
     if (!api) {
       return;
