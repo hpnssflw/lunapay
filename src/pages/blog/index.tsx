@@ -52,11 +52,9 @@ const genStoryCard = (i: any) => (
 
 const CasesAllStories = () => {
   return (
-    <section className="flex flex-col gap-10">
+    <section className="flex flex-col gap-10 my-40">
       <div className="flex flex-col lg:flex-row items-center gap-10">
-        <Badge>
-          <h2>All Success Stories</h2>
-        </Badge>
+        <Badge className=" xl:mb-auto">All Success Stories</Badge>
         <span>
           Explore Real-Life Examples of Our <br /> Payment Success through Our
           Case Studies
@@ -70,61 +68,115 @@ const CasesAllStories = () => {
   );
 };
 
+const articelContent = [
+  {
+    header: "1. The Rise of AI-Driven Financial Services",
+    content:
+      "Artificial intelligence (AI) continues to transform fintech, driving automation, personalization, and fraud prevention. In 2025, expect AI-powered chatbots, robo-advisors, and machine learning algorithms to provide hyper-personalized financial insights, improving customer experiences and operational efficiency.",
+  },
+  {
+    header: "2. Embedded Finance Becoming the Norm",
+    content:
+      "Embedded finance—seamlessly integrating financial services into non-financial platforms—is gaining traction. From e-commerce to social media, businesses are embedding payments, lending, and insurance into their ecosystems, reducing friction and enhancing user convenience.",
+  },
+  {
+    header: "3. The Expansion of Digital-Only Banking",
+    content:
+      "Neobanks and digital-only financial institutions are set to grow as consumers increasingly prefer mobile-first banking solutions. With streamlined onboarding, lower fees, and AI-powered services, digital banks are challenging traditional financial institutions like never before.",
+  },
+  {
+    header: "4. Blockchain Beyond Cryptocurrencies",
+    content:
+      "While cryptocurrencies remain a hot topic, blockchain technology is finding applications beyond digital assets. Smart contracts, decentralized finance (DeFi), and cross-border payments are revolutionizing how transactions are processed, ensuring greater transparency and efficiency.",
+  },
+  {
+    header: "5. Open Banking and Data-Driven Innovation",
+    content:
+      "Regulatory frameworks around open banking are pushing financial institutions to share data securely with third-party providers. This trend enables innovative financial products, better loan underwriting, and improved risk assessment through data-driven insights.",
+  },
+  {
+    header: "6. Sustainable and Green Fintech Solutions",
+    content:
+      "As ESG (Environmental, Social, and Governance) considerations become central to financial decision-making, fintech companies are integrating sustainability into their products. Carbon footprint tracking, green investment platforms, and ethical banking are gaining momentum.",
+  },
+  {
+    header: "7. The Growth of Biometric Authentication",
+    content:
+      "Security concerns drive the adoption of biometric authentication methods, including facial recognition, fingerprint scanning, and voice verification. These advancements enhance security while offering a frictionless user experience.",
+  },
+  {
+    header: "8. The Evolution of Cross-Border Payments",
+    content:
+      "The demand for faster and more cost-effective international transactions is fueling innovation in cross-border payments. Fintech companies are leveraging blockchain, AI, and partnerships with central banks to facilitate near-instant settlements with lower fees.",
+  },
+  {
+    header: "Looking Ahead",
+    content:
+      "As fintech continues to evolve, businesses and consumers must stay ahead of the trends shaping the financial landscape. Whether through AI, embedded finance, or blockchain, 2025 promises to be a transformative year for the industry. Companies that adapt to these changes will thrive in an increasingly digital and interconnected financial world.",
+  },
+];
+
+interface ArticleUI {
+  header: string;
+  content: string;
+  gap?: string;
+}
+
+const genArticeItem = (_: ArticleUI, fontSize: ArticleUI) => {
+  return (
+    <div className="flex flex-col gap-5">
+      <span className={`text-[${fontSize.header ?? "28px"}]`}>{_.header}</span>
+      <span className={`text-[${fontSize.content ?? "20px"}] font-normal`}>
+        {_.content}
+      </span>
+    </div>
+  );
+};
+
 const BlogLongRead = () => {
-  const [fontSize, setFontSize] = useState({ header: "36px", content: "28px" });
+  const [articlStyles, setArticleStyles] = useState<ArticleUI>({
+    header: "26px",
+    content: "18px",
+    gap: "20",
+  });
 
   return (
-    <FlexSection>
-      <div className="flex gap-0 ml-auto">
+    <FlexSection className="" gap="5">
+      <div className="flex gap-0 ml-auto items-end">
         <Button
-          onClick={() => setFontSize({ header: "36px", content: "28px" })}
+          onClick={() =>
+            setArticleStyles({ header: "36px", content: "22px", gap: "20" })
+          }
           variant="ghost"
-          className="text-[30px]"
+          className="text-[36px] w-[36px]  h-[40px] p-0"
         >
           A
         </Button>
         <Button
-          onClick={() => setFontSize({ header: "32px", content: "24px" })}
+          onClick={() =>
+            setArticleStyles({ header: "26px", content: "20px", gap: "14" })
+          }
           variant="ghost"
-          className="text-[24px]"
+          className="text-[28px] w-[24px] h-[36px] p-0"
         >
           A
         </Button>
         <Button
-          onClick={() => setFontSize({ header: "28px", content: "20px" })}
+          onClick={() =>
+            setArticleStyles({ header: "24px", content: "16px", gap: "10" })
+          }
           variant="ghost"
-          className="text-[20px]"
+          className="text-[22px] w-[25px] h-[30px]  p-0"
         >
           A
         </Button>
       </div>
-
-      <div className="w-full h-[1px] bg-default" />
+      <div className="w-full h-[1px] mb-5 bg-default" />
 
       <div
-        className={`h-[700px] overflow-y-scroll  flex flex-col gap-20 text-[56px]`}
+        className={`h-[700px] max-w-[800px] w-full mx-auto overflow-y-scroll px-5  flex flex-col gap-${articlStyles.gap} text-[56px]`}
       >
-        <div className="flex flex-col gap-5">
-          <span className={`text-[${fontSize.header}]`}>
-            1. Embedded Finance: Everywhere, Seamlessly
-          </span>
-          <span className={`text-[${fontSize.content}]`}>
-            Embedded finance is transitioning from an emerging trend to a core
-            component of business models across industries. By 2025, the
-            integration of financial services into non-financial platforms will
-            be widespread, transforming industries like e-commerce, healthcare,
-            and retail. The ability to access financial services like lending,
-            insurance, or payments directly within apps or platforms is becoming
-            the norm. This shift will enable businesses to offer more seamless
-            experiences, enhancing customer engagement and providing new revenue
-            opportunities. For example, a retail website could seamlessly offer
-            consumers the option to finance their purchases or purchase
-            insurance through integrated platforms without leaving the site. As
-            the demand for frictionless financial solutions continues to grow,
-            embedded finance is expected to become a primary driver of fintech
-            innovation.
-          </span>
-        </div>
+        {articelContent.map((i) => genArticeItem(i, articlStyles))}
       </div>
     </FlexSection>
   );
@@ -132,7 +184,7 @@ const BlogLongRead = () => {
 
 export const BlogPage = () => {
   return (
-    <FlexSection gap="20">
+    <FlexSection className="py-20">
       <section className="rounded-[45px] bg-secondary grid grid-cols-2 items-center ">
         <img src={blogintro} alt="" />
 
@@ -143,12 +195,11 @@ export const BlogPage = () => {
           <h2>The Future of Fintech: Top Trends to Watch in 2025</h2>
 
           <span className="font-normal">
-            As innovation accelerates, so does the potential for fintech to
-            reshape the way people and businesses interact with their finances.
-            The numbers speak volumes — according to Market Data Forecast, the
-            global fintech market is expected to reach $1264.6 billion by 2032,
-            fueled by rising demand for digital payments, personalized financial
-            solutions, and streamlined regulatory compliance.
+            The fintech industry is evolving at an unprecedented pace, reshaping
+            how businesses and consumers interact with financial services. As we
+            move into 2025, several emerging trends are set to define the next
+            phase of financial technology. Here’s what to watch for in the
+            coming year.
           </span>
         </div>
       </section>

@@ -1,21 +1,7 @@
-import { Header, Footer } from "@/ui";
-import {
-  AboutUsPage,
-  BlogPage,
-  HomePage,
-  ServicesPage,
-  UseCasesPage,
-} from "@/pages";
-import { Outlet, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
+import { AboutUsPage, BlogPage, HomePage, ServicesPage } from "@/pages";
+import { Layout } from "./ui/Layout";
 import "./App.css";
-
-const Layout = () => (
-  <section className="mx-auto w-full overflow-hidden flex px-[20px] flex-col items-center justify-between">
-    <Header />
-    <Outlet />
-    <Footer />
-  </section>
-);
 
 function App() {
   return (
@@ -24,7 +10,6 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="about-us" element={<AboutUsPage />} />
         <Route path="services" element={<ServicesPage />} />
-        <Route path="use-cases" element={<UseCasesPage />} />
         <Route path="blog" element={<BlogPage />} />
       </Route>
     </Routes>

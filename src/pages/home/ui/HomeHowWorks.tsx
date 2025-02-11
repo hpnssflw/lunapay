@@ -32,26 +32,21 @@ const accordionContent = [
     content:
       "Luna Pay provides detailed, real-time reporting and analytics to help you track your transactions with ease. Our transparent communication ensures you stay informed about payment statuses, security updates, and system improvements every step of the way.",
   },
-  {
-    trigger: "Continual Improvement",
-    content:
-      "We are committed to constant innovation and improvement. At Luna Pay, we regularly update our platform with the latest features, enhanced security protocols, and performance optimizations to meet the evolving needs of your business.",
-  },
 ];
 
 const getAccItem = (i: any, index: number) => (
   <AccordionItem
     value={`item-${index}`}
-    className="border rounded-[45px] border-b-[6px] w-full px-10 bg-secondary py-10 border-black shadow-lg"
+    className="border rounded-[45px] border-b-[6px] w-full px-5 xl:px-10 bg-secondary py-2 xl:py-10 border-black shadow-lg"
   >
-    <div className="grid grid-cols-[50px_1fr] gap-10">
-      <span className="text-[60px]">{"0" + (index + 1)}</span>
+    <div className="grid grid-cols-[5px_1fr] items-center xl:grid-cols-[50px_1fr] gap-10">
+      <span className="text-[30px] xl:text-[60px] ">{"0" + (index + 1)}</span>
 
-      <AccordionTrigger className=" w-full justify-between flex">
+      <AccordionTrigger className=" w-full justify-between text-[18px] xl:text-[26px] flex">
         {i.trigger}
       </AccordionTrigger>
     </div>
-    <AccordionContent className="text-[18px] border-t border-black pt-5">
+    <AccordionContent className="text-[16px] xl:text-[18px] border-t border-black pt-5">
       {i.content}
     </AccordionContent>
   </AccordionItem>

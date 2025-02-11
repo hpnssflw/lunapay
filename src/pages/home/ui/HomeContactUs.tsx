@@ -12,8 +12,10 @@ export const HomeContactUs = () => {
         <Badge bg="primary">
           <h2>Contact Us</h2>
         </Badge>
-        <p>
-          Connect with Us: Let's Discuss <br /> Your Payment Needs
+        <p className="max-w-[600px]">
+          Tell us about your business, and let’s craft the perfect payment
+          strategy together. Whether you need a quick chat or a detailed quote,
+          we’re ready to assist.
         </p>
       </div>
 
