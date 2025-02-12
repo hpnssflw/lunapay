@@ -24,7 +24,7 @@ export const Badge = ({
 }) => {
   return (
     <p
-      className={`max-h-[51px] y px-2 w-fit   rounded-[7px] text-[${text}] ${bgType[bg]} ${className}`}
+      className={`max-h-[51px] y px-2 w-fit  rounded-[7px] text-[${text}] ${bgType[bg]} ${className}`}
     >
       {children}
     </p>

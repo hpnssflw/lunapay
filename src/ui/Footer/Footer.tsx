@@ -8,34 +8,57 @@ import {
 } from "@radix-ui/react-navigation-menu";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
-const genFooterNavItem = (i: any) => (
-  <NavigationMenuItem>
-    <NavigationMenuLink className={cn(navLinkClasses)}>
-      {i.path}
-    </NavigationMenuLink>
-  </NavigationMenuItem>
-);
+import { Link, useLocation } from "react-router";
+import { navLinkClasses, routes } from "@/shared/constants";
+import { Badge } from "../Badge/Badge";
 
 export const Footer = () => {
+  const location = useLocation();
+
+  const activeRoute = (v: string) => location.pathname === v;
+  const genLink = (_: any) => (
+    <NavigationMenuItem>
+      <Link to={_.path}>
+        <NavigationMenuLink
+          className={cn(
+            navLinkClasses,
+            "text-white  underline",
+            activeRoute(_.path) && "text-primary"
+          )}
+        >
+          {_.label}
+        </NavigationMenuLink>
+      </Link>
+    </NavigationMenuItem>
+  );
+
   return (
     <footer className="flex flex-col w-full max-w-[1240px] p-5 lg:p-[60px] text-white rounded-tr-[45px] mt-20  rounded-tl-[45px] bg-default ">
       <div className="flex flex-col lg:flex-row items-center lg:justify-between w-full ">
-        <img src={luna} alt="Luna Pay logo" className="h-[77px] " />
+        <a href="/" aria-label="Home Page">
+          <img
+            src={luna}
+            alt="Company Name Logo"
+            loading="lazy"
+            className="h-[88px] w-full"
+          />
+        </a>
 
-        <NavigationMenu>
-          <NavigationMenuList className=" flex flex-col lg:flex-row justify-center gap-4  p-4">
-            {routes.map(genFooterNavItem)}
+        <NavigationMenu className=" cursor-pointer">
+          <NavigationMenuList className="flex justify-center flex-col md:flex-row gap-4 efault p-4">
+            {routes.map(genLink)}
           </NavigationMenuList>
         </NavigationMenu>
       </div>
 
       <section className="grid text-center lg:text-left grid-cols-1 lg:grid-cols-[30%_1fr] lg:gap-20 py-10">
-        <div className="w-full flex flex-col gap-5 font-normal">
-          <p>Contact us:</p>
-          <p>Email: info@lunapay.com</p>
-          <p>Phone: 555-567-8901</p>
-          <p>
+        <div className="w-full flex flex-col gap-5  items-center md:items-start font-normal">
+          <Badge className="text-black font-medium" text="20px">
+            Contact us
+          </Badge>
+          <p className="font-normal">Email: info@lunapay.com</p>
+          <p className="font-normal">Phone: 555-567-8901</p>
+          <p className="font-normal">
             Address: 1234 Main St <br />
             Moonstone City, Stardust State 12345
           </p>
@@ -66,25 +89,3 @@ export const Footer = () => {
     </footer>
   );
 };
-
-export const routes = [
-  {
-    path: "about-us",
-  },
-  {
-    path: "services",
-  },
-  {
-    path: "use-cases",
-  },
-  {
-    path: "pricing",
-  },
-  {
-    path: "blog",
-  },
-];
-const navLinkClasses = `
-    text-white hover:text-primary transition-colors duration-200 
-    font-normal uppercase  rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
-  `;

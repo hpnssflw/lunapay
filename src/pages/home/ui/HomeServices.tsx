@@ -62,7 +62,7 @@ const servicesCards = [
 
 const genCard = (i: any) => (
   <div
-    className={`rounded-[45px] p-[50px] grid grid-cols-1 xl:grid-cols-[1fr_220px] shadow-md border-[1px] border-b-[6px] border-black bg-${i.bgColor} w-full max-w-[600px] xl:h-[310px]`}
+    className={`rounded-[45px] p-[50px] grid grid-cols-1 xl:grid-cols-[1fr_220px] mx-auto border-[1px] border-b-[6px] border-black bg-${i.bgColor} w-full max-w-[600px] xl:h-[310px]`}
   >
     <div className="flex flex-col justify-between ">
       <div>
@@ -86,7 +86,7 @@ const genCard = (i: any) => (
 
 export const HomeServices = () => {
   return (
-    <section className="flex flex-col gap-10">
+    <section className="flex flex-col gap-10 w-full">
       <div className="flex flex-col xl:flex-row items-center text-center xl:text-left xl:items-start gap-10 ">
         <Badge bg="primary">
           <h2>Services</h2>

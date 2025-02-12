@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge, FlexSection } from "@/ui";
+import bg from "@/assets/imgs/home/contactus.svg";
 
 export const HomeContactUs = () => {
   return (
@@ -19,23 +19,18 @@ export const HomeContactUs = () => {
         </p>
       </div>
 
-      <div className="w-full py-20 px-24 bg-secondary rounded-[45px]">
+      <div className="w-full py-10 px-6 xl:py-20 xl:px-24 bg-secondary overflow-hidden rounded-[45px] relative ">
+        <img
+          src={bg}
+          alt="Contact Us"
+          className="hidden lg:block absolute w-[560px] top-10 right-[calc(0px_-_270px)] "
+        />
+
         <form
           action="
       POST"
           className="max-w-[555px] flex flex-col gap-10"
         >
-          <RadioGroup defaultValue="comfortable">
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="default" id="r1" />
-              <Label htmlFor="r1">Default</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="comfortable" id="r2" />
-              <Label htmlFor="r2">Comfortable</Label>
-            </div>
-          </RadioGroup>
-
           <div className="flex flex-col gap-5">
             <div>
               <Label>Name</Label>

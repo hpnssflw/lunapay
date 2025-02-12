@@ -37,8 +37,50 @@ const storiesCards = [
   },
 ];
 
-const genStoryCard = (i: any) => (
-  <div className="flex flex-col gap-10">
+const getSideBorders = (index: number): boolean => {
+  const allowedIndices = new Set([0, 1, 3, 4]);
+  return allowedIndices.has(index);
+};
+
+const getFirstRow = (index: number): boolean => {
+  const allowedIndices = new Set([0, 1, 2]);
+  return allowedIndices.has(index);
+};
+
+const getRowStarters = (index: number): boolean => {
+  const allowedIndices = new Set([0, 3]);
+  return allowedIndices.has(index);
+};
+
+const getRowEnders = (index: number): boolean => {
+  const allowedIndices = new Set([2, 5]);
+  return allowedIndices.has(index);
+};
+
+const genStoryCard = (i: any, index: number) => (
+  <div
+    className={`flex flex-col gap-10   px-7
+      ${getSideBorders(index) ? "border-r-2 border-black" : ""} 
+      ${getFirstRow(index) ? "border-b-2 border-black" : ""} 
+      ${getRowStarters(index) ? "pl-0" : ""} 
+      ${getRowEnders(index) ? "pr-0" : ""} 
+      ${getFirstRow(index) ? "pb-14" : "pt-14"}`}
+  >
+    <h3>{i.title}</h3>
+    <p>{i.info}</p>
+    <LinkStyled
+      to="/"
+      label="Learn more"
+      iconBg="bg-primary"
+      iconTextColor="#000"
+    />
+  </div>
+);
+
+const genStoryCardMobile = (i: any) => (
+  <div
+    className={`flex flex-col gap-10 p-10 rounded-[45px] border-black border border-b-[6px] max-w-[600px] mx-auto w-full`}
+  >
     <h3>{i.title}</h3>
     <p>{i.info}</p>
     <LinkStyled
@@ -61,8 +103,12 @@ const CasesAllStories = () => {
         </span>
       </div>
 
-      <div className="border border-black rounded-[45px] p-10 grid gap-20 grid-cols-1 lg:grid-cols-3">
+      <div className="border border-black rounded-[45px] py-10 px-20 hidden  lg:grid lg:grid-cols-3">
         {storiesCards.map(genStoryCard)}
+      </div>
+
+      <div className="flex flex-wrap gap-5 lg:hidden">
+        {storiesCards.map(genStoryCardMobile)}
       </div>
     </section>
   );
@@ -185,14 +231,16 @@ const BlogLongRead = () => {
 export const BlogPage = () => {
   return (
     <FlexSection className="py-20">
-      <section className="rounded-[45px] bg-secondary grid grid-cols-2 items-center ">
-        <img src={blogintro} alt="" />
+      <section className="rounded-[45px] bg-secondary grid grid-cols-1 xl:grid-cols-2 items-center ">
+        <img src={blogintro} alt="" className="hidden xl:block" />
 
-        <div className="flex flex-col gap-10 pr-40">
-          <Badge>
+        <div className="flex flex-col gap-10 p-10 xl:pr-40">
+          <Badge bg="primary">
             <p>Fintech Trends</p>
           </Badge>
           <h2>The Future of Fintech: Top Trends to Watch in 2025</h2>
+
+          <img src={blogintro} alt="" className="block xl:hidden" />
 
           <span className="font-normal">
             The fintech industry is evolving at an unprecedented pace, reshaping

@@ -5,7 +5,7 @@ import star from "@/assets/imgs/star-black.svg";
 
 export const HomeIntro = () => {
   return (
-    <section className="lg:grid grid-cols-2 gap-x-10 max-w-[1240px]">
+    <section className="lg:grid grid-cols-2 gap-x-10 max-w-[1240px] pt-10 lg:pt-20 xl:pt-0">
       <div className="flex flex-col gap-10 mt-[80px]">
         <h1>The Future of Payments</h1>
         <img

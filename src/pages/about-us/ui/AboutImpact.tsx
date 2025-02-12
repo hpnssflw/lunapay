@@ -1,14 +1,17 @@
-import { Badge } from "lucide-react";
+import { Badge } from "@/ui";
 
 export const AboutImpact = () => {
   return (
     <section className="flex flex-col gap-20 w-full">
       <div className="flex flex-col xl:flex-row xl:mr-auto items-center xl:text-left text-center xl:items-center gap-10">
-        <Badge>
-          <h2>Our Impact in Numbers</h2>
-        </Badge>
+        <Badge className="hidden md:block">Our Impact in Numbers</Badge>
 
-        <span className="font-normal">
+        <div className="flex flex-col items-center md:hidden ">
+          <Badge>Our Impact in</Badge>
+          <Badge className="relative -top-1">Numbers</Badge>
+        </div>
+
+        <span className="font-normal mb-auto">
           A snapshot of the milestones and achievements that drive our success
         </span>
       </div>

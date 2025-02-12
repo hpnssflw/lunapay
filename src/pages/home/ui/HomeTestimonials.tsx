@@ -14,8 +14,7 @@ export const HomeTestimonials = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
-
-  console.log(" #count", count);
+  console.log("$ c", count);
 
   React.useEffect(() => {
     if (!api) {
@@ -33,7 +32,7 @@ export const HomeTestimonials = () => {
   const genStarView = (_: any, index: number) => {
     return (
       <div
-        className={`h-6 w-6 rotate-45 ${
+        className={`h-4 w-4 md:h-6 md:w-6 rotate-45 ${
           index + 1 === current ? "bg-primary" : "bg-white"
         }`}
       ></div>
@@ -110,12 +109,12 @@ export const HomeTestimonials = () => {
             ))}
           </CarouselContent>
 
-          <div className="flex gap-5 mx-auto mt-[5px] md:mt-100">
+          <div className="flex gap-5 mx-auto mt-6 md:mt-[15px]">
             {Array.from({ length: 5 }).map(genStarView)}
           </div>
 
-          <CarouselPrevious className="top-[450px] translate-x-20 xl:translate-x-60 bg-transparent border-0 text-white text-[36px]" />
-          <CarouselNext className="top-[450px] -translate-x-20 xl:-translate-x-60 bg-transparent border-0 text-white" />
+          <CarouselPrevious className="top-[460px] translate-x-20 xl:translate-x-80 bg-transparent border-0 text-white " />
+          <CarouselNext className="top-[460px] -translate-x-20 xl:-translate-x-80 bg-transparent border-0 text-white" />
         </Carousel>
       </div>
     </FlexSection>
