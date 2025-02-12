@@ -1,40 +1,45 @@
 import { Badge } from "@/ui";
-import intrologo from "@/assets/imgs/services/intro.png";
+import recurringlogo from "@/assets/imgs/home/service-recurring.png";
+import dashboardlogo from "@/assets/imgs/home/service-dashboard.png";
+import fraudlogo from "@/assets/imgs/home/service-fraud.png";
+import apilogo from "@/assets/imgs/home/service-api.png";
+import creditlogo from "@/assets/imgs/services/creditcard.png";
+import b2clogo from "@/assets/imgs/services/b2c.png";
 
 const servicesCards = [
   {
     title: "Recurring Billing, & Subscriptions",
-    img: "",
+    img: recurringlogo,
     bgColor: "secondary",
     badgeColor: "white",
   },
   {
-    title: "Real-Time Analytics , & Reporting ",
-    img: "",
+    title: "Real-Time, Analytics, & Reporting ",
+    img: dashboardlogo,
     bgColor: "secondary",
     badgeColor: "white",
   },
   {
     title: "Chargeback, Management",
-    img: "",
+    img: creditlogo,
     bgColor: "secondary",
     badgeColor: "white",
   },
   {
-    title: "Secure Tokenization, for Data Protection ",
-    img: "",
+    title: "Secure, Tokenization, for Data Protection ",
+    img: fraudlogo,
     bgColor: "secondary",
     badgeColor: "white",
   },
   {
     title: "B2C , Masspayments",
-    img: "",
+    img: b2clogo,
     bgColor: "secondary",
     badgeColor: "white",
   },
   {
     title: "API Integration, & Developer Tools",
-    img: "",
+    img: apilogo,
     bgColor: "secondary",
     badgeColor: "white",
   },
@@ -42,7 +47,7 @@ const servicesCards = [
 
 const genCard = (i: any) => (
   <div
-    className={`rounded-[45px] border-b-[6px] p-[50px] grid grid-cols-1 lg:grid-cols-[1fr_180px] shadow-md border-2 border-black bg-${i.bgColor} max-w-[600px] w-full lg:h-[310px]`}
+    className={`rounded-[45px] border-b-[6px] p-[50px] grid grid-cols-1 xl:grid-cols-[1fr_180px]  border-2 border-black bg-${i.bgColor} max-w-[600px] w-full xl:h-[310px]`}
   >
     <div className="flex flex-col justify-between ">
       <div>
@@ -50,20 +55,21 @@ const genCard = (i: any) => (
           <Badge bg={i.badgeColor}>{str}</Badge>
         ))}
       </div>
-      <img
-        src={intrologo}
-        alt=""
-        className="z-10 w-80 mx-auto lg:hidden block"
-      />
     </div>
 
-    <img src={intrologo} alt="" height={454} className="z-10 hidden lg:block" />
+    <div className="relative">
+      <img
+        src={i.img}
+        alt=""
+        className="relative xl:absolute max-w-[200px] mx-auto"
+      />
+    </div>
   </div>
 );
 
 export const ServicesOtherFeatures = () => {
   return (
-    <section className="flex flex-col gap-10 my-20">
+    <section className="flex flex-col gap-10 my-20 w-full">
       <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:items-center gap-10">
         <Badge bg="primary" className="xl:mb-auto">
           Other Luna Pay Features

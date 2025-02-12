@@ -1,6 +1,6 @@
 import fintechlogo from "@/assets/imgs/aboutus/fintech.png";
 import growthlogo from "@/assets/imgs/aboutus/growth.png";
-import { Badge } from "lucide-react";
+import { Badge } from "@/ui";
 
 const valuesContent = [
   {
@@ -49,7 +49,7 @@ export const AboutValues = () => {
           <h2>Core Values</h2>
         </Badge>
 
-        <span className="font-normal">
+        <span className="font-normal mb-auto">
           At the heart of everything we do are our core values:
         </span>
       </div>

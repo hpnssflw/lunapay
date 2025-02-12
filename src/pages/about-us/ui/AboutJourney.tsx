@@ -1,4 +1,4 @@
-import { Badge } from "lucide-react";
+import { Badge } from "@/ui";
 import bankcard from "@/assets/imgs/aboutus/bankcard.png";
 import star from "@/assets/imgs/aboutus/Star.svg";
 import bankpayment from "@/assets/imgs/aboutus/bankpayment.png";
@@ -60,7 +60,7 @@ export const AboutJourney = () => {
           <h2>Our Journey</h2>
         </Badge>
 
-        <span className="font-normal">
+        <span className="font-normal mb-auto">
           From humble beginnings to industry leaders, discover how Positivus has
           <br /> evolved to drive success for businesses worldwide.
         </span>
