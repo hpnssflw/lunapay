@@ -38,9 +38,13 @@ export const RegisterDialog = () => {
 
       console.log("Form submitted successfully:", await response.json());
     } catch (error) {
+      console.log("$$ error", error);
+
       if (error instanceof Yup.ValidationError) {
+        console.log("$$ error", error);
         setError(error.message);
       } else {
+        console.log("$$ error", error);
         console.error("Error submitting form:", error);
         setError("An unexpected error occurred.");
       }
