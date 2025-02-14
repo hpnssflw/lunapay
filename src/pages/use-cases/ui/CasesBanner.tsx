@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { DialogWrapper, RegisterDialog } from "@/ui";
 
 export const CasesBanner = () => {
   return (
@@ -11,6 +12,13 @@ export const CasesBanner = () => {
           transactions, and achieve lasting success.
         </span>
         <Button className="w-fit">Get Your Free Payment Proposal</Button>
+
+        <DialogWrapper
+          trigger={
+            <Button className="w-fit">Get Your Free Payment Proposal</Button>
+          }
+          content={<RegisterDialog />}
+        />
       </div>
 
       <div></div>

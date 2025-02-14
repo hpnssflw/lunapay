@@ -78,7 +78,7 @@ export const HomeTestimonials = () => {
         <Badge>
           <h2>Reviews</h2>
         </Badge>
-        <p>
+        <p className="mb-auto">
           Trusted by businesses worldwide. Here’s how Luna Pay is transforming
           payment experiences.
         </p>

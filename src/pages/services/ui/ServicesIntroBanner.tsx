@@ -1,6 +1,6 @@
 import starprim from "@/assets/imgs/star-primary.svg";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/ui";
+import { Badge, DialogWrapper, RegisterDialog } from "@/ui";
 
 export const ServicesIntroBanner = () => {
   return (
@@ -27,12 +27,18 @@ export const ServicesIntroBanner = () => {
           help increase conversions, reduce declines, and provide a smoother
           transaction experience.
         </p>
-        <Button
-          variant="outline"
-          className="bg-white text-black p-0 w-[255px] lg:w-full"
-        >
-          Optimize My Payments
-        </Button>
+
+        <DialogWrapper
+          trigger={
+            <Button
+              variant="outline"
+              className="bg-white text-black p-0 w-[255px] lg:w-full"
+            >
+              Optimize My Payments
+            </Button>
+          }
+          content={<RegisterDialog />}
+        />
       </div>
     </section>
   );
