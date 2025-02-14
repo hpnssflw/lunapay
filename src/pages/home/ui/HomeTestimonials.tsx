@@ -75,7 +75,9 @@ export const HomeTestimonials = () => {
   return (
     <FlexSection gap="20">
       <div className="flex flex-col xl:flex-row  items-center xl:text-left text-center xl:mr-auto xl:items-center gap-10">
-        <Badge>Reviews</Badge>
+        <Badge>
+          <h2>Reviews</h2>
+        </Badge>
         <p>
           Trusted by businesses worldwide. Here’s how Luna Pay is transforming
           payment experiences.
