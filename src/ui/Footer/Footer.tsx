@@ -33,7 +33,7 @@ export const Footer = () => {
   );
 
   return (
-    <footer className="flex flex-col w-full max-w-[1240px] p-5 lg:p-[60px] text-white rounded-tr-[45px] mt-20  rounded-tl-[45px] bg-default ">
+    <footer className="flex flex-col w-full max-w-[1240px] p-5 lg:p-[60px] text-white md:rounded-tr-[45px] mt-20  md:rounded-tl-[45px] bg-default ">
       <div className="flex flex-col lg:flex-row items-center lg:justify-between w-full ">
         <a href="/" aria-label="Home Page">
           <img
@@ -52,7 +52,7 @@ export const Footer = () => {
       </div>
 
       <section className="grid text-center lg:text-left grid-cols-1 lg:grid-cols-[30%_1fr] lg:gap-20 py-10">
-        <div className="w-full flex flex-col gap-5  items-center md:items-start font-normal">
+        <div className="w-full flex flex-col gap-5  items-center lg:items-start font-normal">
           <Badge className="text-black font-medium" text="20px">
             Contact us
           </Badge>
