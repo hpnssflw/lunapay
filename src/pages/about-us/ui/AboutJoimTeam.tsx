@@ -1,5 +1,6 @@
 import teamlogo from "@/assets/imgs/aboutus/teamwork.png";
 import { Button } from "@/components/ui/button";
+import { DialogWrapper, RegisterDialog } from "@/ui";
 
 export const AboutJoinTeam = () => {
   return (
@@ -12,7 +13,11 @@ export const AboutJoinTeam = () => {
           passionate, driven individuals to join our team and help businesses
           competitive globally. Ready to make an impact in fintech?
         </span>
-        <Button className="xl:w-fit ">Explore Careers 🚀</Button>
+
+        <DialogWrapper
+          trigger={<Button className="xl:w-fit ">Explore Careers 🚀</Button>}
+          content={<RegisterDialog />}
+        />
       </div>
 
       <img src={teamlogo} alt="" className="w-[320px] mx-auto " />
