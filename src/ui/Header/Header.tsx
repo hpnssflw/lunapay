@@ -14,15 +14,7 @@ import { AlignJustify } from "lucide-react";
 import { navLinkClasses, routes } from "@/shared/constants";
 import luna from "@/assets/imgs/luna-logo.png";
 import { DialogWrapper, RegisterDialog } from "../Dialogs";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 export const Header = () => {
   const location = useLocation();
@@ -48,7 +40,7 @@ export const Header = () => {
             src={luna}
             alt="Company Name Logo"
             loading="lazy"
-            className="h-[88px] w-full"
+            className="h-[88px] w-[344px]"
           />
         </a>
 
