@@ -40,7 +40,7 @@ export const Footer = () => {
             src={luna}
             alt="Company Name Logo"
             loading="lazy"
-            className="h-[88px] w-full"
+            className="h-[88px]  w-[344px]"
           />
         </a>
 
