@@ -232,7 +232,7 @@ export const BlogPage = () => {
   return (
     <FlexSection className="py-20">
       <section className="rounded-[45px] bg-secondary grid grid-cols-1 xl:grid-cols-2 items-center ">
-        <img src={blogintro} alt="" className="hidden xl:block" />
+        <img src={blogintro} alt="" className="hidden  xl:block" />
 
         <div className="flex flex-col gap-10 p-10 xl:pr-40">
           <Badge bg="primary">
@@ -240,7 +240,11 @@ export const BlogPage = () => {
           </Badge>
           <h2>The Future of Fintech: Top Trends to Watch in 2025</h2>
 
-          <img src={blogintro} alt="" className="block xl:hidden" />
+          <img
+            src={blogintro}
+            alt=""
+            className="block max-w-[310px] mx-auto xl:hidden"
+          />
 
           <span className="font-normal">
             The fintech industry is evolving at an unprecedented pace, reshaping

@@ -1,34 +1,18 @@
-import React from "react";
-import { cn } from "@/lib/utils"; // Utility function for class names
+import { Link } from "react-router";
+import { cn } from "@/lib/utils";
 import { useLocation } from "react-router";
 import {
   NavigationMenu,
-  // NavigationMenuContent,
-  // NavigationMenuIndicator,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  // NavigationMenuTrigger,
-  // navigationMenuTriggerStyle,
-  // NavigationMenuViewport,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Link } from "react-router";
-
-import luna from "@/assets/imgs/luna-logo.png";
 import { Button } from "@/components/ui/button";
-// import {
-//   DrawerTrigger,
-//   DrawerContent,
-//   DrawerHeader,
-//   DrawerTitle,
-//   DrawerDescription,
-//   DrawerFooter,
-//   DrawerClose,
-//   Drawer,
-// } from "@/components/ui/drawer";
-import { Drawer } from "vaul";
 import { AlignJustify } from "lucide-react";
 import { navLinkClasses, routes } from "@/shared/constants";
+import luna from "@/assets/imgs/luna-logo.png";
 
 export const Header = () => {
   const location = useLocation();
@@ -65,33 +49,24 @@ export const Header = () => {
         <Button variant="outline"> Request a quote</Button>
       </NavigationMenu>
 
-      <div className=" xl:hidden">
-        <Drawer.Root direction="right">
-          <Drawer.Trigger className="relative flex h-10 flex-shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-4 text-sm font-medium  transition-all hover:bg-[#FAFAFA] dark:bg-[#161615] dark:hover:bg-[#1A1A19] dark:text-white">
-            <AlignJustify />
-          </Drawer.Trigger>
-          <Drawer.Portal>
-            <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-            <Drawer.Content
-              className="right-2 top-2 bottom-2 fixed z-10 outline-none w-[310px] flex"
-              style={
-                {
-                  "--initial-transform": "calc(100% + 8px)",
-                } as React.CSSProperties
-              }
-            >
-              {/* navs */}
-              <NavigationMenu className="bg-white rounded-[25px] w-[300px] px-10 flex-col flex cursor-pointer">
+      <NavigationMenu className="block xl:hidden">
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>
+              <AlignJustify />
+            </NavigationMenuTrigger>
+            <NavigationMenuContent className="px-4">
+              <NavigationMenu className="bg-white w-[350px] rounded-[25px] h-full py-20 flex-col flex cursor-pointer">
                 <NavigationMenuList className="flex flex-col justify-center gap-4 efault p-4">
                   {routes.map(genLink)}
                 </NavigationMenuList>
 
                 <Button variant="outline"> Request a quote</Button>
               </NavigationMenu>
-            </Drawer.Content>
-          </Drawer.Portal>
-        </Drawer.Root>
-      </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
     </div>
   );
 };
