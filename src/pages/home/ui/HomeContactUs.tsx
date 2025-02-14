@@ -9,7 +9,7 @@ export const HomeContactUs = () => {
   return (
     <FlexSection gap="20" className="mt-20">
       <div className="flex flex-col xl:flex-row  items-center xl:text-left xl:mr-auto text-center xl:items-center gap-10">
-        <Badge bg="primary">
+        <Badge bg="primary" className="mb-auto">
           <h2>Contact Us</h2>
         </Badge>
         <p className="max-w-[600px]">
