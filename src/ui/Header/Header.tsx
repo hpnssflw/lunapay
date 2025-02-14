@@ -56,7 +56,7 @@ export const Header = () => {
               <AlignJustify />
             </NavigationMenuTrigger>
             <NavigationMenuContent className="px-4">
-              <NavigationMenu className="bg-white w-[350px] rounded-[25px] h-full py-20 flex-col flex cursor-pointer">
+              <NavigationMenu className="bg-white w-full max-w-[350px] rounded-[25px] h-full py-20 flex-col flex cursor-pointer">
                 <NavigationMenuList className="flex flex-col justify-center gap-4 efault p-4">
                   {routes.map(genLink)}
                 </NavigationMenuList>
