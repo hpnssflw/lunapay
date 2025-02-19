@@ -41,7 +41,7 @@ const genPathCard = (i: JourneyCountent, index: number) => {
     <div className={style}>
       <p className="text-[60px] mt-5">{i.year}</p>
 
-      <div className="max-w-[600px] w-full bg-default rounded-[45px] p-10 font-normal text-white h-[240px] flex flex-row items-center gap-5">
+      <div className="max-w-[600px] w-full bg-default rounded-[45px] p-10 font-normal text-white md:h-[240px] flex flex-row items-center gap-5">
         <img src={star} alt="" className="h-[29px]" />
         <div className="flex flex-col gap-5">
           <h3>{i.title}</h3>

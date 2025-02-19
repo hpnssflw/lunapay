@@ -4,7 +4,7 @@ import { Badge, DialogWrapper, RegisterDialog } from "@/ui";
 
 export const ServicesIntroBanner = () => {
   return (
-    <section className="w-full relative xl:h-[315px] grid grid-col-1 xl:grid-cols-[30%_1fr] gap-10 xl:gap-20 rounded-[45px] bg-default p-10 xl:pr-40 text-white items-center">
+    <section className="w-full relative xl:h-[315px] grid grid-col-1 xl:grid-cols-[30%_1fr] gap-10 xl:gap-20 rounded-[45px] bg-default p-5 md:p-10 xl:pr-40 text-white items-center">
       <img src={starprim} alt="" className="absolute top-8 left-8" />
       <div className="text-black xl:flex justify-between hidden mb-auto mt-7">
         <div className="ml-20">

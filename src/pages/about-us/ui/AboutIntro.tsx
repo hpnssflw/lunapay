@@ -1,7 +1,7 @@
 import aboutlogo from "@/assets/imgs/aboutus/intro.png";
 
 export const AboutIntro = () => (
-  <div className="flex flex-col-reverse lg:grid  lg:grid-cols-2  items-center gap-10 pt-20 lg:pt-0">
+  <div className="flex flex-col-reverse lg:grid  lg:grid-cols-2  items-center gap-10 pt-28 lg:pt-0">
     <img src={aboutlogo} alt="" height={377} className=" w-[590px]" />
 
     <div className="flex flex-col gap-5">

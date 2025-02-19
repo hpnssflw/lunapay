@@ -9,15 +9,7 @@ export const ServicesPage = () => {
   return (
     <FlexSection>
       <ServicesIntro />
-      {/* <LinkStyled
-        to="/"
-        label="Back"
-        iconBg="bg-black"
-        iconTextColor="#fff"
-        className="mr-auto"
-      /> */}
       <ServicesIntroBanner />
-      {/* <ServicesProcess /> */}
       <HomeHowWorks />
       <ServicesOtherFeatures />
       <HomePowering />
