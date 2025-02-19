@@ -9,11 +9,10 @@ export const ServicesPage = () => {
   return (
     <FlexSection>
       <ServicesIntro />
-   
       <ServicesIntroBanner />
       <HomeHowWorks />
-      {/* <ServicesOtherFeatures /> */}
-      {/* <HomePowering /> */}
+      <ServicesOtherFeatures />
+      <HomePowering />
     </FlexSection>
   );
 };
