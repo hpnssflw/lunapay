@@ -1,7 +1,7 @@
 import intrologo from "@/assets/imgs/services/intro.png";
 
 export const ServicesIntro = () => (
-  <div className="grid lg:grid-cols-2 grid-cols-1 items-center py-20 lg:py-0">
+  <div className="grid lg:grid-cols-2 grid-cols-1 items-center pt-28 pb-20 lg:py-0">
     <img src={intrologo} alt="" height={454} className="hidden lg:block" />
 
     <div className="flex flex-col w-full gap-5">
