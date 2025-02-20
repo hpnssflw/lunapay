@@ -1,14 +1,14 @@
 import { Badge, FlexSection } from "@/ui";
 import { useState } from "react";
-import blogintro from "@/assets/imgs/blog/intro.png";
+import blogintro5 from "@/assets/imgs/blog/intro5.png";
 import { LinkStyled } from "@/ui/LinkStyled";
 import { Button } from "@/components/ui/button";
 
 const storiesCards = [
   {
-    title: "How to Reduce Payment Processing Costs for Your Business",
-    info: "Efficient payment processing is a critical component of any business’s financial strategy.",
-    link: "/blog1",
+    title: "The Future of Fintech",
+    info: "The fintech industry is evolving at an unprecedented pace, reshaping how businesses and consumers interact with financial services.",
+    link: "/blog",
   },
   {
     title: "How to Prevent and Dispute Unfair Claims",
@@ -21,14 +21,14 @@ const storiesCards = [
     link: "/blog3",
   },
   {
+    title: "How to Reduce Payment Processing Costs for Your Business",
+    info: "Efficient payment processing is a critical component of any business’s financial strategy.",
+    link: "/blog1",
+  },
+  {
     title: "How to Minimize Fees and Delays",
     info: "Expanding into international markets presents lucrative opportunities for e-commerce businesses, but cross-border payments often come with high fees and processing delays. ",
     link: "/blog4",
-  },
-  {
-    title: "How to Set Up and Scale Subscription Billing",
-    info: "Subscription-based business models have gained immense popularity across various industries, offering predictable revenue streams and fostering long-term customer relationships.",
-    link: "/blog5",
   },
   {
     title: "Fraud Prevention for Online Business",
@@ -116,51 +116,37 @@ const CasesAllStories = () => {
 
 const articelContent = [
   {
-    header: "1. The Rise of AI-Driven Financial Services",
+    header: "1. Choosing the Right Payment Provider",
     content:
-      "Artificial intelligence (AI) continues to transform fintech, driving automation, personalization, and fraud prevention. In 2025, expect AI-powered chatbots, robo-advisors, and machine learning algorithms to provide hyper-personalized financial insights, improving customer experiences and operational efficiency.",
+      "Selecting a reliable payment provider is crucial for managing recurring transactions efficiently. Businesses should look for a solution that offers:\nAutomated recurring billing with flexible scheduling options.\nSupport for multiple payment methods, including credit cards, digital wallets, and direct debits.\nCompliance with global payment regulations to support international expansion.\nLuna Pay provides an advanced subscription billing platform that enables businesses to automate recurring payments while minimizing payment failures and maximizing customer retention.",
   },
   {
-    header: "2. Embedded Finance Becoming the Norm",
+    header: "2. Implementing a Flexible Subscription Model",
     content:
-      "Embedded finance—seamlessly integrating financial services into non-financial platforms—is gaining traction. From e-commerce to social media, businesses are embedding payments, lending, and insurance into their ecosystems, reducing friction and enhancing user convenience.",
+      "To attract and retain a broad customer base, businesses should offer multiple subscription tiers and billing cycles. Consider:\nMonthly, quarterly, or annual billing options.\nFree trials or introductory pricing to encourage sign-ups.\nCustomizable plans that allow users to upgrade, downgrade, or cancel easily.\nA well-structured subscription model enhances customer satisfaction and increases lifetime value.",
   },
   {
-    header: "3. The Expansion of Digital-Only Banking",
+    header: "3. Optimizing Payment Authorization and Reducing Failures",
     content:
-      "Neobanks and digital-only financial institutions are set to grow as consumers increasingly prefer mobile-first banking solutions. With streamlined onboarding, lower fees, and AI-powered services, digital banks are challenging traditional financial institutions like never before.",
+      "Payment failures due to expired cards, insufficient funds, or authorization issues can lead to involuntary churn. To reduce failed transactions:\nEnable automated card updates to keep payment details current.\nImplement smart retry logic to attempt payment recovery after failures.\nUse dunning management strategies to notify customers and encourage timely updates.\nLuna Pay incorporates intelligent transaction routing and automated payment recovery tools to ensure higher authorization rates and reduce churn.",
   },
   {
-    header: "4. Blockchain Beyond Cryptocurrencies",
+    header: "4. Ensuring Compliance and Security",
     content:
-      "While cryptocurrencies remain a hot topic, blockchain technology is finding applications beyond digital assets. Smart contracts, decentralized finance (DeFi), and cross-border payments are revolutionizing how transactions are processed, ensuring greater transparency and efficiency.",
+      "Handling recurring payments requires adherence to industry regulations and security standards. Businesses must:\nComply with PCI DSS standards for payment data protection.\nImplement strong customer authentication (SCA) where required.\nMaintain transparent billing practices to build customer trust.\nUsing a payment provider that offers built-in compliance management can simplify regulatory adherence and mitigate risks.",
   },
   {
-    header: "5. Open Banking and Data-Driven Innovation",
+    header: "5. Leveraging Analytics for Growth",
     content:
-      "Regulatory frameworks around open banking are pushing financial institutions to share data securely with third-party providers. This trend enables innovative financial products, better loan underwriting, and improved risk assessment through data-driven insights.",
+      "Tracking subscription metrics helps businesses refine their pricing strategies and improve customer retention. Key performance indicators (KPIs) to monitor include:\nCustomer lifetime value (CLV)\nChurn rate and retention metrics\nAverage revenue per user (ARPU)\nLuna Pay provides real-time analytics and insights, empowering businesses to make data-driven decisions and optimize subscription performance.",
   },
   {
-    header: "6. Sustainable and Green Fintech Solutions",
+    header: "Final Thoughts",
     content:
-      "As ESG (Environmental, Social, and Governance) considerations become central to financial decision-making, fintech companies are integrating sustainability into their products. Carbon footprint tracking, green investment platforms, and ethical banking are gaining momentum.",
-  },
-  {
-    header: "7. The Growth of Biometric Authentication",
-    content:
-      "Security concerns drive the adoption of biometric authentication methods, including facial recognition, fingerprint scanning, and voice verification. These advancements enhance security while offering a frictionless user experience.",
-  },
-  {
-    header: "8. The Evolution of Cross-Border Payments",
-    content:
-      "The demand for faster and more cost-effective international transactions is fueling innovation in cross-border payments. Fintech companies are leveraging blockchain, AI, and partnerships with central banks to facilitate near-instant settlements with lower fees.",
-  },
-  {
-    header: "Looking Ahead",
-    content:
-      "As fintech continues to evolve, businesses and consumers must stay ahead of the trends shaping the financial landscape. Whether through AI, embedded finance, or blockchain, 2025 promises to be a transformative year for the industry. Companies that adapt to these changes will thrive in an increasingly digital and interconnected financial world.",
+      "Scaling a subscription-based business requires a robust recurring payment infrastructure, proactive churn management, and strategic pricing. By leveraging automated billing, optimizing payment success rates, and ensuring compliance, businesses can create a seamless experience for subscribers while maximizing revenue growth. With Luna Pay’s advanced subscription billing solutions, businesses can efficiently manage recurring payments and scale with confidence.",
   },
 ];
+
 
 interface ArticleUI {
   header: string;
@@ -228,30 +214,31 @@ const BlogLongRead = () => {
   );
 };
 
-export const BlogPage = () => {
+export const BlogPage5 = () => {
   return (
     <FlexSection className="py-20">
       <section className="rounded-[45px] bg-secondary grid grid-cols-1 xl:grid-cols-2 items-center ">
-        <img src={blogintro} alt="" className="hidden  xl:block" />
+        <img src={blogintro5} alt="" className="hidden  xl:block" />
 
         <div className="flex flex-col gap-10 p-10 xl:pr-40">
           <Badge bg="primary">
-            <p>Fintech Trends</p>
+            <p>Recurring Payments</p>
           </Badge>
-          <h2>The Future of Fintech: Top Trends to Watch in 2025</h2>
+          <h2>Recurring Payments: How to Set Up and Scale Subscription Billing</h2>
 
           <img
-            src={blogintro}
+            src={blogintro5}
             alt=""
             className="block max-w-[310px] mx-auto xl:hidden"
           />
 
           <span className="font-normal">
-            The fintech industry is evolving at an unprecedented pace, reshaping
-            how businesses and consumers interact with financial services. As we
-            move into 2025, several emerging trends are set to define the next
-            phase of financial technology. Here’s what to watch for in the
-            coming year.
+            Subscription-based business models have gained immense popularity across various 
+            industries, offering predictable revenue streams and fostering long-term customer 
+            relationships. However, setting up and scaling a recurring payment system requires 
+            careful planning, the right technology, and a strategic approach. In this article, 
+            we will explore the key steps to implementing a seamless subscription billing system 
+            while optimizing for growth.
           </span>
         </div>
       </section>

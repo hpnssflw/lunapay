@@ -1,19 +1,19 @@
 import { Badge, FlexSection } from "@/ui";
 import { useState } from "react";
-import blogintro from "@/assets/imgs/blog/intro.png";
+import blogintro2 from "@/assets/imgs/blog/intro2.png";
 import { LinkStyled } from "@/ui/LinkStyled";
 import { Button } from "@/components/ui/button";
 
 const storiesCards = [
   {
-    title: "How to Reduce Payment Processing Costs for Your Business",
-    info: "Efficient payment processing is a critical component of any business’s financial strategy.",
-    link: "/blog1",
+    title: "The Future of Fintech",
+    info: "The fintech industry is evolving at an unprecedented pace, reshaping how businesses and consumers interact with financial services.",
+    link: "/blog",
   },
   {
-    title: "How to Prevent and Dispute Unfair Claims",
+    title: "How to Reduce Payment Processing Costs for Your Business",
     info: "Chargebacks can be a costly and time-consuming issue for businesses, impacting revenue and operational efficiency.",
-    link: "/blog2",
+    link: "/blog1",
   },
   {
     title: "Optimizing Your Checkout Flow to Increase Conversion Rates",
@@ -116,49 +116,39 @@ const CasesAllStories = () => {
 
 const articelContent = [
   {
-    header: "1. The Rise of AI-Driven Financial Services",
+    header: "1. Understanding Chargebacks and Their Impact",
     content:
-      "Artificial intelligence (AI) continues to transform fintech, driving automation, personalization, and fraud prevention. In 2025, expect AI-powered chatbots, robo-advisors, and machine learning algorithms to provide hyper-personalized financial insights, improving customer experiences and operational efficiency.",
+      "A chargeback occurs when a customer disputes a transaction with their issuing bank, resulting in a forced refund. While chargebacks were originally designed to protect consumers from fraud, they are often misused, leading to revenue losses and additional processing fees. Businesses must proactively address chargebacks to avoid unnecessary financial strain.",
   },
   {
-    header: "2. Embedded Finance Becoming the Norm",
+    header: "2. Implement Strong Fraud Prevention Measures",
     content:
-      "Embedded finance—seamlessly integrating financial services into non-financial platforms—is gaining traction. From e-commerce to social media, businesses are embedding payments, lending, and insurance into their ecosystems, reducing friction and enhancing user convenience.",
+      "One of the most effective ways to reduce chargebacks is to prevent fraudulent transactions before they occur. Implementing security protocols such as: Two-Factor Authentication (2FA), Address Verification Service (AVS), Card Verification Value (CVV), Checks Real-time Fraud Detection Tools Partnering with an advanced payment provider like Luna Pay ensures businesses have access to sophisticated fraud detection solutions, reducing the likelihood of fraudulent chargebacks.",
   },
   {
-    header: "3. The Expansion of Digital-Only Banking",
+    header: "3. Enhance Customer Communication and Transparency",
     content:
-      "Neobanks and digital-only financial institutions are set to grow as consumers increasingly prefer mobile-first banking solutions. With streamlined onboarding, lower fees, and AI-powered services, digital banks are challenging traditional financial institutions like never before.",
+      "Clear communication can prevent misunderstandings that lead to chargebacks. Businesses should: Provide detailed product descriptions and transparent pricing. Send immediate order confirmations and tracking updates. Offer responsive customer support to address disputes before they escalate.",
   },
   {
-    header: "4. Blockchain Beyond Cryptocurrencies",
+    header: "4. Implement a Robust Refund and Dispute Resolution Policy",
     content:
-      "While cryptocurrencies remain a hot topic, blockchain technology is finding applications beyond digital assets. Smart contracts, decentralized finance (DeFi), and cross-border payments are revolutionizing how transactions are processed, ensuring greater transparency and efficiency.",
+      "A clear and fair refund policy can help resolve issues before they turn into chargebacks. Encouraging customers to reach out to customer service before disputing a charge with their bank can reduce unnecessary disputes. Providing easy access to support through multiple channels — email, chat, and phone — can significantly improve resolution rates.",
   },
   {
-    header: "5. Open Banking and Data-Driven Innovation",
+    header: "5. Disputing Unfair Chargebacks: The Right Approach",
     content:
-      "Regulatory frameworks around open banking are pushing financial institutions to share data securely with third-party providers. This trend enables innovative financial products, better loan underwriting, and improved risk assessment through data-driven insights.",
+      "Despite your best efforts, some chargebacks may still occur. When faced with an unfair chargeback, businesses should: Gather supporting documentation, such as receipts, proof of delivery, and customer communications. Respond within the required timeframe, as each payment network has specific deadlines. Use a structured dispute response format, outlining clear evidence that supports the legitimacy of the transaction. Luna Pay offers automated chargeback management tools that help businesses track disputes, submit responses efficiently, and improve success rates in overturning unjustified claims.",
   },
   {
-    header: "6. Sustainable and Green Fintech Solutions",
+    header: "6. Leverage Chargeback Analytics for Continuous Improvement",
     content:
-      "As ESG (Environmental, Social, and Governance) considerations become central to financial decision-making, fintech companies are integrating sustainability into their products. Carbon footprint tracking, green investment platforms, and ethical banking are gaining momentum.",
+      "Monitoring chargeback trends can help businesses identify recurring issues and adjust their policies accordingly. Analyzing data such as chargeback reason codes, customer behavior patterns, and transaction history enables businesses to take preventive action and reduce future disputes.",
   },
   {
-    header: "7. The Growth of Biometric Authentication",
+    header: "Final Thoughts",
     content:
-      "Security concerns drive the adoption of biometric authentication methods, including facial recognition, fingerprint scanning, and voice verification. These advancements enhance security while offering a frictionless user experience.",
-  },
-  {
-    header: "8. The Evolution of Cross-Border Payments",
-    content:
-      "The demand for faster and more cost-effective international transactions is fueling innovation in cross-border payments. Fintech companies are leveraging blockchain, AI, and partnerships with central banks to facilitate near-instant settlements with lower fees.",
-  },
-  {
-    header: "Looking Ahead",
-    content:
-      "As fintech continues to evolve, businesses and consumers must stay ahead of the trends shaping the financial landscape. Whether through AI, embedded finance, or blockchain, 2025 promises to be a transformative year for the industry. Companies that adapt to these changes will thrive in an increasingly digital and interconnected financial world.",
+      "Effective chargeback management requires a proactive approach, combining fraud prevention, clear customer policies, and a well-structured dispute process. By leveraging advanced payment solutions like Luna Pay, businesses can minimize chargeback risks, protect their revenue stream, and maintain customer trust. Taking control of chargeback management today ensures a more secure and profitable future for your business.",
   },
 ];
 
@@ -228,30 +218,29 @@ const BlogLongRead = () => {
   );
 };
 
-export const BlogPage = () => {
+export const BlogPage2 = () => {
   return (
     <FlexSection className="py-20">
       <section className="rounded-[45px] bg-secondary grid grid-cols-1 xl:grid-cols-2 items-center ">
-        <img src={blogintro} alt="" className="hidden  xl:block" />
+        <img src={blogintro2} alt="" className="hidden  xl:block" />
 
         <div className="flex flex-col gap-10 p-10 xl:pr-40">
           <Badge bg="primary">
-            <p>Fintech Trends</p>
+            <p>Chargeback Management</p>
           </Badge>
-          <h2>The Future of Fintech: Top Trends to Watch in 2025</h2>
+          <h2>Chargeback Management: How to Prevent and Dispute Unfair Claims</h2>
 
           <img
-            src={blogintro}
+            src={blogintro2}
             alt=""
             className="block max-w-[310px] mx-auto xl:hidden"
           />
 
           <span className="font-normal">
-            The fintech industry is evolving at an unprecedented pace, reshaping
-            how businesses and consumers interact with financial services. As we
-            move into 2025, several emerging trends are set to define the next
-            phase of financial technology. Here’s what to watch for in the
-            coming year.
+            Chargebacks can be a costly and time-consuming issue for businesses, impacting revenue 
+            and operational efficiency. Effectively managing chargebacks involves both prevention 
+            strategies and a structured approach to disputing unjustified claims. In this article, 
+            we will explore best practices for reducing chargebacks and successfully challenging disputes when necessary.
           </span>
         </div>
       </section>

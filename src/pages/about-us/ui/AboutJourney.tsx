@@ -61,30 +61,31 @@ export const AboutJourney = () => {
         </Badge>
 
         <span className="font-normal mb-auto">
-          From humble beginnings to industry leaders, discover how Positivus has
+          From humble beginnings to industry leaders, discover how Luna Pay has
           <br /> evolved to drive success for businesses worldwide.
         </span>
       </div>
 
       <div className="flex flex-col gap-10">{mapContent.map(genPathCard)}</div>
 
-      <div className=" hidden xl:block absolute -right-[15%] top-[47%] ">
+      <div className="hidden xl:block absolute -right-[15%] top-[47%]">
         <div className="relative">
-          <img src={bankpayment} alt="" className="w-[413px]" />
-          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[50%] -z-10" />
-          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[57%] -z-10" />
-          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[64%] -z-10" />
+          <img src={bankpayment} alt="" className="w-[413px] relative z-10" />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[50%] " />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[57%] " />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[64%] " />
         </div>
       </div>
 
-      <div className="hidden xl:block absolute -left-[15%] top-[20%] ">
+      <div className="hidden xl:block absolute -left-[15%] top-[20%]">
         <div className="relative">
-          <img src={bankcard} alt="" className="w-[406px]" />
-          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[50%] -z-10" />
-          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[57%] -z-10" />
-          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[64%] -z-10" />
+          <img src={bankcard} alt="" className="w-[406px] relative z-10" />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[50%] " />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[57%] " />
+          <div className="h-[88px] w-[422px] border rounded-[100%] border-black absolute top-[64%] " />
         </div>
       </div>
+
     </section>
   );
 };

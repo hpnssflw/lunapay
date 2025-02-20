@@ -1,6 +1,6 @@
 import { Badge, FlexSection } from "@/ui";
 import { useState } from "react";
-import blogintro from "@/assets/imgs/blog/intro.png";
+import blogintro3 from "@/assets/imgs/blog/intro3.png";
 import { LinkStyled } from "@/ui/LinkStyled";
 import { Button } from "@/components/ui/button";
 
@@ -11,14 +11,14 @@ const storiesCards = [
     link: "/blog1",
   },
   {
+    title: "The Future of Fintech",
+    info: "The fintech industry is evolving at an unprecedented pace, reshaping how businesses and consumers interact with financial services.",
+    link: "/blog",
+  },
+  {
     title: "How to Prevent and Dispute Unfair Claims",
     info: "Chargebacks can be a costly and time-consuming issue for businesses, impacting revenue and operational efficiency.",
     link: "/blog2",
-  },
-  {
-    title: "Optimizing Your Checkout Flow to Increase Conversion Rates",
-    info: "A seamless checkout experience is crucial for businesses aiming to maximize conversion rates and reduce cart abandonment",
-    link: "/blog3",
   },
   {
     title: "How to Minimize Fees and Delays",
@@ -76,7 +76,6 @@ const genStoryCard = (i: any, index: number) => (
     />
   </div>
 );
-
 const genStoryCardMobile = (i: any) => (
   <div
     className={`flex flex-col gap-10 p-10 rounded-[45px] border-black border border-b-[6px] max-w-[600px] mx-auto w-full`}
@@ -116,51 +115,47 @@ const CasesAllStories = () => {
 
 const articelContent = [
   {
-    header: "1. The Rise of AI-Driven Financial Services",
+    header: "1. Simplify the Checkout Process",
     content:
-      "Artificial intelligence (AI) continues to transform fintech, driving automation, personalization, and fraud prevention. In 2025, expect AI-powered chatbots, robo-advisors, and machine learning algorithms to provide hyper-personalized financial insights, improving customer experiences and operational efficiency.",
+      "Lengthy and complicated checkout processes often frustrate customers, causing them to abandon their purchases. To streamline the experience:\nMinimize the number of required form fields.\nOffer a guest checkout option to reduce friction.\nUse auto-fill and predictive text to expedite form completion.\nWith a provider like Luna Pay, businesses can implement a streamlined checkout process that reduces friction and accelerates transactions.",
   },
   {
-    header: "2. Embedded Finance Becoming the Norm",
+    header: "2. Offer Multiple Payment Options",
     content:
-      "Embedded finance—seamlessly integrating financial services into non-financial platforms—is gaining traction. From e-commerce to social media, businesses are embedding payments, lending, and insurance into their ecosystems, reducing friction and enhancing user convenience.",
+      "Customers have different payment preferences, and limiting their options can result in lost sales. To improve conversion rates:\nSupport a variety of payment methods, including credit/debit cards, digital wallets, and local payment solutions.\nEnable one-click payments for returning customers.\nAllow buy now, pay later (BNPL) options to cater to a broader audience.",
   },
   {
-    header: "3. The Expansion of Digital-Only Banking",
+    header: "3. Enhance Payment Security Without Adding Friction",
     content:
-      "Neobanks and digital-only financial institutions are set to grow as consumers increasingly prefer mobile-first banking solutions. With streamlined onboarding, lower fees, and AI-powered services, digital banks are challenging traditional financial institutions like never before.",
+      "While security is essential, excessive authentication steps can discourage customers. Implementing solutions like tokenization and biometric authentication can protect transactions without creating unnecessary steps for a client to deal with.\nLuna Pay integrates advanced fraud detection tools to ensure secure payments while maintaining a smooth user experience.",
   },
   {
-    header: "4. Blockchain Beyond Cryptocurrencies",
+    header: "4. Optimize for Mobile Users",
     content:
-      "While cryptocurrencies remain a hot topic, blockchain technology is finding applications beyond digital assets. Smart contracts, decentralized finance (DeFi), and cross-border payments are revolutionizing how transactions are processed, ensuring greater transparency and efficiency.",
+      "With a growing number of consumers shopping via mobile devices, businesses must ensure a fully responsive checkout experience. Key mobile optimizations include:\nImplementing a mobile-first design with easy navigation.\nUsing larger buttons and simple input fields.\nEnabling digital wallet payments like Apple Pay and Google Pay for faster transactions.",
   },
   {
-    header: "5. Open Banking and Data-Driven Innovation",
+    header: "5. Reduce Unnecessary Distractions",
     content:
-      "Regulatory frameworks around open banking are pushing financial institutions to share data securely with third-party providers. This trend enables innovative financial products, better loan underwriting, and improved risk assessment through data-driven insights.",
+      "A cluttered checkout page with too many distractions can lead customers away from completing their purchase. Best practices include:\nRemoving unnecessary links and pop-ups.\nKeeping the design clean and focused on the transaction.\nProviding clear calls to action (e.g., “Complete Purchase” instead of generic labels).",
   },
   {
-    header: "6. Sustainable and Green Fintech Solutions",
+    header: "6. Display Transparent Pricing and Policies",
     content:
-      "As ESG (Environmental, Social, and Governance) considerations become central to financial decision-making, fintech companies are integrating sustainability into their products. Carbon footprint tracking, green investment platforms, and ethical banking are gaining momentum.",
+      "Unexpected costs or unclear policies are among the top reasons for cart abandonment. To build customer trust:\nClearly display shipping fees, taxes, and total costs before the final payment step.\nOffer easy access to return and refund policies.\nProvide real-time currency conversion for international customers.",
   },
   {
-    header: "7. The Growth of Biometric Authentication",
+    header: "7. Use A/B Testing to Continuously Improve",
     content:
-      "Security concerns drive the adoption of biometric authentication methods, including facial recognition, fingerprint scanning, and voice verification. These advancements enhance security while offering a frictionless user experience.",
+      "Optimizing checkout is an ongoing process. Conduct A/B testing on different elements such as button placement, form layouts, and CTA wording to determine which configurations yield the highest conversion rates.",
   },
   {
-    header: "8. The Evolution of Cross-Border Payments",
+    header: "Final Thoughts",
     content:
-      "The demand for faster and more cost-effective international transactions is fueling innovation in cross-border payments. Fintech companies are leveraging blockchain, AI, and partnerships with central banks to facilitate near-instant settlements with lower fees.",
-  },
-  {
-    header: "Looking Ahead",
-    content:
-      "As fintech continues to evolve, businesses and consumers must stay ahead of the trends shaping the financial landscape. Whether through AI, embedded finance, or blockchain, 2025 promises to be a transformative year for the industry. Companies that adapt to these changes will thrive in an increasingly digital and interconnected financial world.",
+      "A well-optimized checkout flow is essential for increasing conversion rates and improving customer satisfaction. By simplifying the process, offering diverse payment options, and ensuring mobile responsiveness, businesses can significantly enhance their payment experience. With Luna Pay’s advanced checkout solutions, companies can implement these optimizations effortlessly, leading to higher conversions and greater revenue growth.",
   },
 ];
+
 
 interface ArticleUI {
   header: string;
@@ -228,30 +223,29 @@ const BlogLongRead = () => {
   );
 };
 
-export const BlogPage = () => {
+export const BlogPage3 = () => {
   return (
     <FlexSection className="py-20">
       <section className="rounded-[45px] bg-secondary grid grid-cols-1 xl:grid-cols-2 items-center ">
-        <img src={blogintro} alt="" className="hidden  xl:block" />
+        <img src={blogintro3} alt="" className="hidden  xl:block" />
 
         <div className="flex flex-col gap-10 p-10 xl:pr-40">
           <Badge bg="primary">
-            <p>Fintech Trends</p>
+            <p>Checkout Flow</p>
           </Badge>
-          <h2>The Future of Fintech: Top Trends to Watch in 2025</h2>
+          <h2>Optimizing Your Checkout Flow to Increase Conversion Rates</h2>
 
           <img
-            src={blogintro}
+            src={blogintro3}
             alt=""
             className="block max-w-[310px] mx-auto xl:hidden"
           />
 
           <span className="font-normal">
-            The fintech industry is evolving at an unprecedented pace, reshaping
-            how businesses and consumers interact with financial services. As we
-            move into 2025, several emerging trends are set to define the next
-            phase of financial technology. Here’s what to watch for in the
-            coming year.
+          A seamless checkout experience is crucial for businesses aiming to maximize conversion rates and reduce 
+          cart abandonment. A complex or inefficient checkout process can deter customers, leading to lost revenue 
+          opportunities. In this article, we will explore key strategies for optimizing your checkout flow to drive 
+          higher conversion rates while ensuring a smooth payment experience.
           </span>
         </div>
       </section>

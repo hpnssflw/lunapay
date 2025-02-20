@@ -1,18 +1,18 @@
 import { Badge, FlexSection } from "@/ui";
 import { useState } from "react";
-import blogintro from "@/assets/imgs/blog/intro.png";
+import blogintro1 from "@/assets/imgs/blog/intro1.png";
 import { LinkStyled } from "@/ui/LinkStyled";
 import { Button } from "@/components/ui/button";
 
 const storiesCards = [
   {
-    title: "How to Reduce Payment Processing Costs for Your Business",
-    info: "Efficient payment processing is a critical component of any business’s financial strategy.",
-    link: "/blog1",
+    title: "The Future of Fintech",
+    info: "The fintech industry is evolving at an unprecedented pace, reshaping how businesses and consumers interact with financial services.",
+    link: "/blog",
   },
   {
     title: "How to Prevent and Dispute Unfair Claims",
-    info: "Chargebacks can be a costly and time-consuming issue for businesses, impacting revenue and operational efficiency.",
+    info: "Efficient payment processing is a critical component of any business’s financial strategy.",
     link: "/blog2",
   },
   {
@@ -84,7 +84,7 @@ const genStoryCardMobile = (i: any) => (
     <h3>{i.title}</h3>
     <p>{i.info}</p>
     <LinkStyled
-      to={i.link}
+      to="/"
       label="Learn more"
       iconBg="bg-primary"
       iconTextColor="#000"
@@ -116,49 +116,44 @@ const CasesAllStories = () => {
 
 const articelContent = [
   {
-    header: "1. The Rise of AI-Driven Financial Services",
+    header: "1. Evaluate Your Payment Processor and Negotiate Fees",
     content:
-      "Artificial intelligence (AI) continues to transform fintech, driving automation, personalization, and fraud prevention. In 2025, expect AI-powered chatbots, robo-advisors, and machine learning algorithms to provide hyper-personalized financial insights, improving customer experiences and operational efficiency.",
+      "Not all payment processors offer the same fee structures. Businesses should regularly review their agreements and compare service providers to ensure they are getting the most competitive rates. Negotiating lower transaction fees, reducing chargeback penalties, or switching to a provider like Luna Pay that offers cost-effective and transparent pricing can help reduce expenses.",
   },
   {
-    header: "2. Embedded Finance Becoming the Norm",
+    header: "2. Choose the Right Payment Methods",
     content:
-      "Embedded finance—seamlessly integrating financial services into non-financial platforms—is gaining traction. From e-commerce to social media, businesses are embedding payments, lending, and insurance into their ecosystems, reducing friction and enhancing user convenience.",
+      "Different payment methods come with varying processing fees. Credit card transactions often carry higher fees compared to direct bank transfers or digital wallets. Encouraging customers to use lower-cost alternatives, such as Automated Clearing House (ACH) payments or local payment methods, can help businesses reduce overall transaction costs.",
   },
   {
-    header: "3. The Expansion of Digital-Only Banking",
+    header: "3. Optimize Transaction Routing",
     content:
-      "Neobanks and digital-only financial institutions are set to grow as consumers increasingly prefer mobile-first banking solutions. With streamlined onboarding, lower fees, and AI-powered services, digital banks are challenging traditional financial institutions like never before.",
+      "Smart transaction routing ensures that each payment is processed through the most cost-effective network. Businesses can leverage intelligent routing technology to minimize interchange fees and improve authorization rates. Partnering with an advanced payment provider like Luna Pay can enable businesses to benefit from optimized transaction flows.",
   },
   {
-    header: "4. Blockchain Beyond Cryptocurrencies",
+    header: "4. Minimize Chargebacks and Fraud",
     content:
-      "While cryptocurrencies remain a hot topic, blockchain technology is finding applications beyond digital assets. Smart contracts, decentralized finance (DeFi), and cross-border payments are revolutionizing how transactions are processed, ensuring greater transparency and efficiency.",
+      "Chargebacks and fraudulent transactions contribute to unnecessary costs. Implementing strong fraud prevention measures, such as two-factor authentication, real-time transaction monitoring, and address verification services, can help mitigate these risks. Proactively managing chargebacks through dispute resolution tools can also prevent revenue losses.",
   },
   {
-    header: "5. Open Banking and Data-Driven Innovation",
+    header: "5. Consolidate Payment Services",
     content:
-      "Regulatory frameworks around open banking are pushing financial institutions to share data securely with third-party providers. This trend enables innovative financial products, better loan underwriting, and improved risk assessment through data-driven insights.",
+      "Using multiple payment service providers can lead to redundant fees and inefficiencies. Consolidating payment processing under a single, scalable provider can simplify operations and reduce overall costs. Luna Pay, for example, offers an integrated platform that helps businesses manage payments more efficiently while keeping costs under control.",
   },
   {
-    header: "6. Sustainable and Green Fintech Solutions",
+    header: "6. Leverage Volume Discounts",
     content:
-      "As ESG (Environmental, Social, and Governance) considerations become central to financial decision-making, fintech companies are integrating sustainability into their products. Carbon footprint tracking, green investment platforms, and ethical banking are gaining momentum.",
+      "Many payment processors offer tiered pricing based on transaction volume. Businesses with high processing volumes should negotiate for volume discounts or explore custom pricing structures. Bundling multiple financial services — such as payments, payouts, and currency exchange — through a single provider can lead to additional savings.",
   },
   {
-    header: "7. The Growth of Biometric Authentication",
+    header: "7. Monitor and Analyze Payment Data",
     content:
-      "Security concerns drive the adoption of biometric authentication methods, including facial recognition, fingerprint scanning, and voice verification. These advancements enhance security while offering a frictionless user experience.",
+      "Regularly reviewing payment data allows businesses to identify inefficiencies and hidden costs. By analyzing transaction trends, businesses can optimize their payment strategy, detect patterns of failed transactions, and adjust payment settings accordingly. Using a provider with advanced analytics capabilities, such as Luna Pay, ensures access to actionable insights that support cost reduction efforts.",
   },
   {
-    header: "8. The Evolution of Cross-Border Payments",
+    header: "Final Thoughts",
     content:
-      "The demand for faster and more cost-effective international transactions is fueling innovation in cross-border payments. Fintech companies are leveraging blockchain, AI, and partnerships with central banks to facilitate near-instant settlements with lower fees.",
-  },
-  {
-    header: "Looking Ahead",
-    content:
-      "As fintech continues to evolve, businesses and consumers must stay ahead of the trends shaping the financial landscape. Whether through AI, embedded finance, or blockchain, 2025 promises to be a transformative year for the industry. Companies that adapt to these changes will thrive in an increasingly digital and interconnected financial world.",
+      "Reducing payment processing costs is a strategic initiative that requires a combination of the right technology, proactive negotiation, and continuous optimization. By working with a trusted payment partner like Luna Pay, businesses can enhance their payment efficiency, minimize unnecessary fees, and improve profitability without compromising on customer experience. For businesses looking to streamline their payment operations, now is the time to evaluate existing processes and implement cost-saving strategies that drive long-term success.",
   },
 ];
 
@@ -228,30 +223,30 @@ const BlogLongRead = () => {
   );
 };
 
-export const BlogPage = () => {
+export const BlogPage1 = () => {
   return (
     <FlexSection className="py-20">
       <section className="rounded-[45px] bg-secondary grid grid-cols-1 xl:grid-cols-2 items-center ">
-        <img src={blogintro} alt="" className="hidden  xl:block" />
+        <img src={blogintro1} alt="" className="hidden  xl:block" />
 
         <div className="flex flex-col gap-10 p-10 xl:pr-40">
           <Badge bg="primary">
-            <p>Fintech Trends</p>
+            <p>Payment Processing</p>
           </Badge>
-          <h2>The Future of Fintech: Top Trends to Watch in 2025</h2>
+          <h2>How to Reduce Payment Processing Costs</h2>
 
           <img
-            src={blogintro}
+            src={blogintro1}
             alt=""
             className="block max-w-[310px] mx-auto xl:hidden"
           />
 
           <span className="font-normal">
-            The fintech industry is evolving at an unprecedented pace, reshaping
-            how businesses and consumers interact with financial services. As we
-            move into 2025, several emerging trends are set to define the next
-            phase of financial technology. Here’s what to watch for in the
-            coming year.
+            Efficient payment processing is a critical component of any business’s financial strategy. 
+            High processing fees and transaction costs can significantly impact profitability, 
+            making cost optimization an essential focus for companies looking to improve their bottom line. 
+            In this article, we will explore practical strategies to reduce payment processing costs while maintaining 
+            a smooth transaction experience for customers.
           </span>
         </div>
       </section>

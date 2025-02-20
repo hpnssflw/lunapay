@@ -1,14 +1,14 @@
 import { Badge, FlexSection } from "@/ui";
 import { useState } from "react";
-import blogintro from "@/assets/imgs/blog/intro.png";
+import blogintro4 from "@/assets/imgs/blog/intro4.png";
 import { LinkStyled } from "@/ui/LinkStyled";
 import { Button } from "@/components/ui/button";
 
 const storiesCards = [
   {
-    title: "How to Reduce Payment Processing Costs for Your Business",
-    info: "Efficient payment processing is a critical component of any business’s financial strategy.",
-    link: "/blog1",
+    title: "The Future of Fintech",
+    info: "The fintech industry is evolving at an unprecedented pace, reshaping how businesses and consumers interact with financial services.",
+    link: "/blog",
   },
   {
     title: "How to Prevent and Dispute Unfair Claims",
@@ -16,14 +16,14 @@ const storiesCards = [
     link: "/blog2",
   },
   {
+    title: "How to Reduce Payment Processing Costs for Your Business",
+    info: "Efficient payment processing is a critical component of any business’s financial strategy.",
+    link: "/blog1",
+  },
+  {
     title: "Optimizing Your Checkout Flow to Increase Conversion Rates",
     info: "A seamless checkout experience is crucial for businesses aiming to maximize conversion rates and reduce cart abandonment",
     link: "/blog3",
-  },
-  {
-    title: "How to Minimize Fees and Delays",
-    info: "Expanding into international markets presents lucrative opportunities for e-commerce businesses, but cross-border payments often come with high fees and processing delays. ",
-    link: "/blog4",
   },
   {
     title: "How to Set Up and Scale Subscription Billing",
@@ -116,51 +116,42 @@ const CasesAllStories = () => {
 
 const articelContent = [
   {
-    header: "1. The Rise of AI-Driven Financial Services",
+    header: "1. Choose the Right Payment Provider",
     content:
-      "Artificial intelligence (AI) continues to transform fintech, driving automation, personalization, and fraud prevention. In 2025, expect AI-powered chatbots, robo-advisors, and machine learning algorithms to provide hyper-personalized financial insights, improving customer experiences and operational efficiency.",
+      "Not all payment processors offer the same efficiency and cost-effectiveness for cross-border transactions. Businesses should partner with a provider that specializes in international payments, offering:\nCompetitive exchange rates with minimal markups.\nDirect local payment processing to reduce intermediary fees.\nFaster settlement times to improve cash flow.\nLuna Pay provides tailored cross-border payment solutions, helping businesses reduce processing costs while ensuring efficient global transactions.",
   },
   {
-    header: "2. Embedded Finance Becoming the Norm",
+    header: "2. Optimize Currency Conversion",
     content:
-      "Embedded finance—seamlessly integrating financial services into non-financial platforms—is gaining traction. From e-commerce to social media, businesses are embedding payments, lending, and insurance into their ecosystems, reducing friction and enhancing user convenience.",
+      "Currency exchange fees can significantly impact profit margins. To minimize these costs:\nUse a payment provider that offers dynamic currency conversion (DCC) to let customers pay in their preferred currency.\nReduce reliance on banks with high foreign exchange fees by leveraging fintech solutions with real-time exchange rate optimization.\nImplement multi-currency accounts to settle transactions in the currency of your key markets.",
   },
   {
-    header: "3. The Expansion of Digital-Only Banking",
+    header: "3. Leverage Local Payment Methods",
     content:
-      "Neobanks and digital-only financial institutions are set to grow as consumers increasingly prefer mobile-first banking solutions. With streamlined onboarding, lower fees, and AI-powered services, digital banks are challenging traditional financial institutions like never before.",
+      "Consumers across different regions prefer various payment methods. Offering locally preferred options improves conversion rates and reduces transaction costs. Strategies include:\nAccepting region-specific digital wallets and alternative payment methods.\nUsing direct bank transfers to eliminate unnecessary intermediaries.\nSupporting local card networks to lower processing fees.",
   },
   {
-    header: "4. Blockchain Beyond Cryptocurrencies",
+    header: "4. Reduce Chargebacks and Fraud Risks",
     content:
-      "While cryptocurrencies remain a hot topic, blockchain technology is finding applications beyond digital assets. Smart contracts, decentralized finance (DeFi), and cross-border payments are revolutionizing how transactions are processed, ensuring greater transparency and efficiency.",
+      "Cross-border transactions are more susceptible to fraud, leading to costly chargebacks and payment disputes. Businesses can mitigate these risks by:\nImplementing advanced fraud detection tools, such as AI-driven risk analysis.\nUsing multi-factor authentication (MFA) for international transactions.\nEnsuring compliance with local and international security standards to build trust.\nLuna Pay integrates intelligent fraud prevention mechanisms to safeguard cross-border payments, reducing losses from chargebacks and unauthorized transactions.",
   },
   {
-    header: "5. Open Banking and Data-Driven Innovation",
+    header: "5. Streamline Regulatory Compliance",
     content:
-      "Regulatory frameworks around open banking are pushing financial institutions to share data securely with third-party providers. This trend enables innovative financial products, better loan underwriting, and improved risk assessment through data-driven insights.",
+      "Navigating global payment regulations can be complex. Ensuring compliance with local financial regulations, tax requirements, and anti-money laundering (AML) laws prevents costly fines and delays. Best practices include:\nPartnering with a payment provider that manages compliance requirements on your behalf.\nAutomating tax and reporting obligations for different jurisdictions.\nKeeping up to date with evolving regulatory frameworks in key markets.",
   },
   {
-    header: "6. Sustainable and Green Fintech Solutions",
+    header: "6. Improve Transaction Speed and Efficiency",
     content:
-      "As ESG (Environmental, Social, and Governance) considerations become central to financial decision-making, fintech companies are integrating sustainability into their products. Carbon footprint tracking, green investment platforms, and ethical banking are gaining momentum.",
+      "Slow cross-border transactions can impact customer experience and cash flow. To accelerate payments:\nUtilize real-time payment networks where available.\nAvoid excessive bank intermediaries by leveraging direct payment routes.\nImplement automated reconciliation tools to streamline back-office operations.",
   },
   {
-    header: "7. The Growth of Biometric Authentication",
+    header: "Final Thoughts",
     content:
-      "Security concerns drive the adoption of biometric authentication methods, including facial recognition, fingerprint scanning, and voice verification. These advancements enhance security while offering a frictionless user experience.",
-  },
-  {
-    header: "8. The Evolution of Cross-Border Payments",
-    content:
-      "The demand for faster and more cost-effective international transactions is fueling innovation in cross-border payments. Fintech companies are leveraging blockchain, AI, and partnerships with central banks to facilitate near-instant settlements with lower fees.",
-  },
-  {
-    header: "Looking Ahead",
-    content:
-      "As fintech continues to evolve, businesses and consumers must stay ahead of the trends shaping the financial landscape. Whether through AI, embedded finance, or blockchain, 2025 promises to be a transformative year for the industry. Companies that adapt to these changes will thrive in an increasingly digital and interconnected financial world.",
+      "Effective management of cross-border payments is crucial for e-commerce businesses seeking international growth. By optimizing currency conversion, leveraging local payment methods, reducing fraud risks, and ensuring compliance, businesses can significantly cut costs and improve payment efficiency. With Luna Pay’s cross-border payment solutions, businesses can expand globally while keeping transaction fees and delays to a minimum.",
   },
 ];
+
 
 interface ArticleUI {
   header: string;
@@ -228,30 +219,30 @@ const BlogLongRead = () => {
   );
 };
 
-export const BlogPage = () => {
+export const BlogPage4 = () => {
   return (
     <FlexSection className="py-20">
       <section className="rounded-[45px] bg-secondary grid grid-cols-1 xl:grid-cols-2 items-center ">
-        <img src={blogintro} alt="" className="hidden  xl:block" />
+        <img src={blogintro4} alt="" className="hidden  xl:block" />
 
         <div className="flex flex-col gap-10 p-10 xl:pr-40">
           <Badge bg="primary">
-            <p>Fintech Trends</p>
+            <p>Payments for E-Commerce</p>
           </Badge>
-          <h2>The Future of Fintech: Top Trends to Watch in 2025</h2>
+          <h2>Cross-Border Payments for E-Commerce: How to Minimize Fees and Delays</h2>
 
           <img
-            src={blogintro}
+            src={blogintro4}
             alt=""
             className="block max-w-[310px] mx-auto xl:hidden"
           />
 
           <span className="font-normal">
-            The fintech industry is evolving at an unprecedented pace, reshaping
-            how businesses and consumers interact with financial services. As we
-            move into 2025, several emerging trends are set to define the next
-            phase of financial technology. Here’s what to watch for in the
-            coming year.
+            Expanding into international markets presents lucrative opportunities 
+            for e-commerce businesses, but cross-border payments often come with high 
+            fees and processing delays. Managing these costs and ensuring timely transactions 
+            is critical to maintaining customer satisfaction and profitability. In this article,
+            we will explore effective strategies for optimizing cross-border payments while minimizing fees and delays.
           </span>
         </div>
       </section>

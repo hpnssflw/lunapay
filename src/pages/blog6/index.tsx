@@ -1,10 +1,15 @@
 import { Badge, FlexSection } from "@/ui";
 import { useState } from "react";
-import blogintro from "@/assets/imgs/blog/intro.png";
+import blogintro6 from "@/assets/imgs/blog/intro6.png";
 import { LinkStyled } from "@/ui/LinkStyled";
 import { Button } from "@/components/ui/button";
 
 const storiesCards = [
+  {
+    title: "The Future of Fintech",
+    info: "The fintech industry is evolving at an unprecedented pace, reshaping how businesses and consumers interact with financial services.",
+    link: "/blog",
+  },
   {
     title: "How to Reduce Payment Processing Costs for Your Business",
     info: "Efficient payment processing is a critical component of any business’s financial strategy.",
@@ -29,11 +34,6 @@ const storiesCards = [
     title: "How to Set Up and Scale Subscription Billing",
     info: "Subscription-based business models have gained immense popularity across various industries, offering predictable revenue streams and fostering long-term customer relationships.",
     link: "/blog5",
-  },
-  {
-    title: "Fraud Prevention for Online Business",
-    info: "With the rise of digital commerce, fraud prevention has become a top priority for online businesses.",
-    link: "/blog6",
   },
 ];
 
@@ -116,51 +116,42 @@ const CasesAllStories = () => {
 
 const articelContent = [
   {
-    header: "1. The Rise of AI-Driven Financial Services",
+    header: "1. Implement Advanced Fraud Detection Systems",
     content:
-      "Artificial intelligence (AI) continues to transform fintech, driving automation, personalization, and fraud prevention. In 2025, expect AI-powered chatbots, robo-advisors, and machine learning algorithms to provide hyper-personalized financial insights, improving customer experiences and operational efficiency.",
+      "Modern fraud prevention relies on machine learning and artificial intelligence (AI) to detect suspicious activities in real time. These systems analyze transaction patterns, flag anomalies, and adapt to emerging fraud threats. Key features to look for include:\nBehavioral analytics to identify unusual purchasing behavior.\nDevice fingerprinting to track unique user devices.\nAI-driven risk scoring to assess transaction legitimacy.\nLuna Pay integrates AI-powered fraud detection tools that help businesses reduce fraudulent transactions without disrupting legitimate purchases.",
   },
   {
-    header: "2. Embedded Finance Becoming the Norm",
+    header: "2. Use Multi-Layer Authentication",
     content:
-      "Embedded finance—seamlessly integrating financial services into non-financial platforms—is gaining traction. From e-commerce to social media, businesses are embedding payments, lending, and insurance into their ecosystems, reducing friction and enhancing user convenience.",
+      "Enhancing authentication methods is crucial in preventing unauthorized access. Businesses should implement:\nTwo-Factor Authentication (2FA) for account logins.\nStrong Customer Authentication (SCA) for transactions in compliance with PSD2 regulations.\nBiometric verification such as fingerprint or facial recognition for added security.",
   },
   {
-    header: "3. The Expansion of Digital-Only Banking",
+    header: "3. Monitor Transactions in Real Time",
     content:
-      "Neobanks and digital-only financial institutions are set to grow as consumers increasingly prefer mobile-first banking solutions. With streamlined onboarding, lower fees, and AI-powered services, digital banks are challenging traditional financial institutions like never before.",
+      "Continuous monitoring of payment transactions allows businesses to detect and respond to fraudulent activities before they result in losses. Key monitoring strategies include:\nSetting up automated alerts for high-risk transactions.\nEstablishing transaction velocity checks to detect rapid purchases from the same account.\nReviewing high-value transactions manually to prevent chargeback fraud.",
   },
   {
-    header: "4. Blockchain Beyond Cryptocurrencies",
+    header: "4. Leverage Tokenization and Encryption",
     content:
-      "While cryptocurrencies remain a hot topic, blockchain technology is finding applications beyond digital assets. Smart contracts, decentralized finance (DeFi), and cross-border payments are revolutionizing how transactions are processed, ensuring greater transparency and efficiency.",
+      "Protecting sensitive payment data is fundamental to fraud prevention. Businesses should:\nUse tokenization to replace card details with secure, non-sensitive tokens.\nEncrypt payment data during transmission and storage.\nPartner with a PCI DSS-compliant payment provider to ensure industry-standard security.\nLuna Pay offers end-to-end encryption and tokenization solutions, helping businesses secure customer payment details effectively.",
   },
   {
-    header: "5. Open Banking and Data-Driven Innovation",
+    header: "5. Prevent Chargeback Fraud",
     content:
-      "Regulatory frameworks around open banking are pushing financial institutions to share data securely with third-party providers. This trend enables innovative financial products, better loan underwriting, and improved risk assessment through data-driven insights.",
+      "Chargeback fraud, or friendly fraud, occurs when customers dispute legitimate transactions. To minimize losses, businesses should:\nClearly outline refund and dispute policies to customers.\nMaintain detailed transaction records, including delivery confirmations and customer interactions.\nUse chargeback management tools to challenge unjustified claims.",
   },
   {
-    header: "6. Sustainable and Green Fintech Solutions",
+    header: "6. Stay Updated on Emerging Fraud Trends",
     content:
-      "As ESG (Environmental, Social, and Governance) considerations become central to financial decision-making, fintech companies are integrating sustainability into their products. Carbon footprint tracking, green investment platforms, and ethical banking are gaining momentum.",
+      "Cybercriminals constantly adapt their strategies, making it vital for businesses to stay informed about new fraud techniques. Regularly updating fraud prevention protocols and working with a trusted payment partner can enhance security measures and keep businesses ahead of threats.",
   },
   {
-    header: "7. The Growth of Biometric Authentication",
+    header: "Final Thoughts",
     content:
-      "Security concerns drive the adoption of biometric authentication methods, including facial recognition, fingerprint scanning, and voice verification. These advancements enhance security while offering a frictionless user experience.",
-  },
-  {
-    header: "8. The Evolution of Cross-Border Payments",
-    content:
-      "The demand for faster and more cost-effective international transactions is fueling innovation in cross-border payments. Fintech companies are leveraging blockchain, AI, and partnerships with central banks to facilitate near-instant settlements with lower fees.",
-  },
-  {
-    header: "Looking Ahead",
-    content:
-      "As fintech continues to evolve, businesses and consumers must stay ahead of the trends shaping the financial landscape. Whether through AI, embedded finance, or blockchain, 2025 promises to be a transformative year for the industry. Companies that adapt to these changes will thrive in an increasingly digital and interconnected financial world.",
+      "Fraud prevention is an ongoing process that requires a combination of technology, strategic monitoring, and proactive security measures. By implementing AI-driven fraud detection, enhancing authentication protocols, and leveraging secure payment solutions, businesses can protect themselves from financial losses and reputational damage. With Luna Pay’s comprehensive fraud prevention tools, online businesses can operate with confidence, ensuring a safer and more reliable transaction environment.",
   },
 ];
+
 
 interface ArticleUI {
   header: string;
@@ -228,30 +219,29 @@ const BlogLongRead = () => {
   );
 };
 
-export const BlogPage = () => {
+export const BlogPage6 = () => {
   return (
     <FlexSection className="py-20">
       <section className="rounded-[45px] bg-secondary grid grid-cols-1 xl:grid-cols-2 items-center ">
-        <img src={blogintro} alt="" className="hidden  xl:block" />
+        <img src={blogintro6} alt="" className="hidden  xl:block" />
 
         <div className="flex flex-col gap-10 p-10 xl:pr-40">
           <Badge bg="primary">
-            <p>Fintech Trends</p>
+            <p>Fraud Prevention</p>
           </Badge>
-          <h2>The Future of Fintech: Top Trends to Watch in 2025</h2>
+          <h2>Fraud Prevention for Online Business: Essential Tools and Strategies</h2>
 
           <img
-            src={blogintro}
+            src={blogintro6}
             alt=""
             className="block max-w-[310px] mx-auto xl:hidden"
           />
 
           <span className="font-normal">
-            The fintech industry is evolving at an unprecedented pace, reshaping
-            how businesses and consumers interact with financial services. As we
-            move into 2025, several emerging trends are set to define the next
-            phase of financial technology. Here’s what to watch for in the
-            coming year.
+            With the rise of digital commerce, fraud prevention has become a top priority for online businesses. 
+            Cybercriminals continuously develop new tactics to exploit vulnerabilities, making it essential for 
+            businesses to implement robust fraud prevention measures. In this article, we will explore key tools 
+            and strategies to protect online transactions, minimize chargebacks, and safeguard customer trust.
           </span>
         </div>
       </section>

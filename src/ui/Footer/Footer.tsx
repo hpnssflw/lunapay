@@ -22,7 +22,7 @@ export const Footer = () => {
         <NavigationMenuLink
           className={cn(
             navLinkClasses,
-            "text-white  underline",
+            "text-white underline",
             activeRoute(_.path) && "text-primary"
           )}
         >
@@ -33,46 +33,63 @@ export const Footer = () => {
   );
 
   return (
-    <footer className="flex flex-col w-full max-w-[1240px] p-5 lg:p-[60px] text-white md:rounded-tr-[45px] mt-20  md:rounded-tl-[45px] bg-default ">
-      <div className="flex flex-col lg:flex-row items-center lg:justify-between w-full ">
+    <footer className="flex flex-col w-full max-w-[1240px] p-5 lg:p-[60px] text-white md:rounded-tr-[45px] mt-20 md:rounded-tl-[45px] bg-default">
+      {/* Блок с логотипом и навигацией */}
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full">
         <a href="/" aria-label="Home Page">
           <img
             src={luna}
             alt="Company Name Logo"
             loading="lazy"
-            className="h-[88px]  w-[344px]"
+            className="h-[88px] w-[344px]"
           />
         </a>
 
-        <NavigationMenu className=" cursor-pointer">
-          <NavigationMenuList className="flex justify-center flex-col md:flex-row gap-4 efault p-4">
+        <NavigationMenu className="cursor-pointer">
+          <NavigationMenuList className="flex justify-center items-center flex-col md:flex-row gap-4 p-4">
             {routes.map(genLink)}
           </NavigationMenuList>
         </NavigationMenu>
       </div>
 
-      <section className="grid text-center lg:text-left grid-cols-1 lg:grid-cols-[30%_1fr] lg:gap-20 py-10">
-        <div className="w-full flex flex-col gap-5  items-center lg:items-start font-normal">
+      {/* Секция с контактами и формой подписки */}
+      <section className="grid text-center lg:text-left grid-cols-1 lg:grid-cols-[30%_1fr] gap-10 lg:gap-20 py-10">
+        {/* Левая колонка: Контакты */}
+        <div className="w-full flex flex-col gap-5 items-center lg:items-start font-normal">
           <Badge className="text-black font-medium" text="20px">
             Contact us
           </Badge>
-          <p className="font-normal">Email: info@lunapay.com</p>
-          <p className="font-normal">Phone: 555-567-8901</p>
           <p className="font-normal">
-            Address: 1234 Main St <br />
-            Moonstone City, Stardust State 12345
+            Email:{" "}
+            <a
+              href="mailto:account@luna-pay.com"
+              className="underline text-white"
+            >
+              account@luna-pay.com
+            </a>
           </p>
-          <p></p>
+          <p className="font-normal">
+            Address:{" "}
+            <a
+              href="https://www.google.com/maps/place/Epworth+House+25+City+Road+London+England+EC1Y+1AA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-white"
+            >
+              Office 211, Epworth House 25 City Road, London, England, EC1Y 1AA
+            </a>
+          </p>
         </div>
 
+        {/* Правая колонка: Форма подписки */}
         <form
           action=""
-          className="flex flex-col w-full lg:flex-row bg-[#292A32] p-10 rounded-[25px] my-auto lg:h-[184px] items-center gap-2"
+          className="flex flex-col w-full lg:flex-row bg-[#292A32] p-10 rounded-[25px] my-auto lg:h-[184px] items-center gap-2 mt-6 lg:mt-0"
         >
           <Input
             type="email"
             placeholder="Email"
-            className="bg-transparent border-white lg:h-[68px]  placeholder:text-white placeholder:font-normal"
+            className="bg-transparent border-white lg:h-[68px] placeholder:text-white placeholder:font-normal"
           />
           <Button variant="primary" className="w-full lg:w-fit">
             Subscribe to news
@@ -80,7 +97,7 @@ export const Footer = () => {
         </form>
       </section>
 
-      <div className="w-full h-[1px] bg-white mb-10"></div>
+      <div className="w-full h-[1px] bg-white mb-10" />
 
       <div className="flex flex-col lg:flex-row text-center lg:text-left mx-auto lg:mx-0 gap-10 font-normal">
         <span>© 2025 LunaPay. All Rights Reserved.</span>

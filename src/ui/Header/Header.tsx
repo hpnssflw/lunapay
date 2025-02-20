@@ -34,7 +34,7 @@ export const Header = () => {
 
   return (
     <Dialog>
-      <div className="flex flex-row w-full fixed xl:relative xl:flex bg-white z-20 max-w-[1240px] justify-between items-center h-20">
+      <div className="flex flex-row w-full fixed xl:relative xl:flex bg-secondary md:bg-opacity-100 xl:bg-opacity-20 z-20 max-w-[1240px] justify-between items-center h-20 rounded-xl">
         <a href="/" aria-label="Home Page">
           <img
             src={luna}
