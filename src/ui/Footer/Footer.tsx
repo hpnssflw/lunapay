@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router";
 import { navLinkClasses, routes } from "@/shared/constants";
 import { Badge } from "../Badge/Badge";
+import { FaLinkedin, FaFacebook } from "react-icons/fa";
 
 export const Footer = () => {
   const location = useLocation();
@@ -34,7 +35,7 @@ export const Footer = () => {
 
   return (
     <footer className="flex flex-col w-full max-w-[1240px] p-5 lg:p-[60px] text-white md:rounded-tr-[45px] mt-20 md:rounded-tl-[45px] bg-default">
-      {/* Блок с логотипом и навигацией */}
+      {/* Блок с логотипом, навигацией и соцсетями */}
       <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full">
         <a href="/" aria-label="Home Page">
           <img
@@ -45,11 +46,35 @@ export const Footer = () => {
           />
         </a>
 
-        <NavigationMenu className="cursor-pointer">
-          <NavigationMenuList className="flex justify-center items-center flex-col md:flex-row gap-4 p-4">
-            {routes.map(genLink)}
-          </NavigationMenuList>
-        </NavigationMenu>
+        {/* Контейнер для навигации и соцсетей */}
+        <div className="flex flex-col lg:flex-row items-center gap-4">
+          <NavigationMenu className="cursor-pointer">
+            <NavigationMenuList className="flex justify-center items-center flex-col md:flex-row gap-4 p-4">
+              {routes.map(genLink)}
+            </NavigationMenuList>
+          </NavigationMenu>
+          {/* Ссылки на соцсети с иконками */}
+          <div className="flex gap-4 text-xl">
+            <a
+              href="https://www.linkedin.com/company/luna-pay.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61573044662567"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white"
+              aria-label="Facebook"
+            >
+              <FaFacebook />
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Секция с контактами и формой подписки */}
@@ -106,3 +131,4 @@ export const Footer = () => {
     </footer>
   );
 };
+
