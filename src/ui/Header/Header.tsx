@@ -50,7 +50,7 @@ export const Header = () => {
           </NavigationMenuList>
 
           <DialogWrapper
-            trigger={<Button variant="outline"> Create Account</Button>}
+            trigger={<Button variant="outline"> Contact Us Now </Button>}
             content={<RegisterDialog />}
           />
         </NavigationMenu>
@@ -68,7 +68,7 @@ export const Header = () => {
                   </NavigationMenuList>
                   <NavigationMenuItem>
                     <DialogTrigger asChild>
-                      <Button variant="outline"> Request a quote</Button>
+                      <Button variant="outline"> Contact Us Now </Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[425px]">
                       <RegisterDialog />
