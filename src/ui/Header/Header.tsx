@@ -20,7 +20,7 @@ export const Header = () => {
   const location = useLocation();
 
   const activeRoute = (v: string) => location.pathname === v;
-  const genLink = (_: any) => (
+  const genLink = (_: { path: string; label: string }) => (
     <NavigationMenuItem>
       <Link to={_.path}>
         <NavigationMenuLink
@@ -50,7 +50,12 @@ export const Header = () => {
           </NavigationMenuList>
 
           <DialogWrapper
-            trigger={<Button variant="outline"> Contact Us Now </Button>}
+            trigger={
+              <Button variant="outline" className="font-semibold">
+                {" "}
+                Contact Us Now{" "}
+              </Button>
+            }
             content={<RegisterDialog />}
           />
         </NavigationMenu>
@@ -68,7 +73,10 @@ export const Header = () => {
                   </NavigationMenuList>
                   <NavigationMenuItem>
                     <DialogTrigger asChild>
-                      <Button variant="outline"> Contact Us Now </Button>
+                      <Button variant="outline" className="font-semibold">
+                        {" "}
+                        Contact Us Now{" "}
+                      </Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[425px]">
                       <RegisterDialog />

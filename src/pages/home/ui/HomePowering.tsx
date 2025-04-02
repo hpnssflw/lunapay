@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import powering from "@/assets/imgs/home/powering.png";
+import { DialogWrapper, RegisterDialog } from "@/ui";
 
 export const HomePowering = () => {
   return (
@@ -12,9 +13,12 @@ export const HomePowering = () => {
           solutions?
         </span>
 
-        <Button className="md:w-fit w-full text-sm">
-          Get Your Free Payment Proposal
-        </Button>
+        <DialogWrapper
+          trigger={
+            <Button className="md:w-fit w-full text-sm">Contact Us</Button>
+          }
+          content={<RegisterDialog />}
+        />
       </div>
 
       <div className="relative  h-full">
