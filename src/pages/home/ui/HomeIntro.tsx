@@ -19,9 +19,7 @@ export const HomeIntro = () => {
         </h4>
 
         <DialogWrapper
-          trigger={
-            <Button className="md:w-fit w-full">Create Your Account</Button>
-          }
+          trigger={<Button className="md:w-fit w-full">Let's Connect</Button>}
           content={<RegisterDialog />}
         />
       </div>

@@ -77,13 +77,21 @@ export const RegisterDialog = () => {
           type="tel"
         />
       </div>
-      <p>Download resume</p>
-      <Input type="file" name="resume" />
+
       <Button variant="primary" type="submit">
         Submit
       </Button>
       {error && <p className="text-red-500">{error}</p>}
-      <p>By clicking the "Submit" button, you agree to our privacy policy</p>
+      <p>
+        By clicking the "Submit" button, you agree to our{" "}
+        <a
+          href="/docs/privacy-policy.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Privacy Policy
+        </a>
+      </p>
     </form>
   );
 };

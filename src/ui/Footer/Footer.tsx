@@ -6,8 +6,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
 } from "@radix-ui/react-navigation-menu";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+
 import { Link, useLocation } from "react-router";
 import { navLinkClasses, routes } from "@/shared/constants";
 import { Badge } from "../Badge/Badge";
@@ -17,7 +16,7 @@ export const Footer = () => {
   const location = useLocation();
 
   const activeRoute = (v: string) => location.pathname === v;
-  const genLink = (_: any) => (
+  const genLink = (_: { path: string; label: string }) => (
     <NavigationMenuItem>
       <Link to={_.path}>
         <NavigationMenuLink
@@ -90,7 +89,7 @@ export const Footer = () => {
               href="mailto:account@luna-pay.com"
               className="underline text-white"
             >
-              account@luna-pay.com
+              hello@luna-pay.com
             </a>
           </p>
           <p className="font-normal">
@@ -105,30 +104,27 @@ export const Footer = () => {
             </a>
           </p>
         </div>
-
-        {/* Правая колонка: Форма подписки */}
-        <form
-          action=""
-          className="flex flex-col w-full lg:flex-row bg-[#292A32] p-10 rounded-[25px] my-auto lg:h-[184px] items-center gap-2 mt-6 lg:mt-0"
-        >
-          <Input
-            type="email"
-            placeholder="Email"
-            className="bg-transparent border-white lg:h-[68px] placeholder:text-white placeholder:font-normal"
-          />
-          <Button variant="primary" className="w-full lg:w-fit">
-            Subscribe to news
-          </Button>
-        </form>
       </section>
 
       <div className="w-full h-[1px] bg-white mb-10" />
 
-      <div className="flex flex-col lg:flex-row text-center lg:text-left mx-auto lg:mx-0 gap-10 font-normal">
+      <div className="flex flex-col lg:flex-row text-center items-center lg:text-left mx-auto lg:mx-0 gap-10 font-normal">
         <span>© 2025 LunaPay. All Rights Reserved.</span>
-        <span>Privacy Policy</span>
+        <a
+          href="/docs/privacy-policy.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Privacy Policy
+        </a>
+        <a
+          href="/docs/privacy-policy.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Cookie Declaration
+        </a>
       </div>
     </footer>
   );
 };
-

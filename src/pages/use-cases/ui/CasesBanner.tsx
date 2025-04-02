@@ -11,11 +11,11 @@ export const CasesBanner = () => {
           learn how Luna Pay can help your business grow, streamline
           transactions, and achieve lasting success.
         </span>
-        <Button className="w-fit">Get Your Free Payment Proposal</Button>
+        <Button className="w-fit">Contact Us</Button>
 
         <DialogWrapper
           trigger={
-            <Button className="w-fit">Get Your Free Payment Proposal</Button>
+            <Button className="w-fit">Contact Us</Button>
           }
           content={<RegisterDialog />}
         />
