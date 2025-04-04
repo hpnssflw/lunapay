@@ -20,13 +20,13 @@ export const CookiesPage = () => {
       <p className="text-left">This website uses cookies.</p>
 
       <p>
-        Essential cookies are set automatically. Optional cookies cn be adjusted
+        Essential cookies are set automatically. Optional cookies can be adjusted
         to your preferences. See our{" "}
-        <a href="#" className="text-blue-500">
+        <a href="https://luna-pay.com/docs/privacy-policy.pdf" className="text-blue-500">
           Privacy Policy
         </a>{" "}
         and{" "}
-        <a href="#" className="text-blue-500">
+        <a href="https://luna-pay.com/cookies" className="text-blue-500">
           Cookie Declaration
         </a>{" "}
         for details.
@@ -34,16 +34,16 @@ export const CookiesPage = () => {
 
       <p>
         For more information about our cookie practices please visit our{" "}
-        <a href="#" className="text-blue-500">
+        <a href="https://luna-pay.com/docs/privacy-policy.pdf" className="text-blue-500">
           Privacy Policy
         </a>{" "}
         and{" "}
-        <a href="#" className="text-blue-500">
+        <a href="https://luna-pay.com/cookies" className="text-blue-500">
           Cookie Declaration
         </a>{" "}
-        or contact us at support@cladenet.net.
+        or contact us at hello@luna-pay.com
         <br />
-        Your consent applies to the following domains: cladenet.com
+        Your consent applies to the following domains: luna-pay.com
       </p>
 
       <div className="border border-gray-700 rounded-md p-4 my-5 bg-white">
@@ -103,7 +103,7 @@ export const CookiesPage = () => {
             <tbody>
               <tr>
                 <td className="border border-gray-700 p-2">
-                  CookieConsent / cladenet.com
+                  CookieConsent / luna-pay.com
                 </td>
                 <td className="border border-gray-700 p-2 ">
                   Stores the user's cookie consent state for the current domain.
