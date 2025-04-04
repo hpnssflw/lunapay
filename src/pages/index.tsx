@@ -9,3 +9,4 @@ export { BlogPage3 } from "./blog3";
 export { BlogPage4 } from "./blog4";
 export { BlogPage5 } from "./blog5";
 export { BlogPage6 } from "./blog6";
+export { CookiesPage } from "./cookies";

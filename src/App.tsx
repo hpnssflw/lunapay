@@ -1,5 +1,17 @@
 import { Route, Routes } from "react-router";
-import { AboutUsPage, BlogPage, HomePage, ServicesPage, BlogPage1, BlogPage2, BlogPage3, BlogPage4, BlogPage5, BlogPage6 } from "@/pages";
+import {
+  AboutUsPage,
+  BlogPage,
+  HomePage,
+  ServicesPage,
+  BlogPage1,
+  BlogPage2,
+  BlogPage3,
+  BlogPage4,
+  BlogPage5,
+  BlogPage6,
+  CookiesPage,
+} from "@/pages";
 import { Layout } from "./ui/Layout";
 import "./App.css";
 
@@ -10,6 +22,8 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="about-us" element={<AboutUsPage />} />
         <Route path="services" element={<ServicesPage />} />
+        <Route path="cookies" element={<CookiesPage />} />
+
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog1" element={<BlogPage1 />} />
         <Route path="blog2" element={<BlogPage2 />} />
