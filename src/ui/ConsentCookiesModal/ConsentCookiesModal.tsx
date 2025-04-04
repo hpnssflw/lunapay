@@ -60,7 +60,7 @@ export const ConsentCookiesModal = () => {
                 Our website uses cookies to enhance your experience. You can
                 manage your cookie preferences below.
               </p>
-              <div className="flex flex-col sm:flex-row gap-2 justify-end">
+              <div className="flex flex-col sm:flex-row gap-2 justify-center">
                 <Button
                   onClick={acceptAll}
                   className="h-[34px] text-[14px] rounded-[6px]"
@@ -82,6 +82,7 @@ export const ConsentCookiesModal = () => {
                   Customize
                 </Button>
               </div>
+
             </>
           ) : (
             <>
@@ -180,8 +181,8 @@ export const ConsentCookiesModal = () => {
           <div className="mt-6 pt-4 border-t border-gray-700 text-gray-400 text-sm flex justify-between">
             <p>Your current state: {getConsentStatus(analytics, marketing)}</p>
             <div className="">
-              <Link to="cookies" className="text-blue-500">
-                Policy
+              <Link to="https://luna-pay.com/docs/privacy-policy.pdf" className="text-blue-500">
+                Privacy Policy
               </Link>
             </div>
           </div>
