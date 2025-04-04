@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { useEffect } from "react";
+import { ConsentCookiesModal } from "../ConsentCookiesModal/ConsentCookiesModal";
 
 export const Layout = () => {
   const location = useLocation();
@@ -17,6 +18,7 @@ export const Layout = () => {
         <Outlet />
       </div>
       <Footer />
+      <ConsentCookiesModal />
     </section>
   );
 };
