@@ -21,25 +21,13 @@ export const CookiesPage = () => {
 
       <p>
         Essential cookies are set automatically. Optional cookies can be adjusted
-        to your preferences. See our{" "}
-        <a href="https://luna-pay.com/docs/privacy-policy.pdf" className="text-blue-500">
-          Privacy Policy
-        </a>{" "}
-        and{" "}
-        <a href="https://luna-pay.com/cookies" className="text-blue-500">
-          Cookie Declaration
-        </a>{" "}
-        for details.
+        to your preferences.
       </p>
 
       <p>
         For more information about our cookie practices please visit our{" "}
         <a href="https://luna-pay.com/docs/privacy-policy.pdf" className="text-blue-500">
           Privacy Policy
-        </a>{" "}
-        and{" "}
-        <a href="https://luna-pay.com/cookies" className="text-blue-500">
-          Cookie Declaration
         </a>{" "}
         or contact us at hello@luna-pay.com
         <br />
