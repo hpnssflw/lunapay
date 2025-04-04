@@ -1,6 +1,6 @@
 // todo : handle for test
-const GA_ID = "";
-const GTM_ID = "";
+const GA_ID = "G-BY061G8TJ3";
+const GTM_ID = "GTM-KPX8RFRC";
 
 type GtagCommand = "config" | "set" | "event" | "js" | "consent" | "get";
 type GtagParams = Record<string, unknown>;
