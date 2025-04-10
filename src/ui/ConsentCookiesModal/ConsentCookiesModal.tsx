@@ -51,7 +51,7 @@ export const ConsentCookiesModal = () => {
                 Our website uses cookies to enhance your experience. You can
                 manage your cookie preferences below.
               </p>
-              <div className="flex flex-col sm:flex-row gap-2 justify-end">
+              <div className="flex flex-col sm:flex-row gap-2 justify-center">
                 <Button
                   onClick={acceptAll}
                   className="h-[34px] text-[14px] rounded-[6px]"
@@ -73,6 +73,7 @@ export const ConsentCookiesModal = () => {
                   Customize
                 </Button>
               </div>
+
             </>
           ) : (
             <>
