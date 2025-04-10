@@ -88,6 +88,7 @@ export const RegisterDialog = () => {
           href="/docs/privacy-policy.pdf"
           target="_blank"
           rel="noopener noreferrer"
+          className="text-primary underline"
         >
           Privacy Policy
         </a>

@@ -29,6 +29,7 @@ export function useCookieConsent() {
         setAnalytics(preferences.analytics || false);
         setMarketing(preferences.marketing || false);
 
+        // Only load analytics if user has given consent
         if (preferences.analytics) {
           loadAnalytics();
         }

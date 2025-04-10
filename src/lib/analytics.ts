@@ -1,6 +1,6 @@
 // todo : handle for test
-const GA_ID = "";
-const GTM_ID = "";
+const GA_ID = "G-BY061G8TJ3";
+const GTM_ID = "GTM-KPX8RFRC";
 
 type GtagCommand = "config" | "set" | "event" | "js" | "consent" | "get";
 type GtagParams = Record<string, unknown>;
@@ -54,19 +54,8 @@ function loadGA(gaId = GA_ID) {
     const w = window as GoogleAnalyticsWindow;
 
     w.dataLayer = w.dataLayer || [];
-
-    function gtag(
-      command: GtagCommand,
-      params?: string | Date | GtagParams,
-      additionalParams?: GtagParams
-    ) {
-      if (command === "js" && params instanceof Date) {
-        w.dataLayer?.push(["js", params]);
-      } else if (command === "config" && typeof params === "string") {
-        w.dataLayer?.push(["config", params, additionalParams || {}]);
-      } else {
-        w.dataLayer?.push([command, params, additionalParams]);
-      }
+    function gtag(...args: unknown[]) {
+      w.dataLayer?.push(args);
     }
 
     w.gtag = gtag;

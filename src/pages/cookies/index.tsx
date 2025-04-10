@@ -1,8 +1,9 @@
-import { useCookieConsent } from "@/hooks/useCookieConsent";
+import { useCookieConsentContext } from "@/contexts/CookieConsentContext";
 import { getCookie } from "@/lib/cookies";
 
 export const CookiesPage = () => {
-  const { rejectAll, openConsentModal, getConsentStatus } = useCookieConsent();
+  const { rejectAll, openConsentModal, getConsentStatus } =
+    useCookieConsentContext();
 
   const consentId = getCookie("cookie_consent_id") || "N/A";
   const consentDate = getCookie("cookie_consent_date") || "N/A";
@@ -45,7 +46,7 @@ export const CookiesPage = () => {
           <br />
           Your consent ID: {consentId}
           <br />
-          Consent date: {consentDate}
+          Consent date: {new Date(consentDate).toLocaleString()}
         </p>
         <div className="mt-4">
           <button

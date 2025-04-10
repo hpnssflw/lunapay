@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useCookieConsent } from "@/hooks/useCookieConsent";
+import { useCookieConsentContext } from "@/contexts/CookieConsentContext";
 import { Cookie } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
@@ -19,7 +19,7 @@ export const ConsentCookiesModal = () => {
     openConsentModal,
     closeConsentModal,
     getConsentStatus,
-  } = useCookieConsent();
+  } = useCookieConsentContext();
 
   const handleCustomize = () => {
     setShowCustomize(true);
