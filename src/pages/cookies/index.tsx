@@ -16,7 +16,11 @@ export const CookiesPage = () => {
       <p>
         Essential cookies are set automatically. Optional cookies cn be adjusted
         to your preferences. See our{" "}
-        <a href="#" className="text-blue-500">
+        <a
+          href="/docs/privacy-policy.pdf"
+          target="_blank"
+          className="text-blue-500"
+        >
           Privacy Policy
         </a>{" "}
         and{" "}
@@ -28,7 +32,11 @@ export const CookiesPage = () => {
 
       <p>
         For more information about our cookie practices please visit our{" "}
-        <a href="#" className="text-blue-500">
+        <a
+          href="/docs/privacy-policy.pdf"
+          target="_blank"
+          className="text-blue-500"
+        >
           Privacy Policy
         </a>{" "}
         and{" "}

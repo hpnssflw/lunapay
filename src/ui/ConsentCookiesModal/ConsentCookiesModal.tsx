@@ -171,8 +171,12 @@ export const ConsentCookiesModal = () => {
           <div className="mt-6 pt-4 border-t border-gray-700 text-gray-400 text-sm flex justify-between">
             <p>Your current state: {getConsentStatus()}</p>
             <div className="">
-              <Link to="cookies" className="text-blue-500">
-                Policy
+              <Link
+                to="/docs/privacy-policy.pdf"
+                target="_blank"
+                className="text-blue-500"
+              >
+                Privacy Policy
               </Link>
             </div>
           </div>
