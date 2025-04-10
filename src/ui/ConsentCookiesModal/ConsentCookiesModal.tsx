@@ -18,6 +18,7 @@ export const ConsentCookiesModal = () => {
     savePreferences,
     openConsentModal,
     closeConsentModal,
+    getConsentStatus,
   } = useCookieConsent();
 
   const handleCustomize = () => {
@@ -33,16 +34,6 @@ export const ConsentCookiesModal = () => {
   const handleReopenModal = () => {
     openConsentModal();
     setShowCustomize(false);
-  };
-
-  const getConsentStatus = (analytics: boolean, marketing: boolean) => {
-    if (analytics && marketing) {
-      return "Allow all";
-    } else if (!analytics && !marketing) {
-      return "Necessary only";
-    } else {
-      return "Custom preferences";
-    }
   };
 
   return (
@@ -178,7 +169,7 @@ export const ConsentCookiesModal = () => {
 
           {/* Your consent ID and date section similar to image */}
           <div className="mt-6 pt-4 border-t border-gray-700 text-gray-400 text-sm flex justify-between">
-            <p>Your current state: {getConsentStatus(analytics, marketing)}</p>
+            <p>Your current state: {getConsentStatus()}</p>
             <div className="">
               <Link to="cookies" className="text-blue-500">
                 Policy

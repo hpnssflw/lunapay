@@ -8,6 +8,16 @@ export function useCookieConsent() {
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
 
+  const getConsentStatus = () => {
+    if (analytics && marketing) {
+      return "Allow all";
+    } else if (!analytics && !marketing) {
+      return "Necessary only";
+    } else {
+      return "Custom preferences";
+    }
+  };
+
   useEffect(() => {
     const consentStatus = getCookie("cookie_consent");
 
@@ -142,5 +152,6 @@ export function useCookieConsent() {
     savePreferences,
     openConsentModal,
     closeConsentModal,
+    getConsentStatus,
   };
 }

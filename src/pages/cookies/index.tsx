@@ -2,14 +2,7 @@ import { useCookieConsent } from "@/hooks/useCookieConsent";
 import { getCookie } from "@/lib/cookies";
 
 export const CookiesPage = () => {
-  const { rejectAll, openConsentModal, analytics, marketing } =
-    useCookieConsent();
-
-  const getConsentStatus = () => {
-    if (analytics && marketing) return "Allow all";
-    if (!analytics && !marketing) return "Necessary only";
-    return "Custom preferences";
-  };
+  const { rejectAll, openConsentModal, getConsentStatus } = useCookieConsent();
 
   const consentId = getCookie("cookie_consent_id") || "N/A";
   const consentDate = getCookie("cookie_consent_date") || "N/A";
