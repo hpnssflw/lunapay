@@ -20,7 +20,7 @@ const mapContent = [
     info: "With a team of 50+ experts, we introduced groundbreaking features like multi-currency support, AI-powered fraud detection, and advanced analytics—helping businesses optimize their transactions.",
   },
   {
-    year: "2024",
+    year: "2025",
     title: "Shaping the Future of Payments",
     info: "Today, we are at the forefront of payment technology, driving AI-driven automation, seamless cross-border transactions, and setting new standards for security and efficiency.",
   },

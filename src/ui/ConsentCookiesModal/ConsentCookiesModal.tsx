@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useCookieConsent } from "@/hooks/useCookieConsent";
+import { useCookieConsentContext } from "@/contexts/CookieConsentContext";
 import { Cookie } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
@@ -18,7 +18,8 @@ export const ConsentCookiesModal = () => {
     savePreferences,
     openConsentModal,
     closeConsentModal,
-  } = useCookieConsent();
+    getConsentStatus,
+  } = useCookieConsentContext();
 
   const handleCustomize = () => {
     setShowCustomize(true);
@@ -33,16 +34,6 @@ export const ConsentCookiesModal = () => {
   const handleReopenModal = () => {
     openConsentModal();
     setShowCustomize(false);
-  };
-
-  const getConsentStatus = (analytics: boolean, marketing: boolean) => {
-    if (analytics && marketing) {
-      return "Allow all";
-    } else if (!analytics && !marketing) {
-      return "Necessary only";
-    } else {
-      return "Custom preferences";
-    }
   };
 
   return (
@@ -179,9 +170,13 @@ export const ConsentCookiesModal = () => {
 
           {/* Your consent ID and date section similar to image */}
           <div className="mt-6 pt-4 border-t border-gray-700 text-gray-400 text-sm flex justify-between">
-            <p>Your current state: {getConsentStatus(analytics, marketing)}</p>
+            <p>Your current state: {getConsentStatus()}</p>
             <div className="">
-              <Link to="https://luna-pay.com/docs/privacy-policy.pdf" className="text-blue-500">
+              <Link
+                to="/docs/privacy-policy.pdf"
+                target="_blank"
+                className="text-blue-500"
+              >
                 Privacy Policy
               </Link>
             </div>

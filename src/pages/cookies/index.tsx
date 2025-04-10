@@ -1,15 +1,9 @@
-import { useCookieConsent } from "@/hooks/useCookieConsent";
+import { useCookieConsentContext } from "@/contexts/CookieConsentContext";
 import { getCookie } from "@/lib/cookies";
 
 export const CookiesPage = () => {
-  const { rejectAll, openConsentModal, analytics, marketing } =
-    useCookieConsent();
-
-  const getConsentStatus = () => {
-    if (analytics && marketing) return "Allow all";
-    if (!analytics && !marketing) return "Necessary only";
-    return "Custom preferences";
-  };
+  const { rejectAll, openConsentModal, getConsentStatus } =
+    useCookieConsentContext();
 
   const consentId = getCookie("cookie_consent_id") || "N/A";
   const consentDate = getCookie("cookie_consent_date") || "N/A";
@@ -20,13 +14,29 @@ export const CookiesPage = () => {
       <p className="text-left">This website uses cookies.</p>
 
       <p>
-        Essential cookies are set automatically. Optional cookies can be adjusted
-        to your preferences.
+        Essential cookies are set automatically. Optional cookies cn be adjusted
+        to your preferences. See our{" "}
+        <a
+          href="/docs/privacy-policy.pdf"
+          target="_blank"
+          className="text-blue-500"
+        >
+          Privacy Policy
+        </a>{" "}
+        and{" "}
+        <a href="#" className="text-blue-500">
+          Cookie Declaration
+        </a>{" "}
+        for details.
       </p>
 
       <p>
         For more information about our cookie practices please visit our{" "}
-        <a href="https://luna-pay.com/docs/privacy-policy.pdf" className="text-blue-500">
+        <a
+          href="/docs/privacy-policy.pdf"
+          target="_blank"
+          className="text-blue-500"
+        >
           Privacy Policy
         </a>{" "}
         or contact us at hello@luna-pay.com
@@ -40,7 +50,7 @@ export const CookiesPage = () => {
           <br />
           Your consent ID: {consentId}
           <br />
-          Consent date: {consentDate}
+          Consent date: {new Date(consentDate).toLocaleString()}
         </p>
         <div className="mt-4">
           <button

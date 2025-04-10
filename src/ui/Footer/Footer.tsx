@@ -117,11 +117,7 @@ export const Footer = () => {
         >
           Privacy Policy
         </a>
-        <a
-          href="https://luna-pay.com/cookies"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="/cookies" rel="noopener noreferrer">
           Cookie Declaration
         </a>
       </div>

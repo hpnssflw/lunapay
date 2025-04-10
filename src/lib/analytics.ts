@@ -1,32 +1,49 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // todo : handle for test
 const GA_ID = "G-BY061G8TJ3";
 const GTM_ID = "GTM-KPX8RFRC";
 
-type GtagCommand = "config" | "set" | "event" | "js" | "consent" | "get";
-type GtagParams = Record<string, unknown>;
+type GtagEvent = "js" | "config" | "consent" | "event";
 
-interface GoogleAnalyticsWindow {
-  dataLayer?: unknown[];
-  gtag?: (
-    command: GtagCommand,
-    params?: string | Date | GtagParams,
-    additionalParams?: GtagParams
-  ) => void;
+interface GtagConfig {
+  anonymize_ip?: boolean;
+  allow_google_signals?: boolean;
+  allow_ad_personalization_signals?: boolean;
+  [key: string]: any;
 }
 
-export function loadAnalytics() {
+interface DataLayerEvent {
+  "gtm.start"?: number;
+  event?: string;
+  [key: string]: any;
+}
+
+interface GoogleAnalyticsWindow extends Window {
+  dataLayer?: DataLayerEvent[];
+  gtag?: {
+    (...args: [GtagEvent, Date]): void;
+    (...args: [GtagEvent, string, GtagConfig?]): void;
+    (...args: any[]): void;
+  };
+}
+
+declare const window: GoogleAnalyticsWindow;
+
+export function loadAnalytics(): void {
   if (typeof window === "undefined") return;
-  loadGA();
   loadGTM();
+  loadGA();
 }
 
-export function loadMarketing() {
+export function loadMarketing(): void {
   if (typeof window === "undefined") return;
 }
 
-function loadGTM(gtmId = GTM_ID) {
+function loadGTM(gtmId: string = GTM_ID): void {
   if (typeof window === "undefined" || typeof document === "undefined") return;
   if (document.getElementById("gtm-script")) return;
+
+  window.dataLayer = window.dataLayer || [];
 
   const script = document.createElement("script");
   script.id = "gtm-script";
@@ -38,11 +55,24 @@ function loadGTM(gtmId = GTM_ID) {
   noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}"
       height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
   document.body.appendChild(noscript);
+
+  const gtmEvent: DataLayerEvent = {
+    "gtm.start": new Date().getTime(),
+    event: "gtm.js",
+  };
+  window.dataLayer.push(gtmEvent);
 }
 
-function loadGA(gaId = GA_ID) {
+function loadGA(gaId: string = GA_ID): void {
   if (typeof window === "undefined" || typeof document === "undefined") return;
   if (document.getElementById("ga-script")) return;
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(...args: any[]): void {
+    window.dataLayer?.push(args);
+  }
+  window.gtag = gtag;
 
   const script = document.createElement("script");
   script.id = "ga-script";
@@ -51,27 +81,15 @@ function loadGA(gaId = GA_ID) {
   document.head.appendChild(script);
 
   script.onload = () => {
-    const w = window as GoogleAnalyticsWindow;
+    if (window.gtag) {
+      window.gtag("js", new Date());
 
-    w.dataLayer = w.dataLayer || [];
-
-    function gtag(
-      command: GtagCommand,
-      params?: string | Date | GtagParams,
-      additionalParams?: GtagParams
-    ) {
-      if (command === "js" && params instanceof Date) {
-        w.dataLayer?.push(["js", params]);
-      } else if (command === "config" && typeof params === "string") {
-        w.dataLayer?.push(["config", params, additionalParams || {}]);
-      } else {
-        w.dataLayer?.push([command, params, additionalParams]);
-      }
+      const config: GtagConfig = {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+      };
+      window.gtag("config", gaId, config);
     }
-
-    w.gtag = gtag;
-
-    gtag("js", new Date());
-    gtag("config", gaId);
   };
 }
