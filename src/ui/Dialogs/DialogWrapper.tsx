@@ -22,9 +22,15 @@ export function DialogWrapper({
   footer?: React.ReactNode;
 }) {
   return (
-    <Dialog>
+    <Dialog modal={true}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent
+        className="sm:max-w-[425px]"
+        onInteractOutside={(e) => {
+          // Prevent dialog from closing when interacting with browser autocomplete
+          e.preventDefault();
+        }}
+      >
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{description}</DialogDescription>

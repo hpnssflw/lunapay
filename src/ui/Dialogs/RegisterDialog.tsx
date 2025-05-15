@@ -19,35 +19,59 @@ const validationSchema = Yup.object().shape({
 export const RegisterDialog = () => {
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const postForm = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+
     try {
+      // Validate form inputs
       await validationSchema.validate(inputs, { abortEarly: false });
-      const response = await fetch("", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(inputs),
-      });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit the form");
+      // Using FormSubmit AJAX endpoint
+      const response = await fetch(
+        "https://formsubmit.co/ajax/hello@luna-pay.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: inputs.name,
+            email: inputs.email,
+            phone: inputs.phone,
+            _subject: "New Registration from Luna Website",
+            _template: "table",
+            _captcha: false,
+          }),
+        }
+      );
+
+      const data = await response.json();
+      console.log("FormSubmit response:", data);
+
+      if (data.success === "true" || data.success === true) {
+        setSuccess(true);
+        setInputs({});
+      } else {
+        throw new Error(data.message || "Failed to submit form");
       }
-
-      console.log("Form submitted successfully:", await response.json());
     } catch (error) {
-      console.log("$$ error", error);
+      console.error("Error submitting form:", error);
 
       if (error instanceof Yup.ValidationError) {
-        console.log("$$ error", error);
         setError(error.message);
+      } else if (error instanceof Error) {
+        setError(error.message || "An unexpected error occurred.");
       } else {
-        console.log("$$ error", error);
-        console.error("Error submitting form:", error);
         setError("An unexpected error occurred.");
       }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -57,31 +81,54 @@ export const RegisterDialog = () => {
       ...prev,
       [name]: value,
     }));
+
+    if (success) setSuccess(false);
   };
 
   return (
-    <form className="flex flex-col gap-5" onSubmit={postForm}>
+    <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
       <h2>Please fill the form below</h2>
-      <div className="flex flex-col gap-2">
-        <Input
-          placeholder="Email"
-          name="email"
-          onChange={handleInputChange}
-          type="email"
-        />
-        <Input placeholder="Name" name="name" onChange={handleInputChange} />
-        <Input
-          placeholder="Phone"
-          name="phone"
-          onChange={handleInputChange}
-          type="tel"
-        />
-      </div>
 
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-      {error && <p className="text-red-500">{error}</p>}
+      {success ? (
+        <div className="bg-green-50 p-4 rounded-md text-green-700 mb-4">
+          Thank you for your submission! We'll contact you soon.
+        </div>
+      ) : (
+        <>
+          <div className="flex flex-col gap-2">
+            <Input
+              placeholder="Email"
+              name="email"
+              onChange={handleInputChange}
+              type="email"
+              value={inputs.email || ""}
+              required
+            />
+            <Input
+              placeholder="Name"
+              name="name"
+              onChange={handleInputChange}
+              value={inputs.name || ""}
+              required
+            />
+            <Input
+              placeholder="Phone"
+              name="phone"
+              onChange={handleInputChange}
+              type="tel"
+              value={inputs.phone || ""}
+              required
+            />
+          </div>
+
+          <Button variant="primary" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Submitting..." : "Submit"}
+          </Button>
+
+          {error && <p className="text-red-500">{error}</p>}
+        </>
+      )}
+
       <p>
         By clicking the "Submit" button, you agree to our{" "}
         <a
