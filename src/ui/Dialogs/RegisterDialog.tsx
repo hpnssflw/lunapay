@@ -16,7 +16,7 @@ const validationSchema = Yup.object().shape({
     .required("Phone is required"),
 });
 
-const LUNA_URL = import.meta.env.LUNA_URL || "http://localhost:3000";
+const LUNA_URL = import.meta.env.LUNA_URL || "https://luna-pay.com";
 
 export const RegisterDialog = () => {
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
