@@ -23,10 +23,10 @@ export const Badge = ({
   text?: string;
 }) => {
   return (
-    <p
+    <div
       className={`max-h-[51px] y px-2 w-fit  rounded-[7px] text-[${text}] ${bgType[bg]} ${className}`}
     >
       {children}
-    </p>
+    </div>
   );
 };

@@ -60,14 +60,15 @@ const servicesCards = [
   },
 ];
 
-const genCard = (i: any) => (
+const genCard = (i: any, index: number) => (
   <div
+    key={index}
     className={`rounded-[45px] p-[50px] grid grid-cols-1 xl:grid-cols-[1fr_220px] mx-auto border-[1px] border-b-[6px] border-black bg-${i.bgColor} w-full max-w-[600px] xl:h-[310px]`}
   >
     <div className="flex flex-col justify-between ">
       <div>
-        {i.title.split(",").map((str: string) => (
-          <Badge bg={i.badgeColor}>
+        {i.title.split(",").map((str: string, index: number) => (
+          <Badge key={index} bg={i.badgeColor}>
             <h3>{str}</h3>
           </Badge>
         ))}

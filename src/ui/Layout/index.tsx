@@ -12,7 +12,7 @@ export const Layout = () => {
   }, [location.pathname]);
 
   return (
-    <section className="mx-auto w-full overflow-hidden flex  flex-col items-center justify-between">
+    <section className="mx-auto w-full overflow-hidden flex  flex-col items-center justify-between font-space">
       <Header />
       <div className="px-[10px] md:px-[20xp]">
         <Outlet />

@@ -16,6 +16,8 @@ const validationSchema = Yup.object().shape({
     .required("Phone is required"),
 });
 
+const LUNA_URL = import.meta.env.LUNA_URL || "http://localhost:3000";
+
 export const RegisterDialog = () => {
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
   const [error, setError] = useState<string | null>(null);
@@ -32,24 +34,18 @@ export const RegisterDialog = () => {
       await validationSchema.validate(inputs, { abortEarly: false });
 
       // Using FormSubmit AJAX endpoint
-      const response = await fetch(
-        "https://formsubmit.co/ajax/hello@luna-pay.com",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            name: inputs.name,
-            email: inputs.email,
-            phone: inputs.phone,
-            _subject: "New Registration from Luna Website",
-            _template: "table",
-            _captcha: false,
-          }),
-        }
-      );
+      const response = await fetch(`${LUNA_URL}/api/send-email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: inputs.name,
+          email: inputs.email,
+          phone: inputs.phone,
+        }),
+      });
 
       const data = await response.json();
       console.log("FormSubmit response:", data);
