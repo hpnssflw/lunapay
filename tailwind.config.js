@@ -7,6 +7,9 @@ export default {
     //   lg: "1280px",
     // },
     extend: {
+      fontFamily: {
+        space: ["Space Grotesk", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

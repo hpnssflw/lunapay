@@ -37,6 +37,7 @@ const accordionContent = [
 const getAccItem = (i: any, index: number) => (
   <AccordionItem
     value={`item-${index}`}
+    key={index}
     className="border rounded-[45px] border-b-[6px] w-full px-5 xl:px-10 bg-secondary py-2 xl:py-10 border-black shadow-lg"
   >
     <div className="grid grid-cols-[5px_1fr] items-center xl:grid-cols-[50px_1fr] gap-10">

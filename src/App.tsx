@@ -23,7 +23,6 @@ function App() {
         <Route path="about-us" element={<AboutUsPage />} />
         <Route path="services" element={<ServicesPage />} />
         <Route path="cookies" element={<CookiesPage />} />
-
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog1" element={<BlogPage1 />} />
         <Route path="blog2" element={<BlogPage2 />} />

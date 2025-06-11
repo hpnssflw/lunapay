@@ -16,8 +16,8 @@ export const Footer = () => {
   const location = useLocation();
 
   const activeRoute = (v: string) => location.pathname === v;
-  const genLink = (_: { path: string; label: string }) => (
-    <NavigationMenuItem>
+  const genLink = (_: { path: string; label: string }, index: number) => (
+    <NavigationMenuItem key={index}>
       <Link to={_.path}>
         <NavigationMenuLink
           className={cn(

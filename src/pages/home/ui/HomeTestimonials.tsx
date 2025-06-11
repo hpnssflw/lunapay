@@ -13,8 +13,7 @@ import { Badge, FlexSection } from "@/ui";
 export const HomeTestimonials = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
-  console.log("$ c", count);
+  const [, setCount] = React.useState(0);
 
   React.useEffect(() => {
     if (!api) {
@@ -32,6 +31,7 @@ export const HomeTestimonials = () => {
   const genStarView = (_: any, index: number) => {
     return (
       <div
+        key={index}
         className={`h-4 w-4 md:h-6 md:w-6 rotate-45 ${
           index + 1 === current ? "bg-primary" : "bg-white"
         }`}
@@ -85,14 +85,12 @@ export const HomeTestimonials = () => {
       </div>
 
       <div className="h-[625px] bg-default overflow- rounded-[45px] flex  flex-col">
-        {" "}
         <Carousel
           setApi={setApi}
           opts={{
             align: "start",
             loop: true,
           }}
-          // className="lg:w-full lg:max-w-[1240px] relative md:max-w-[760px] max-w-[450px]  mx-auto my-auto flex flex-col lg:gap-28 "
           className="xl:w-full xl:max-w-[1240px] w-[calc(100dvw_-_40px)] relative  mx-auto my-auto flex flex-col gap-28 "
         >
           <CarouselContent className="xl:w-[1860px] md:w-full -ml-0 xl:-ml-80">
